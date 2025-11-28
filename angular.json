@@ -38,6 +38,7 @@
             "scripts": [
               "src/plugins/js/jquery.js",
               "src/plugins/js/jquery.zoom.js",
+              "src/plugins/js/swiper.min.js",
               "src/plugins/js/tiny-slider.js"
             ]
           },

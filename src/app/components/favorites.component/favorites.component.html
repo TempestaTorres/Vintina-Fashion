@@ -39,33 +39,34 @@
                       <!-- Products -->
                       <ul class="products jkit-products jkit-align-left">
                         @for (product of products; track product.id) {
-                          <!-- Product Crad -->
-                          <li class="product has-post-thumbnail sale jkit-product-block">
-                            <!-- Card -->
-                            <a class="jkit-product" [routerLink]="['/product', product.type]">
-                              <!-- Image Link -->
-                              <div class="product-link">
-                                @if (product.onSale) {
-                                  <span class="onsale text jkit-onsale-position-left jkit-onsale-position-top">Sale</span>
-                                }
+                          @if (product.favorite) {
+                            <!-- Product Crad -->
+                            <li class="product has-post-thumbnail sale jkit-product-block">
+                              <!-- Card -->
+                              <a class="jkit-product" [routerLink]="['/product', product.type]">
+                                <!-- Image Link -->
+                                <div class="product-link">
+                                  @if (product.onSale) {
+                                    <span class="onsale text jkit-onsale-position-left jkit-onsale-position-top">Sale</span>
+                                  }
 
-                                @if (product.image) {
-                                  <img [src]="product.image" alt="Sensual woman.">
-                                }
+                                  @if (product.image) {
+                                    <img [src]="product.image" alt="Sensual woman.">
+                                  }
 
-                              </div>
-                              <!-- Category -->
-                              <div class="product-categories">
-                                <object>
+                                </div>
+                                <!-- Category -->
+                                <div class="product-categories">
+                                  <object>
                                 <span>
                                   <a [routerLink]="['/product-category', product.category.name]" rel="tag">{{ product.category.name | titlecase }}</a>
                                 </span>
-                                </object>
-                              </div>
-                              <!-- Name -->
-                              <h2 class="product-title">{{ product.name }}</h2>
-                              <!-- Price -->
-                              <span class="price">
+                                  </object>
+                                </div>
+                                <!-- Name -->
+                                <h2 class="product-title">{{ product.name }}</h2>
+                                <!-- Price -->
+                                <span class="price">
                                 @if (product.originalPrice) {
                                   <del aria-hidden="true">
                                 <span class="price-amount">
@@ -74,29 +75,30 @@
                               </del>
                                 }
 
-                              <ins>
+                                  <ins>
                                 <span class="price-amount">
                                   <bdi>{{ product.price | currency: 'USD' : 'symbol' : '.2-2' : 'en-US' }}</bdi>
                                 </span>
                               </ins>
                             </span>
-                            </a>
-                            <!-- Button Add to cart -->
-                            <a
-                              [id]="$index"
-                              [class.loading]="loading($index)"
-                              [class.added]="added($index)"
-                              (click)="addToCart($event, product)"
-                              class="button add_to_cart_button ajax_add_to_cart">
-                              <i class="fas fa-shopping-cart"></i>
-                              Add to cart
-                            </a>
-                            <!-- Button view cart -->
-                            <a (click)="viewCartClick($event)"
-                               class="added_to_cart ap-element-button"
-                               [class.active]="added($index)"
-                               title="View cart">View cart</a>
-                          </li>
+                              </a>
+                              <!-- Button Add to cart -->
+                              <a
+                                [id]="$index"
+                                [class.loading]="loading($index)"
+                                [class.added]="added($index)"
+                                (click)="addToCart($event, product)"
+                                class="button add_to_cart_button ajax_add_to_cart">
+                                <i class="fas fa-shopping-cart"></i>
+                                Add to cart
+                              </a>
+                              <!-- Button view cart -->
+                              <a (click)="viewCartClick($event)"
+                                 class="added_to_cart ap-element-button"
+                                 [class.active]="added($index)"
+                                 title="View cart">View cart</a>
+                            </li>
+                          }
                         }
                       </ul>
                     </div>

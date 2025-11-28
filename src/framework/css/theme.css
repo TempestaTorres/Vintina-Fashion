@@ -1,6 +1,10 @@
 .comments-area a,
 .page-content a {
-  text-decoration:underline
+  text-decoration:underline;
+  cursor: pointer;
+}.comments-area a.hidden,
+.page-content a.hidden {
+  display:none;
 }
 .alignright {
   float:right;

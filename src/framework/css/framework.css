@@ -1,11 +1,12 @@
 @import "reset.css";
+@import "swiper.css";
 @import "app-style.css";
 @import "animations.css";
-@import "theme.css";
 @import "widget-icon-list.css";
 @import "widget-social-icons.css";
 @import "divider.css";
 @import "frontend-lite.css";
+@import "theme.css";
 @import "commerce.css";
 @import "commerce-layout.css";
 @import "commerce-smallscreen.css";

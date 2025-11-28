@@ -183,6 +183,9 @@
   font-family:var( --global-typography-4fff42c-font-family ), sans-serif;
   font-size:var( --global-typography-4fff42c-font-size );
   font-weight:var( --global-typography-4fff42c-font-weight );
+  line-height: var( --global-typography-4fff42c-line-height );
+  letter-spacing: var( --global-typography-4fff42c-letter-spacing );
+  word-spacing: var( --global-typography-4fff42c-word-spacing );
 }
 .app-kit-3 input:not([type="button"]):not([type="submit"]),
 .app-kit-3 textarea,

@@ -1,0 +1,119 @@
+.app-home .app-element.app-element-page-hero.bridal:not(.app-motion-effects-element-type-background),
+.app-home .app-element.app-element-page-hero.bridal > .app-motion-effects-container > .app-motion-effects-layer {
+  background-image:url("/assets/images/sexy-woman-in-black-lingerie-lying-on-sofa.jpg");
+}
+.app-home .app-element.app-widget-image-carousel.post-image-carousel {
+  --image-carousel-slides-to-show:2;
+}
+
+.app-widget-quote-text-image {
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+.app-widget-quote-text-image .blog-quote-image {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  position: relative;
+}
+.app-widget-quote-text-image .blog-quote-image img {
+  width: 55%;
+}
+.app-widget-quote-text-image.quote-text-image-rev .blog-quote-image img {
+  float: right;
+}
+.app-widget-quote-text-image .imagetext-block-panel {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 100%;
+  height: auto;
+  position: absolute;
+  top: 15%;
+  left: 50%;
+  right: auto;
+  bottom: 15%;
+  width: 45%;
+  background-color: #fff;
+  text-align: left;
+}
+.app-widget-quote-text-image.quote-text-image-rev .imagetext-block-panel {
+  right: 50%;
+  left: auto;
+}
+.app-widget-quote-text-image .imagetext-block-panel .quote-text {
+  background-image: url("/assets/images/blog_quote_bg.png");
+  background-size: clamp(200px, 100%, 200px) auto;
+  background-repeat: no-repeat;
+  background-position: center center;
+  margin: 0 0 0 40px;
+  padding: 20px 0;
+}
+.app-widget-quote-text-image.quote-text-image-rev .imagetext-block-panel .quote-text {
+  margin: 0 40px 0 0;
+}
+.app-widget-quote-text-image .imagetext-block-panel .quote-text p {
+  font-style: italic;
+}
+.app-widget-quote-text-image .imagetext-block-panel .quote-text a {
+  text-decoration: underline;
+}
+.app-widget-quote-text-image .imagetext-block-panel .quote-text a:hover {
+  color: var(--c-red);
+}
+.app-home .app-element.app-element-image-column.app-column.app-element[data-element_type="column"] > .app-widget-wrap.app-element-populated {
+  align-content:center;
+  align-items:center;
+}
+.app-home .app-element.app-element-image-column.app-column > .app-widget-wrap {
+  justify-content:flex-start;
+}
+
+/* =============================================== Media 1024 ===========================================*/
+@media (max-width: 1024px) {
+  .app-home .app-element.app-element-wrapper > .app-element-populated {
+    padding:0 10px;
+  }
+}
+@media (max-width: 767px) {
+  .app-widget-quote-text-image {
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .app-widget-quote-text-image .blog-quote-image img {
+    width: 100%;
+  }
+  .app-widget-quote-text-image .imagetext-block-panel,
+  .app-widget-quote-text-image.quote-text-image-rev .imagetext-block-panel {
+    position: relative;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    margin-top: -30px;
+    width: calc(100% - 40px);
+    padding: 20px;
+  }
+  .app-widget-quote-text-image .imagetext-block-panel .quote-text {
+    padding: 0;
+    margin: 0;
+    align-content: flex-start;
+  }
+  .app-home .app-element.app-element-image-column {
+    width:100%;
+  }
+  .app-home .app-element.app-element-image-column.app-column.app-element[data-element_type="column"] > .app-widget-wrap.app-element-populated {
+    align-content:center;
+    align-items:center;
+  }
+  .app-home .app-element.app-element-image-column.app-column > .app-widget-wrap {
+    justify-content:flex-start;
+  }
+  .app-home .app-element.app-element-image-column > .app-element-populated {
+    margin:0 0 20px 0;
+    --column-margin-right:0;
+    --column-margin-left:0;
+  }
+}

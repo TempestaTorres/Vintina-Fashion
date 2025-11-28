@@ -1,0 +1,102 @@
+<div class="app-widget-wrap app app-home">
+  <div class="app-element app-widget-jkit_post_comment app-widget">
+    <div class="app-widget-container">
+      <div class="jeg-app-kit jkit-post-comment">
+        <section id="comments" class="comments-area">
+          <div id="respond" class="comment-respond">
+            <!-- Title -->
+            <h2 class="comment-reply-title">
+              Leave a Reply
+              <small>
+                <a class="cancel-reply hidden" tabindex="0">Cancel reply</a>
+              </small>
+            </h2>
+
+            <!-- Form comment -->
+
+            <form
+                class="comment-form"
+                novalidate>
+                <!--  Notes -->
+              <p class="comment-notes">
+                <span>Your email address will not be published.</span>
+                <span class="required-field-message">&nbsp;Required fields are marked <span class="required">*</span></span>
+              </p>
+              <!-- Comment textarea -->
+              <p class="comment-form-comment">
+                <label for="comment">Comment&nbsp;<span class="required">*</span></label>
+                <textarea id="comment"
+                          name="comment"
+                          cols="45"
+                          rows="8"
+                          maxlength="65525"
+                          required=""></textarea>
+              </p>
+              <!-- Comment author -->
+              <p class="comment-form-author">
+                <label for="author">Name&nbsp;<span class="required">*</span></label>
+                <input
+                  id="author"
+                  name="author"
+                  type="text"
+                  size="30"
+                  maxlength="245"
+                  autocomplete="name"
+                  required="">
+              </p>
+              <!-- Email -->
+              <p class="comment-form-email">
+                <label for="email">Email&nbsp;<span class="required">*</span></label>
+                <input
+                  id="email"
+                  name="email"
+                  type="email"
+                  size="30"
+                  maxlength="100"
+                  aria-describedby="email-notes"
+                  autocomplete="email"
+                  required="">
+              </p>
+              <!-- Url -->
+              <p class="comment-form-url">
+                <label for="url">Website</label>
+                <input
+                  id="url"
+                  name="url"
+                  type="url"
+                  size="30"
+                  maxlength="200"
+                  autocomplete="url">
+              </p>
+              <!-- Checkbox -->
+              <p class="comment-form-cookies-consent">
+                <input
+                  id="comment-cookies-consent"
+                  name="comment-cookies-consent"
+                  type="checkbox"
+                  value="yes">
+                <label for="comment-cookies-consent">
+                  <span class="checkmark">
+                    <i aria-hidden="true" class="jki jki-check-light"></i>
+                  </span>
+                </label>
+                <label for="comment-cookies-consent">Save my name, email, and website in this browser for the next time I comment.</label>
+              </p>
+              <!-- Button -->
+              <p class="form-submit">
+                <input
+                  name="submit"
+                  type="submit"
+                  id="submit"
+                  class="submit"
+                  value="Post Comment">
+              </p>
+            </form>
+
+            <!-- ./ Form comment -->
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+</div>

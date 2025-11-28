@@ -40,7 +40,7 @@
           @for (product of products; track $index) {
 
             <li
-              [class.last]="$index === products.length - 1"
+              [class.last]="($index + 1) % 4 === 0"
               class="product has-post-thumbnail">
               <a
                 [routerLink]="['/product', product.type]"
