@@ -1,0 +1,272 @@
+.dialog-container{
+  display:none;
+  touch-action: manipulation;
+}
+.dialog-container.open {
+  display:block;
+}
+.dialog-container .overlay-container {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  opacity: 1;
+  transition: opacity 0.5s;
+  z-index: 1034;
+  background-color: rgba(0, 0, 0, 0.75);
+  user-select: none;
+}
+
+.overlay-container .modal-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.overlay-container .modal-container .modal {
+  position: relative;
+  display: flex;
+  flex: 0 0 auto;
+  min-height: 600px;
+  width: min(800px, 100vw);
+  flex-direction: row-reverse;
+  background-color: rgb(241, 236, 228);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  box-shadow: none;
+  opacity: 1;
+}
+.modal-close-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  padding: 16px;
+  right: 0;
+  z-index: 3;
+  cursor: pointer;
+  margin-top: 20px;
+  margin-right: 20px;
+  background-color: rgba(0, 0, 0, 0);
+  border-radius: 0;
+}
+.closeIconSvg {
+  stroke: rgb(0, 0, 0);
+  stroke-width: 4px;
+  top: 6px;
+  left: 6px;
+  width: 15px;
+  height: 15px;
+}
+.modal .modal-panel {
+  flex: 1 0 0;
+  position: relative;
+  overflow: hidden auto;
+  max-height: 100%;
+  height: inherit;
+  background-color: rgb(241, 236, 228);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.modal .modal-panel .content {
+  width: 100%;
+  max-width: 600px;
+  min-height: 600px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 30px;
+  overflow-wrap: break-word;
+  z-index: 2;
+}
+.modal-panel .content .content-heading {
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 auto;
+  width: 100%;
+}
+.modal-panel .content .content-heading h2 {
+  margin: 0 0 2.5rem;
+}
+.modal-panel .content .content-heading.confirmed h2 {
+  margin: 0 0 1rem;
+}
+.content-heading span {
+  font-size: 1rem;
+  line-height: 1.125;
+  letter-spacing: 1px;
+  text-align: left;
+  max-width: 100%;
+  display: block;
+}
+.content-heading span.meta-title {
+  margin: 5px 0 20px;
+}
+.content-heading span.meta-desc {
+  margin: 2px 0 30px;
+  font-size: 0.875rem;
+}
+.content-heading.confirmed span.meta-desc {
+  font-size: 0.75rem;
+  margin: 2px 0;
+}
+.modal .side-image {
+  flex: 1 1 0;
+  overflow: hidden;
+  background-image: url("/assets/images/Whitney-Sparkling.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+.modal .side-image.friday {
+  background-image: url("/assets/images/FRI_Pop-Up-Attentive.jpg");
+}
+.side-image-overlay {
+  width: 100%;
+  height: 100%;
+  background: rgb(0, 0, 0);
+  opacity: 0;
+  position: absolute;
+  left: 0;
+}
+.modal-form {
+  width: 100%;
+}
+.modal-form-actions {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.modal-form-actions .action-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 0 0 100%;
+  background-color: rgb(0, 0, 0);
+  width: 100%;
+  min-width: 45px;
+  min-height: 4rem;
+  padding: 0.625em 1em;
+  border-width: 0;
+  border-color: rgb(0, 0, 0);
+  border-radius: 0;
+  margin-top: 10px;
+}
+.modal-form-actions .action-button.yes {
+  min-height: 50px;
+}
+.modal-form-actions .action-button.cancel {
+  background-color: transparent;
+  color: black;
+}
+.modal-form-actions .action-button:first-of-type {
+  margin-top: 0;
+}
+.action-button-text {
+  flex: 1 1 0;
+  flex-direction: column;
+  display: flex;
+}
+.action-button-text > span:not(:first-child) {
+  font-family: var(--global-typography-63e6229-font-family), sans-serif;
+  font-style: italic;
+}
+.meta-legal {
+  --global-typography-2eafb3e-font-size: 0.625rem;
+  font-family: var(--global-typography-2eafb3e-font-family), sans-serif;
+  font-size: var(--global-typography-2eafb3e-font-size);
+  letter-spacing: 0;
+  line-height: 1.25em;
+  text-align: justify;
+  background-color: rgb(241, 236, 228);
+  color: rgb(106, 104, 100);
+  margin-bottom: 0.5rem;
+  max-width: 100%;
+  display: flex;
+  padding: 0;
+  margin-top: 1rem;
+}
+.meta-legal-text-content {
+  width: 100%;
+  max-width: 100%;
+}
+.meta-legal-text-content a {
+  text-decoration: underline !important;
+}
+.subscriber-info {
+  display: flex;
+  flex: 1 1 0;
+  font-size: 0.75rem;
+  font-family: var(--global-typography-2eafb3e-font-family), sans-serif;
+  font-weight: var(--global-typography-2eafb3e-font-weight);
+  color: rgb(0, 0, 0);
+  position: relative;
+  margin-top: 0;
+  border-radius: 0;
+  overflow: hidden;
+  border-style: solid;
+  border-color: rgb(222, 217, 210);
+  border-image: none;
+  border-width: 0 0 1px;
+  margin-bottom: 1rem;
+}
+.subscriber-info.name {
+  margin-top: 2rem;
+}
+.subscriber-info > label {
+  font-size: 0.75em;
+  position: absolute;
+  top: calc(50% - 0.5rem);
+  left: 0;
+  opacity: 0;
+  color: rgb(0, 0, 0);
+  transition: 0.3s;
+}
+.subscriber-info > input {
+  height: 3rem;
+  width: 100%;
+  flex: 1 1 0;
+  font-size: 1em;
+  border: none;
+  color: rgb(0, 0, 0);
+  text-align: left;
+  background-color: rgba(0, 0, 0, 0);
+  padding: .25em .375em .25em 0;
+}
+.subscriber-info > input:focus{
+  outline: none;
+  border: none;
+}
+.modal-form .meta-info > label {
+  display: block;
+  margin-bottom: 0.25rem;
+  font-size: 0.75rem;
+  font-family: var(--global-typography-2eafb3e-font-family), sans-serif;
+  font-weight: var(--global-typography-2eafb3e-font-weight);
+  color: rgb(0, 0, 0);
+  letter-spacing: 1px;
+}
+/*======================================================= Media ==============================*/
+@media (orientation: landscape) {
+  .dialog-container .overlay-container {
+    flex-direction: column;
+  }
+}
+@media (max-width: 767px) {
+  .modal .modal-panel .content {
+    padding:67px 10px 40px 10px;
+  }
+}

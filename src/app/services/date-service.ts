@@ -25,4 +25,10 @@ export class DateService {
     let minutesFormatted: string | number = minutes < 10 ? '0' + minutes : minutes;
     return hours + ':' + minutesFormatted + ' ' + ampm;
   }
+
+  public getDayOfWeekName(): string {
+    const weekday = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+    const d = new Date();
+    return weekday[d.getDay()];
+  }
 }

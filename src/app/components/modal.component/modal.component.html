@@ -1,0 +1,141 @@
+<div
+  [class.open]="bOpen"
+  class="dialog-container"
+  role="dialog"
+  aria-modal="true"
+  aria-label="{{ dialogName }}">
+  <div class="overlay-container animated" [class.fadeIn]="bOpen" [class.fadeOut]="shutdown">
+    <div class="modal-container">
+      <div class="modal">
+        <button
+          (click)="onCancel()"
+          class="modal-close-button">
+          <svg viewBox="0 0 45 45" color="#000000" aria-hidden="true" class="closeIconSvg">
+            <line x1="5" x2="40" y1="5" y2="40"></line>
+            <line x1="5" x2="40" y1="40" y2="5"></line>
+          </svg>
+        </button>
+        <!-- Content Panel -->
+        <div class="modal-panel">
+          <div class="content">
+            @if (!confirmed) {
+              <!-- Heading -->
+              <div class="content-heading">
+                <h2>
+                  <span class="meta-title">JOIN THE VINITA CLUB!</span>
+                  <span class="meta-desc">READY TO TAKE $30 OFF YOUR FIRST PURCHASE?</span>
+                </h2>
+              </div>
+              <!-- Form  -->
+              <form
+                (submit)="onOk($event)"
+                novalidate
+                class="modal-form">
+
+                <div class="modal-form-actions">
+                  <button class="action-button yes">
+                    <div class="action-button-text">
+                      <span>YES, PLEASE!</span>
+                    </div>
+                  </button>
+                  <button
+                    (click)="onCancel()"
+                    type="button"
+                    class="action-button cancel">
+                    <div class="action-button-text">
+                      <span>NO, THANKS!</span>
+                    </div>
+                  </button>
+                </div>
+              </form>
+            } @else {
+              <!-- Heading -->
+              <div class="content-heading confirmed">
+                <h2>
+                  <span class="meta-title">LET'S BE FRIENDS WITH BENEFITS</span>
+                  <span class="meta-desc">ENTER YOUR EMAIL & GET $30 OFF.* WELCOME TO A WORLD OF LINGERIE, PLEASURE & PLAY.</span>
+                </h2>
+                <div class="meta-legal">
+                  <div class="meta-legal-text-content">
+                    By submitting your email address, you agree
+                    to join&nbsp;The Vinita Club&nbsp;&amp; receive marketing emails including AI content from Mad
+                    Jun. We may share info with service providers per our Privacy Policy. You can unsubscribe at
+                    any time. By submitting your email address, you also agree to our
+                    <a rel="noopener" target="_blank" href="https://us.honeybirdette.com/pages/terms-conditions">
+                      Terms (incl. arbitration)
+                    </a>&amp;
+                    <a rel="noopener" target="_blank" href="https://us.honeybirdette.com//pages/privacy-policy">
+                      Privacy Policy</a>
+                    . Contact Mad Jun at 125 York Street Level 1, Sydney, New South Wales 2000.
+                  </div>
+                </div>
+              </div>
+              <!-- Form  -->
+              <form
+                [formGroup]="offerFormGroup"
+                (submit)="onOk($event)"
+                novalidate
+                class="modal-form">
+
+                <div class="meta-info">
+                  <!--Name -->
+                  <div class="subscriber-info name">
+                    <input
+                      formControlName="name"
+                      id="name"
+                      autocomplete="off"
+                      placeholder="FIRST NAME"
+                      type="text"
+                      required>
+                    <label for="name">FIRST NAME</label>
+                  </div>
+                  <!-- Birthday -->
+                  <label for="birthday">BIRTHDAY</label>
+                  <div id="birthday" class="subscriber-info">
+                    <input
+                      formControlName="birthday"
+                      id="input-birthday"
+                      autocomplete="bday"
+                      placeholder="MM/DD/YYYY"
+                      type="text"
+                      required
+                      >
+                    <label for="input-birthday">MM/DD/YYYY</label>
+                  </div>
+                  <!-- Email -->
+                  <div class="subscriber-info">
+                    <input
+                      formControlName="email"
+                      id="email"
+                      autocomplete="email"
+                      placeholder="EMAIL ADDRESS"
+                      type="email"
+                      required
+                    >
+                    <label for="email">EMAIL ADDRESS</label>
+                  </div>
+                </div>
+                <!-- Action -->
+              <div class="modal-form-actions">
+                <button class="action-button yes">
+                  <div class="action-button-text">
+                    <span>GET $30 OFF NOW</span>
+                    <span>when you sign up for emails</span>
+                  </div>
+                </button>
+              </div>
+              </form>
+            }
+          </div>
+        </div>
+        <!-- Image -->
+        <div
+          [class.friday]="bFriday"
+          class="side-image">
+          <div class="side-image-overlay"></div>
+        </div>
+      </div>
+      <!-- ./ modal -->
+    </div>
+  </div>
+</div>

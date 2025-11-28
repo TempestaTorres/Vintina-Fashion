@@ -4871,7 +4871,6 @@ body[class*=jkit-offcanvas-hide-scroll-] {
     background-position: center center;
 }
 .jeg-app-kit.jkit-portfolio-gallery .image-item.current-item {
-    -webkit-transform: scale(1, 1);
     transform: scale(1, 1);
     opacity: 1;
 }
@@ -4889,7 +4888,6 @@ body[class*=jkit-offcanvas-hide-scroll-] {
     background-color: rgba(0, 0, 0, .4);
     opacity: 0;
     visibility: hidden;
-    -webkit-transform: translate3d(0, -15px, 0);
     transform: translate3d(0, -15px, 0);
     -webkit-transition: .25s ease;
     transition: .25s ease;
