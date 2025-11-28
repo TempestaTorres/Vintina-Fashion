@@ -2,6 +2,11 @@
   padding-right: 5px;
 }
 
+#comments .comment-author.vcard {
+  display: flex;
+  flex-direction: column;
+  margin-right: 5px;
+}
 @media (max-width: 767px) {
   .app-home .app-widget-jkit_post_comment > .app-widget-container {
     margin:-20px 0 0 0;

@@ -3,6 +3,41 @@
     <div class="app-widget-container">
       <div class="jeg-app-kit jkit-post-comment">
         <section id="comments" class="comments-area">
+          <!-- Reply List -->
+          @if (comments.length > 0) {
+            <h3 class="title-comments">Responses({{ comments.length }})</h3>
+            <ol class="comment-list">
+              @for (comment of comments; track $index) {
+                <li class="comment">
+                  <article class="comment-body">
+                    <div class="comment-meta">
+                      <!-- Author meta -->
+                      <div class="comment-author vcard">
+                        <!-- Avatar -->
+                        <img
+                          class="avatar"
+                          src="/assets/images/avatar-42x42.jpg" alt="">
+                        <!-- Name -->
+                        <b>{{ comment.author }}</b>
+                        <span class="says">says:</span>
+                      </div>
+                      <!-- Date -->
+                      <div class="comment-metadata">
+                        <time>{{ comment.date }}</time>
+                      </div>
+
+                      @if (!comment.approved) {
+                        <em class="comment-awaiting-moderation">Your comment is awaiting moderation. This is a preview; your comment will be visible after it has been approved.
+                        </em>
+                      }
+                    </div>
+                    <div class="comment-content">{{ comment.content }}</div>
+                  </article>
+                </li>
+              }
+            </ol>
+          }
+          <!-- ./ Reply List -->
           <div id="respond" class="comment-respond">
             <!-- Title -->
             <h2 class="comment-reply-title">
@@ -15,6 +50,8 @@
             <!-- Form comment -->
 
             <form
+              (submit)="onSubmit($event)"
+                [formGroup]="commentFormGroup"
                 class="comment-form"
                 novalidate>
                 <!--  Notes -->
@@ -25,22 +62,21 @@
               <!-- Comment textarea -->
               <p class="comment-form-comment">
                 <label for="comment">Comment&nbsp;<span class="required">*</span></label>
-                <textarea id="comment"
-                          name="comment"
-                          cols="45"
-                          rows="8"
-                          maxlength="65525"
-                          required=""></textarea>
+                <textarea
+                  formControlName="comment"
+                  id="comment"
+                  cols="45"
+                  rows="8"
+                  required=""></textarea>
               </p>
               <!-- Comment author -->
               <p class="comment-form-author">
                 <label for="author">Name&nbsp;<span class="required">*</span></label>
                 <input
                   id="author"
-                  name="author"
+                  formControlName="author"
                   type="text"
                   size="30"
-                  maxlength="245"
                   autocomplete="name"
                   required="">
               </p>
@@ -49,10 +85,9 @@
                 <label for="email">Email&nbsp;<span class="required">*</span></label>
                 <input
                   id="email"
-                  name="email"
+                  formControlName="email"
                   type="email"
                   size="30"
-                  maxlength="100"
                   aria-describedby="email-notes"
                   autocomplete="email"
                   required="">
@@ -62,19 +97,17 @@
                 <label for="url">Website</label>
                 <input
                   id="url"
-                  name="url"
+                  formControlName="url"
                   type="url"
                   size="30"
-                  maxlength="200"
                   autocomplete="url">
               </p>
               <!-- Checkbox -->
               <p class="comment-form-cookies-consent">
                 <input
                   id="comment-cookies-consent"
-                  name="comment-cookies-consent"
-                  type="checkbox"
-                  value="yes">
+                  formControlName="cookies"
+                  type="checkbox">
                 <label for="comment-cookies-consent">
                   <span class="checkmark">
                     <i aria-hidden="true" class="jki jki-check-light"></i>
