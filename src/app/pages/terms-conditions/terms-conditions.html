@@ -1,1 +1,724 @@
-<p>terms-conditions works!</p>
+<div class="app app-home page-top">
+  <div class="app-section app-element app-element-section-post app-section-content-middle app-section-boxed">
+    <div class="app-container app-column-gap-default">
+      <div class="app-column app-col-100 app-element app-element-section-post-wrapper">
+        <div class="app-widget-wrap app-element-populated">
+          <!-- Accordion  -->
+          <div class="app-element app-widget app-widget-jkit_accordion">
+            <div class="app-widget-container">
+              <div
+                #accordion
+                class="jeg-app-kit jkit-accordion style-default">
+                <!-- Item -->
+                <div class="card-wrapper">
+                  <!-- Header -->
+                  <div
+                    (click)="toggle($event, accordion)"
+                    class="card-header">
+                    <a
+                      aria-expanded="false"
+                      class="card-header-button">
+                      <span class="title">Terms & Condition</span>
+                      <div class="right-icon-group">
+                        <!-- Closed icon -->
+                        <div class="normal-icon">
+                          <i aria-hidden="true" class="jki jki-chevron-down-light"></i>
+                        </div>
+                        <!-- Action icon -->
+                        <div class="active-icon">
+                          <i aria-hidden="true" class="jki jki-times-solid"></i>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                  <!-- Expand Card -->
+                  <div class="card-expand">
+                    <div class="card-body">
+                      <p>THESE TERMS AND CONDITIONS (the “Terms”) ARE SUBJECT TO BINDING ARBITRATION AND A WAIVER OF
+                        CLASS ACTION RIGHTS AS DETAILED IN THE MANDATORY ARBITRATION AND CLASS ACTION WAIVER SECTION
+                        BELOW.
+                      </p>
+                      <p>
+                        READ THESE TERMS CAREFULLY. THEY ARE A LEGAL CONTRACT GOVERNING YOUR USE OF THE
+                        VINTINA.COM/US.VINTINA.COM/UK.VINTINA.COM/EU.VINTINA.COM&nbsp;WEBSITE AND ANY
+                        MOBILE-OPTIMIZED WEBSITE, MOBILE APPLICATION, OR OTHER ONLINE SERVICE ALLOWING ACCESS THERETO
+                        (collectively, the “Site”) PROVIDED BY MAD JUN PTY LTD AND ITS AFFILIATED ENTITIES
+                        (collectively, “Mad Jun,” “we,” or “us,” or “our”).
+                      </p>
+                      <p>
+                        By visiting our Site and/or purchasing something offered on the Site, you agree to be bound
+                        to these Terms and our&nbsp;
+                        <a
+                          class="ap-element-underline-button"
+                          [routerLink]="['privacy-policy']"
+                          title="Privacy Policy">Privacy Policy</a>
+                        . All references to “you” or “your,” as applicable, mean any person, vendor,
+                        merchant, browser, or other entity who accesses, uses, and/or engages with the Site in any
+                        manner, and each of your heirs, assigns, and successors. We reserve the right to update, change,
+                        or replace any part of these Terms by posting updates and/or changes to our Site. It is your
+                        responsibility to regularly review this page. The most current version of these Terms will
+                        supersede all previous versions. Your continued use of the Site after the posting of any amended
+                        Terms shall constitute your agreement to be bound by any such changes. Your use of the Site
+                        prior to the time these Terms were posted will be governed according to the Terms that applied
+                        at the time of your use. We reserve the right to deny you access to the Site if you violate
+                        these Terms.
+                      </p>
+                      <p>
+                        <strong>Eligibility.&nbsp;</strong>The Site is intended solely for persons who are 18 years
+                        old or older. Any access to or use of the Site by anyone under the age of 18 is expressly
+                        prohibited. By accessing or using the Site you represent and warrant that you are 18 years old
+                        or older. Furthermore, you agree to be of the legal age required by the state of your residence
+                        when purchasing applicable products from our site. It is your responsibility to determine if you
+                        can legally buy certain products (“Products”) from the Site which may include, for example,
+                        hemp-derived CBD products or smoking accessory products that may be available for purchase. You
+                        may not use our Products for any illegal or unauthorized purpose.
+                      </p>
+                      <p>
+                        <strong>Transactions and E-Commerce</strong>.&nbsp;During your visit to the Site, you may
+                        elect to engage in a transaction involving the purchase of Products or any applicable services
+                        that may be offered. Credit card transactions and order fulfillment of Products are often
+                        handled by a third-party processing agent, bank or distribution institution. While in most cases
+                        transactions are completed without difficulty, there is no such thing as perfect security on the
+                        Internet or offline. If you are concerned about online credit card safety, in most cases a
+                        telephone number will be made available so you can call us and place your order by phone. Honey
+                        Birdette, its parent and its affiliates, cannot and do not take responsibility for the success
+                        or security of transactions undertaken or processed by third parties. We reserve the right to
+                        refuse any order for Products that you may attempt to purchase from the Site. We may, in our
+                        sole discretion, limit or cancel quantities purchased per person, per household, or otherwise.
+                        These restrictions may include orders placed by or under the same customer account, the same
+                        credit card, and/or orders that use the same billing and/or shipping address. Should we make any
+                        change or cancel your order, we may attempt to notify you by contacting the email or phone
+                        number provided at the time your order was made. You represent to us that any information you
+                        provide in connection with purchasing Products from the Site, or otherwise engaging with the
+                        Site will be correct, complete, and accurate in all respects.
+                      </p>
+                      <p>
+                        <strong>Products and Accuracy of Information</strong>.&nbsp;Certain Products may be
+                        available exclusively online through the Site, and/or may have limited quantities and are
+                        subject to return or exchange only according to our&nbsp;
+                        <a
+                          class="ap-element-underline-button"
+                          [routerLink]="['returns-exchanges']"
+                          title="Returns &amp; Exchanges">refund or return policy</a>.
+                        On occasion, a Product may not be available at the time or the price as
+                        it appears in an advertisement or other material in the Site. In such event, or in the event a
+                        Product is listed at an incorrect price or with incorrect information due to typographical
+                        error, technology error, error in the date or length of publication, error in pricing or product
+                        information received from our advertisers or suppliers, or for any other reason, you agree that
+                        we are not responsible for such errors or discrepancies. We reserve the right to limit the sales
+                        of our Products to any person, geographic region, or jurisdiction. We may exercise this right on
+                        a case-by-case basis. All descriptions of Products and pricing are subject to change at any time
+                        without notice at our sole discretion.&nbsp; We reserve the right to discontinue sales of any
+                        Product at any time. Any offer for any Product made on this Site is void in any state, province,
+                        or other jurisdiction where prohibited.
+                      </p>
+                      <p><strong>Health Information</strong>.&nbsp;As of the effective date of these Terms, the Food
+                        and Drug Administration (FDA) has not evaluated any statements or materials on our Site, nor
+                        those applicable Products we may sell and distribute which may become subject to guidance or
+                        regulations issued by the FDA. As such, neither the FDA nor any other regulatory body endorses
+                        or approves any Products on our site or ingredients of our Products. No Products offered on the
+                        Site should be expected to diagnose, treat, cure, or prevent any diseases. Where we have
+                        provided information about recommended use or application of any Products, such information is
+                        being shared only for instructive purposes only and is not meant in any way to be a substitute
+                        for any professional medical advice or care. For those who are pregnant, nursing, taking
+                        prescription medications, or have any pre-existing medical conditions, we strongly advise that
+                        you consult with your physician before using any applicable Products that may be offered on the
+                        Site.
+                      </p>
+                      <p>
+                        <strong>Advertisements &amp; Linked Sites</strong>.&nbsp;We participate in various
+                        affiliate marketing programs and other arrangements with both our PLBY Group affiliated entities
+                        and third parties, which means we may receive a commission or other form of compensation if you
+                        (a) click on certain ads or links that appear on our Site, or (b) purchase a product or service
+                        using links from our Site to affiliated or third party websites.<br><br>If we provide links to
+                        other websites, you should not infer or assume that we operate, control, or are otherwise
+                        connected with these other websites. Please be careful to read the applicable terms and
+                        conditions and privacy policy of any other website before you provide any personal information
+                        or engage in any transactions. We are not responsible for the content or practices of any
+                        website that is not part of the Site, even if the website is operated by a company affiliated or
+                        otherwise connected with us. By using the Site, you acknowledge and agree that we are not
+                        responsible or liable to you for any content or other materials hosted, served, or residing on
+                        the domain from any websites other than the Site and then only to the extent provided for
+                        herein.<br><br>During your visit to the Site, you may link to, or view as part of a frame,
+                        certain content that is actually created, hosted and/or licensed by a third party. Because we
+                        have no control over third-party sites and resources, you acknowledge and agree that we are not
+                        responsible for the availability of external websites or resources, nor for the content,
+                        actions, or policies of those sites. Information you provide on such websites, including
+                        personal information and transactional information, is subject to the applicable terms and
+                        conditions and privacy policy of those websites.<br><br>Your dealings or communications through
+                        the Site with any party other than Vinita are solely between you and that third party.
+                        Under no circumstances will the Site be liable for any goods, services, resources or content
+                        available through such third-party dealings or communications, or for any harm related thereto.
+                        Please review carefully that third party's policies and practices and make sure you are
+                        comfortable with them before you engage in any transaction. Complaints, concerns or questions
+                        relating to materials provided by third parties should be directed to the third party.
+                      </p>
+                      <p>
+                        <strong>Copyright</strong>.&nbsp;All information, content, services and software displayed
+                        on, transmitted through, or used in connection with the Site (with the exception of User Content
+                        as defined below), including, for example, Product reviews, descriptions, photographs, images,
+                        illustrations, audio clips, video, html, source and object code, trademarks, logos, and the like
+                        (collectively, the “Content”), as well as, its selection and arrangement, is owned by Vinita
+                        and/or its licensors and suppliers. You may use the Content online only, and solely for
+                        your personal, non-commercial use, and you may download or print a single copy of any portion of
+                        the Content solely for your personal, non-commercial use, provided you do not remove any
+                        trademark or copyright notice, or other notice, from such Content. If you operate a website and
+                        wish to link to the Site, you may do so provided you agree to cease such link immediately upon
+                        request from us. No other use is permitted without the prior written permission of Mad Jun.
+                        The permitted use described in this section is contingent on your compliance at all
+                        times with these Terms.<br><br>Except where explicitly provided for herein or on the Site, you
+                        may not republish any portion of the Content on any Internet, Intranet, extranet site or any
+                        other online or offline publication, or incorporate the Content in any database, compilation,
+                        archive, cache, or similar medium. You may not distribute any Content to others, whether or not
+                        for payment or other consideration, and you may not archive, modify, copy, frame, cache,
+                        reproduce, sell, publish, transmit, display, exploit, or otherwise use any portion of the
+                        Content. You may not scrape or otherwise copy our Content without our permission. You agree not
+                        to decompile, reverse engineer or disassemble any software or other products or processes
+                        accessible through the Site nor to insert any code or product or manipulate the Content or the
+                        Site in any way or for any purpose, and not to use any data mining, data gathering or extraction
+                        method.<br><br>Requests to use Content for any purpose other than as permitted in these Terms
+                        should be directed to&nbsp;
+                        <a
+                          class="ap-element-underline-button"
+                          [routerLink]="['contact']"
+                        >vinita&#64;madjun.com</a>. In certain
+                        cases, you may be able to use individual images or video that appear on the Site through online
+                        functionality we have specifically designated (e.g., to email a Product image or description to
+                        a friend).
+                      </p>
+                      <p>
+                        <strong>User Content Representations and Warranties</strong>.&nbsp;By placing material on
+                        the Site, including but not limited to posting content or communications to any Product review
+                        or other message or chat area available on the Site, or posting text, images, audio files, video
+                        clips, or any&nbsp; audio-visual content to the Site (collectively, “User Content”), you
+                        represent and warrant: (1) you own or otherwise have all necessary rights to the User Content
+                        you provide and the rights to provide it under these Terms; (2) the User Content will not cause
+                        injury to any person, group or entity; and (3) the User Content does not contain anything
+                        illegal or unlawful.
+                      </p>
+                      <p>
+                        <strong>User Content License</strong>.&nbsp;For all User Content you post, upload, or
+                        otherwise make available (in this section – “Provide”) to the Site, you grant Vinita a
+                        worldwide, royalty-free, perpetual, irrevocable, non-exclusive right and fully sub-licensable,
+                        assignable and transferrable license to use, copy, reproduce, distribute, publish, publicly
+                        perform, publicly display, modify, adapt, translate, archive, store, and create derivative works
+                        from such User Content, in whole or in part, in any form, format, or medium, of any kind now
+                        known or later developed. Without limiting the generality of the previous sentence, you
+                        authorize Vinita to: (i) share the User Content across all websites, mobile
+                        applications, publications and other online and offline services affiliated with Vinita;
+                        (ii) include the User Content in a searchable format accessible by users of the Site and other
+                        Vinita websites, mobile applications, publications and other online services; (iii)
+                        place advertisements in close proximity to such User Content; and (iv) use your name, likeness
+                        and any other information you Provide in connection with our use of the material you Provide.
+                        You waive all moral rights with respect to any User Content you Provide to the Site. You also
+                        grant Vinita the right to use any material, information, ideas, concepts, know-how or
+                        techniques contained in any communication you Provide or otherwise submit to us for any purpose
+                        whatsoever, including but not limited to, commercial purposes, and developing, manufacturing and
+                        marketing commercial products using such information. All rights in this section are granted
+                        without the need for additional compensation of any sort by Vinita to you or to any
+                        other person or entity. You agree that you will indemnify, defend, and hold harmless Honey
+                        Birdette, its parent and affiliates, and each of their respective shareholders, officers,
+                        directors, employees, and agents for all claims resulting from User Content you post. We reserve
+                        the right, at our own expense, to assume the exclusive defense and control of such disputes, and
+                        in any event, you will cooperate with us in asserting any available defenses.<br><br>You also
+                        hereby grant each user of the Site a non-exclusive license to access your User Content through
+                        the Site, and to use, reproduce, distribute, display and perform such User Content as permitted
+                        through the functionality of the Site and under these Terms.
+                      </p>
+                      <p>
+                        <strong>User Content Screening and Removal</strong>.&nbsp;You acknowledge that Vinita
+                        and/or its designees may or may not pre-screen User Content, and shall have the right
+                        (but not the obligation), in their sole discretion, to move, remove, block, edit, or refuse any
+                        User Content for any reason, including without limitation that such User Content violates these
+                        Terms or is otherwise objectionable.
+                      </p>
+                      <p>
+                        <strong>User Content Assumption of Risk</strong>.&nbsp;Although we may from time to time
+                        monitor or review postings, transmissions, and the like on the Site, we cannot and do not
+                        monitor or manage all User Content, and do not guarantee the accuracy, integrity, or quality of
+                        User Content. All User Content provided to the Site is the sole responsibility of the person who
+                        provided it.&nbsp; This means that you are entirely responsible for all User Content that you
+                        Provide.&nbsp; To protect your safety, please use your best judgment when using Site forums,
+                        chat rooms, review or comments sections, or similar features. We discourage divulging personal
+                        phone numbers and addresses or other information that can be used to identify or locate you. You
+                        acknowledge and agree that if you make such disclosures either through posting on any message
+                        forums, review or comment sections, or chat areas, or uploading text, images, audio files or
+                        other audio-visual content, in classified advertising you place or in other interactive areas,
+                        or to third parties in any communication, you do with the full understanding that such
+                        information could be used to identify and contact you.
+                      </p>
+                      <p>
+                        <strong>User Content Posting Rules</strong>.&nbsp;Any decisions as to whether User Content
+                        violates any posting rule set forth in these Terms will be made by us in our sole discretion and
+                        after we have actual notice of such posting. When you provide User Content, you agree to the
+                        following rules:<br>Do not provide User Content that:
+                      </p>
+                      <ul>
+                        <li>contains copyrighted or other proprietary material of any kind without the express
+                          permission of the owner of that material;
+                        </li>
+                        <li>contains vulgar, profane, abusive, racist or hateful language, expressions, epithets, slurs,
+                          text, photographs or illustrations, or is in poor taste, or is an inflammatory attack of a
+                          personal, racial or religious nature;
+                        </li>
+                        <li>is defamatory, threatening, disparaging, grossly inflammatory, false, misleading,
+                          fraudulent, inaccurate, unfair, contains gross exaggeration or unsubstantiated claims,
+                          violates the privacy rights of any third party, is unreasonably harmful or offensive to any
+                          individual or community;
+                        </li>
+                        <li>may cause any harm or damage to the Site, you, us, or anyone else;</li>
+                        <li>violates any right of the Site, Vinita, or any third party;</li>
+                        <li>infringes other individuals privacy rights or rights of publicity;</li>
+                        <li>discriminates on the grounds of race, religion, national origin, gender, age, marital
+                          status, sexual orientation or disability, or refers to such matters in any manner prohibited
+                          by law.
+                        </li>
+                        <li>violates or encourages the violation of any municipal, state, federal or international law,
+                          rule, regulation, ordinance, or similar requirement;
+                        </li>
+                        <li>interferes with any third party’s use or enjoyment of the Site;</li>
+                        <li>advertises, promotes or offers to trade any goods or services, except in areas specifically
+                          designated for such purpose;
+                        </li>
+                        <li>collects any user content or information, or otherwise accesses the Site using automated
+                          means (such as harvesting bots, robots, spiders, or scrapers) without our prior permission;
+                        </li>
+                        <li>violates any robot exclusion headers of the Site, if any, or bypasses or circumvents other
+                          measures employed to prevent or limit access to the Site;
+                        </li>
+                        <li>shares, recompiles, decompiles, disassembles, reverse engineers, or makes or distributes any
+                          other form of, or any derivative work from, the Site;
+                        </li>
+                        <li>attempts to scrape or collect any personal or private information from other users or from
+                          the Site;
+                        </li>
+                        <li>pretends to come from someone other than you, or where you are impersonating someone else;
+                        </li>
+                        <li>intercepts or monitors, damages, or modifies any communication not intended for you;</li>
+                        <li>uses or attempt to use another's registration account, password, service or system except as
+                          expressly permitted by the Terms;
+                        </li>
+                        <li>uploads or transmits viruses or any other harmful, disruptive or destructive files,
+                          materials or code;
+                        </li>
+                        <li>disrupts, interferes with, or otherwise harms or violates the security of the Site, or any
+                          services, system resources, accounts, passwords, servers or networks connected to or
+                          accessible through the Site or affiliated or linked sites;
+                        </li>
+                        <li>harasses, abuses, bullies, threatens, or “flames” any individual or entity (e.g., sends
+                          messages related to another user or model, and/or makes abusive, derogatory, crude, or
+                          offensive comments about another individual), or repeats a prior posting of the same message
+                          under multiple threads or subjects; or otherwise breaches these Terms.
+                        </li>
+                      </ul>
+                      <p><br>
+                        WARNING: Vinita HAS NO TOLERANCE FOR ANY VIOLATION OF THE ABOVE POSTING RULES, NOR ANY
+                        USE OR INTERACTION WITH THE SITE THAT MAY PERMIT OR ALLOW THE UPLOADING OR SHARING OF ANY
+                        CONTENT THAT MAY BE THE RESULT OF OR RELATE TO ANY SEXUAL OR HUMAN TRAFFICKING, PHYSICAL ABUSE,
+                        OR THE EXPLOITATION OF CHILDREN. ANY SUCH VIOLATIONS OR UNLAWFUL CONTENT MAY BE REFERRED TO LAW
+                        ENFORCEMENT AUTHORITIES.
+                      </p>
+                      <p>
+                        You shall notify us immediately upon becoming aware of any conduct or behavior by any
+                        individuals or entities of any restricted uses of the Site and/or any suspected unlawful content
+                        by sending an email to&nbsp;
+                        <a
+                          class="ap-element-underline-button"
+                          [routerLink]="['contact']"
+                        >vinita&#64;madjun.com</a>, and you shall
+                        provide us with reasonable assistance in any investigations we conduct in light of the
+                        information you provide to us. We will remove such content and take other appropriate action
+                        which may include terminating/disabling user accounts and reporting the matter to appropriate
+                        organizations or advocacy groups as we deem necessary.
+                      </p>
+                      <p>
+                        You acknowledge that we have no obligation to monitor any users’ access to or use of the Site,
+                        or to review or edit any Content or User Content, but we have the right to do so in our sole
+                        discretion: (i) for the purpose of operating and improving the Site (including without
+                        limitation for fraud prevention, risk assessment, investigation and customer support purposes);
+                        (ii) to ensure your or another user’s compliance with these Terms; (iii) to comply with
+                        applicable law or the order or requirement of a court, administrative agency or other
+                        governmental body; or (iv) to address&nbsp; content that we determine is otherwise objectionable
+                        or violates these Terms. We reserve the right, at any time and without prior notice, to remove
+                        or disable access to any User Content that we, in our sole discretion, consider to be
+                        objectionable for any reason, in violation of these Terms, otherwise harmful to the Site, or for
+                        any other reason that we deem appropriate. In order to protect the integrity of the Site, we
+                        also reserve the right at any time in our sole discretion to block users from certain IP
+                        addresses or geographic locations from accessing and using the Site.
+                      </p>
+                      <p>You acknowledge, consent, and agree that we may access, preserve and disclose any of your
+                        information if we are required to do so by law, or if we believe in good faith that it is
+                        reasonably necessary: (i) to respond to claims asserted against us or to comply with legal
+                        process (for example, subpoenas, warrants, or other process ); (ii) to enforce or administer our
+                        agreements with users, including without limitation these Terms; (iii) to render services you
+                        request; (iv) to protect the rights or property of the Site, Vinita, and their
+                        respective third-party suppliers, service providers, and licensors; (v) for fraud prevention,
+                        risk assessment, investigation, customer support, product development and de-bugging purposes;
+                        (vi) to protect the rights, property or safety of Vinita, the Site, its users, or
+                        members of the public; or (vii) in circumstances that we deem, in our sole discretion, to pose a
+                        threat to the safety of us, you or others.
+                      </p>
+                      <p>
+                        <strong>Notice of Intellectual Property Infringement</strong>.&nbsp;In accordance with the
+                        Digital Millennium Copyright Act (DMCA) and other applicable law, it is our policy, in
+                        appropriate circumstances, to terminate the customer account of anyone who is deemed to infringe
+                        third-party intellectual property rights or to remove User Content that is deemed to be
+                        infringing. If you believe that your work has been copied in a way that constitutes copyright
+                        infringement and is displayed on the Site, please provide substantially the following
+                        information to our Copyright Agent (please consult your legal counsel or see 17 U.S.C. Section
+                        512(c)(3) to confirm these requirements):
+                      </p>
+                      <ul>
+                        <li>an electronic or physical signature of the person authorized to act on behalf of the owner
+                          of the copyright or other intellectual property interest;
+                        </li>
+                        <li>a description of your copyrighted work or other intellectual property that you claim has
+                          been infringed;
+                        </li>
+                        <li>a description of where the material you claim is infringing is located on the Site&nbsp;
+                          (providing us with website URL is the quickest way to help us locate content quickly);
+                        </li>
+                        <li>your address, telephone number, and e-mail address;</li>
+                        <li>a statement by you that you have a good faith belief that the disputed use is not authorized
+                          by the copyright owner, its agent, or the law;
+                        </li>
+                        <li>a statement by you, made under penalty of perjury, that the above information in your notice
+                          is accurate and that you are the copyright or intellectual property owner or authorized to act
+                          on the copyright or intellectual property owner's behalf.
+                        </li>
+                      </ul>
+                      <p><br>
+                        <strong>General Disclaimer and Limitation of Liability</strong>.&nbsp;While we use
+                        reasonable efforts to include accurate and up-to-date information, we do not make any warranties
+                        or representations as to the accuracy of the Content appearing on the Site, including the User
+                        Content, and assume no liability or responsibility for any error or omission in the Content. We
+                        do not represent or warrant that use of any Content will not infringe rights of third parties.
+                        We have no responsibility for actions of third parties or for content provided by others,
+                        including without limitation User Content.
+                      </p>
+                      <p>
+                        USE OF THE SITE IS AT YOUR OWN RISK. ALL CONTENT AND ACCESS TO THE SITE ARE PROVIDED “AS
+                        IS” AND “AS AVAILABLE.” NEITHER VINITA, ITS PARENT, AND AFFILIATES, NOR ANY OF THEIR
+                        RESPECTIVE OFFICERS, DIRECTORS, SHAREHOLDERS, MEMBERS, EMPLOYEES, REPRESENTATIVES, CONTRACTORS,
+                        AGENTS, CONTENT PROVIDERS, SERVICE PROVIDERS, OPERATORS, OR LICENSORS (COLLECTIVELY, “VINITA
+                        ENTITIES”),
+                        MAKE ANY REPRESENTATION OR WARRANTY OF ANY KIND REGARDING THE SITE, THE
+                        CONTENT, ANY ADVERTISING MATERIAL, INFORMATION, PRODUCTS OR SERVICES AVAILABLE ON OR THROUGH THE
+                        SITE, THE AVAILABILITY OF THE SITE OR THE CONTENT THEREON, AND/OR THE RESULTS THAT MAY (OR MAY
+                        NOT) BE OBTAINED FROM ACCESS OR USE OF THE SITE OR THE CONTENT. ALL EXPRESS OR IMPLIED
+                        WARRANTIES, INCLUDING WITHOUT LIMITATION WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A
+                        PARTICULAR PURPOSE, WARRANTIES AGAINST INFRINGEMENT, AND WARRANTIES THE SITE WILL MEET YOUR
+                        REQUIREMENTS, BE UNINTERRUPTED, TIMELY, SECURE OR ERROR FREE, ARE SPECIFICALLY DISCLAIMED. THE
+                        VINITA ENTITIES ARE NOT RESPONSIBLE OR LIABLE FOR CONTENT POSTED BY THIRD PARTIES,
+                        ACTIONS OF ANY THIRD PARTY, OR FOR ANY DAMAGE TO, OR VIRUS&nbsp; OR MALWARE THAT MAY INFECT,
+                        YOUR COMPUTER EQUIPMENT, MOBILE DEVICE, OR OTHER PROPERTY. THE SITE CONTAINS FACTS, VIEWS,
+                        OPINIONS, STATEMENTS AND RECOMMENDATIONS OF THIRD-PARTY INDIVIDUALS AND ORGANIZATIONS. HONEY
+                        BIRDETTE DOES NOT REPRESENT OR ENDORSE THE ACCURACY, CURRENTNESS OR RELIABILITY OF ANY ADVICE,
+                        OPINION, STATEMENT OR OTHER INFORMATION DISPLAYED, UPLOADED OR DISTRIBUTED THROUGH THE SITE. ANY
+                        RELIANCE UPON ANY SUCH OPINION, ADVICE, STATEMENT OR INFORMATION IS AT YOUR SOLE RISK. TO THE
+                        MAXIMUM EXTENT PERMITTED BY LAW, THE VINITA ENTITIES SHALL NOT BE LIABLE FOR ANY
+                        INDIRECT, CONSEQUENTIAL, SPECIAL, INCIDENTAL OR PUNITIVE DAMAGES INCLUDING, WITHOUT LIMITATION,
+                        DAMAGES RELATED TO UNAUTHORIZED ACCESS TO OR ALTERATION OF YOUR TRANSMISSIONS OR DATA, THE
+                        CONTENT OR ANY ERRORS OR OMISSIONS IN THE CONTENT, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH
+                        DAMAGES. TO THE MAXIMUM EXTENT PERMITTED BY LAW, THE VINITA ENTITIES SHALL NOT BE LIABLE
+                        FOR ANY AMOUNT FOR DIRECT DAMAGES IN EXCESS OF THE LESSER OF $100 OR THE AMOUNT YOU PAID TO USE
+                        THE SITE. THE LIMITATION OF LIABILITY DESCRIBED ABOVE SHALL APPLY FULLY TO RESIDENTS OF NEW
+                        JERSEY.</p>
+                      <p>
+                        <strong>Indemnity</strong>.&nbsp;You agree to indemnify, defend and hold harmless Vinita,
+                        its parent and affiliates, and each of their respective shareholders, officers,
+                        directors, members, employees, representatives, contractors, agents, and licensees from and
+                        against any and all claims (including but not limited to claims for defamation, trade
+                        disparagement, privacy and intellectual property infringement) and damages (including attorneys'
+                        fees and court costs) in any and all jurisdictions arising from or relating to any allegation
+                        regarding: (1) your use of the Site; (2) the Site’s and/or Vinita’s use of any User
+                        Content or information you provide; (3) information or material Provided through your customer
+                        account, even if not posted by you; and (4) any violation of these Terms by you.
+                      </p>
+                      <p>
+                        <strong>Discontinuation of Service</strong>.&nbsp;We may modify, suspend, discontinue or
+                        restrict the use of any portion of the Site, including the availability of any Products at any
+                        time, without notice or liability. We may deny access to any customer or other user at any time
+                        for any reason, or no reason at all in our sole discretion. In addition, Vinita may at
+                        any time transfer rights and obligations under these Terms to any PLBY Group affiliate,
+                        subsidiary or business unit, or any of their affiliated companies or divisions, or any entity
+                        that acquires Vinita, the Site or any of their respective assets.
+                      </p>
+                      <p>
+                        <strong>Statute of Limitations</strong>.&nbsp;You agree to file any claim regarding any
+                        aspect of this Site or these Terms within six (6) months of the time in which the events giving
+                        rise to such claim began, or you agree to waive such claim. This statute of limitations
+                        provision does not apply to residents of New Jersey.
+                      </p>
+                      <p><strong>MANDATORY ARBITRATION AND CLASS ACTION WAIVER</strong></p>
+                      <p>PLEASE READ THIS SECTION CAREFULLY. IT AFFECTS YOUR LEGAL RIGHTS, INCLUDING YOUR RIGHT TO FILE
+                        A LAWSUIT IN COURT.
+                      </p>
+                      <p>
+                        <strong>30-Day Right to Opt Out</strong>.&nbsp;You have the right to opt out and not be bound
+                        by the arbitration and class action waiver provisions set forth above by sending written notice
+                        of your decision to opt out to&nbsp;service&#64;yandy.com&nbsp;with the subject line, "MANDATORY
+                        ARBITRATION AND CLASS ACTION WAIVER OPT-OUT." The notice must be sent within thirty (30) days of
+                        (a) the Effective Date of these Terms; or (b) the first date that you used the Site that
+                        contained any versions of the Terms that included this version of the mandatory arbitration and
+                        class action waiver, whichever is later.&nbsp; Otherwise, you shall be bound to arbitrate
+                        disputes in accordance with the terms of those paragraphs. If you opt out of these arbitration
+                        provisions, Vinita also will not be bound by them.
+                      </p>
+                      <p><strong>Changes to This Section</strong>.&nbsp;Vinita reserves the right to change
+                        this Section (Mandatory Arbitration and Class Action Waiver) at any time to reflect changes in
+                        the law, the features of our Site, or other considerations. Please check this page periodically
+                        for changes. Such changes will only become effective sixty (60) days after the revised Effective
+                        Date of these Terms and will only apply prospectively to claims arising after the sixtieth
+                        (60th) day. If a court or arbitrator decides that this subsection on "Changes to This Section"
+                        is not enforceable or valid, then this subsection shall be severed from the section entitled
+                        “Mandatory Arbitration and Class Action Waiver,” and the court or arbitrator shall apply the
+                        first Mandatory Arbitration and Class Action Waiver section in existence after you began using
+                        the Site.</p>
+                      <p>
+                        <strong>Survival</strong>.&nbsp;This Mandatory Arbitration and Class Action Waiver section
+                        shall survive any termination of your account or the Site.
+                      </p>
+                      <p><strong>General Provisions.</strong></p>
+                      <p>
+                        <strong>Force Majeure</strong>.&nbsp;The failure of Vinita to comply with any
+                        provision of these Terms due to an act of God, hurricane, war, fire, riot, pandemic/epidemic,
+                        earthquake, terrorism, act of public enemies, actions of governmental authorities outside of the
+                        control of Vinita (excepting compliance with applicable codes and regulations) or other
+                        force majeure event will not be considered a breach of these Terms.
+                      </p>
+                      <p>
+                        <strong>Severability</strong>.&nbsp;If for any reason any provision of these Terms is found
+                        unenforceable, that provision shall be enforced to the maximum extent permissible so as to
+                        affect the intent of the parties as reflected in that provision, and the remainder of these
+                        Terms shall continue in full force and effect.
+                      </p>
+                      <p><strong>No Waiver</strong>.&nbsp;Any failure by us to enforce or exercise any provision of
+                        these Terms or related right shall not constitute a waiver of that right or provision.</p>
+                      <p><strong>No Third-Party Beneficiaries</strong>.&nbsp;You agree, except as expressly provided
+                        in these Terms, there shall be no third-party beneficiaries to these Terms.</p>
+                      <p><strong>Section Titles</strong>.&nbsp;The section titles used in these Terms are purely for
+                        convenience and carry with them no legal or contractual effect.</p>
+                      <p><strong>Termination</strong>.&nbsp;In the event of termination of these Terms for any
+                        reason, you agree the following provisions will survive: the provisions regarding limitations on
+                        your use of Content, the license(s) you have granted to the Site, the Disputes provisions, and
+                        all other provisions for which survival is equitable or appropriate.</p>
+                      <p><strong>Conflicts</strong>.&nbsp;In the case of a conflict between these Terms and the
+                        terms of any electronic or machine readable statement or policy, these Terms shall control. In
+                        case of a conflict between these Terms and our Privacy Policy, the Privacy Policy controls.</p>
+                      <p><strong>No Joint Venture, Partnership, or Agency Relationship</strong>.&nbsp;No joint
+                        venture, partnership or agency relationship exists between you and Vinita. These Terms,
+                        our Privacy Policy, our SMS Terms &amp; Conditions, any uses of the Site by you, and any
+                        information, products, or services provided to you via the Site do not create and shall not be
+                        construed to create a joint venture, partnership or agency relationship between you and Vinita.
+                      </p>
+                      <p><strong>Material Terms</strong>.&nbsp;You agree that the provisions of these Terms that
+                        limit liability and disclaim warranties are essential terms of these Terms and Conditions.</p>
+                      <p><strong>Entire Agreement</strong>.&nbsp;These Terms constitute the entire agreement between
+                        you and Vinita with respect to the Site and supersede all prior or contemporaneous
+                        understandings regarding such subject matter. No amendment to or modification of these Terms
+                        will be binding unless made in writing and signed by Vinita.&nbsp; Vinita may
+                        post any changes to these Terms at any time in its discretion, and such changes will become
+                        binding as of the Effective Date of the posting of the updated Terms and your continued use of
+                        the Site going forward (except as otherwise provided in the “Changes to this Section” provision
+                        above regarding Mandatory Arbitration and Class Waiver). &nbsp;No failure to exercise, and no
+                        delay in exercising, on the part of either party, any right or any power hereunder shall operate
+                        as a waiver thereof, nor shall any single or partial exercise of any right or power hereunder
+                        preclude further exercise of any other right hereunder. In the event of a conflict between these
+                        Terms and any applicable purchase or other terms, these Terms shall
+                        govern.<em><strong>&nbsp;</strong></em></p>
+                      <p><em><strong>Effective Date</strong></em><em>: December 1, 2025</em></p>
+                    </div>
+                  </div>
+                </div>
+                <!-- Item -->
+                <div class="card-wrapper">
+                  <!-- Header -->
+                  <div
+                    (click)="toggle($event, accordion)"
+                    class="card-header">
+                    <a
+                      aria-expanded="false"
+                      class="card-header-button">
+                      <span class="title">Gift Card Terms & Conditions</span>
+                      <div class="right-icon-group">
+                        <!-- Closed icon -->
+                        <div class="normal-icon">
+                          <i aria-hidden="true" class="jki jki-chevron-down-light"></i>
+                        </div>
+                        <!-- Action icon -->
+                        <div class="active-icon">
+                          <i aria-hidden="true" class="jki jki-times-solid"></i>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                  <!-- Expand Card -->
+                  <div class="card-expand">
+                    <div class="card-body">
+                      <ol>
+                        <li>
+                          All physical and digital Vinita gift cards have a 3-year expiry date from the date
+                          of issue.
+                        </li>
+                        <li>Gift cards cannot be refunded.</li>
+                        <li>Any outstanding balance on a gift card shall not be refunded or exchanged for cash.</li>
+                        <li>
+                          All gift cards are to be treated like cash. The gift card holder is responsible for the use
+                          of the gift card.
+                        </li>
+                        <li>Gift cards will not be replaced if stolen, lost or damaged.</li>
+                        <li>Gift cards must be presented at the time of redemption.</li>
+                        <li>
+                          Both physical and digital gift cards can only be used in the country in which it was
+                          purchased, gift cards are not transferrable across regions. Store credits are
+                          non-transferable.
+                        </li>
+                        <li>
+                          The price of a gift card can be paid by any of the means of payment accepted at Vinita
+                          boutiques or via&nbsp;
+                          <a
+                            class="ap-element-underline-button"
+                            [routerLink]="['']"
+                            title="http://vinita.com/">vinita.com</a>
+                        </li>
+                        <li>Gift cards cannot be purchased with another gift card or promotional code.</li>
+                        <li>Gift cards can be used as often as the gift card holder would like, until the total amount
+                          has been used up.
+                        </li>
+                        <li>Where the purchase price is more than the remaining balance on the gift card, the difference
+                          may be paid through any other payment option accepted at Vinita boutiques or
+                          at&nbsp;
+                          <a
+                            class="ap-element-underline-button"
+                            [routerLink]="['']"
+                            title="http://vinita.com/">vinita.com</a>
+                        </li>
+                        <li>Products purchased with a physical or digital gift card at any Vinita boutique or
+                          online store shall be subject to the general purchase terms and conditions (as with any other
+                          products purchased in our boutiques).
+                        </li>
+                        <li>Where appropriate, refunds for products purchased with a gift card shall be&nbsp; refunded
+                          by reversing the purchase price of the returned items back onto the original gift card. If the
+                          original gift card no longer exists upon return of products, the price shall be credited to a
+                          new gift card issued by Vinita.
+                        </li>
+                        <li>
+                          Where a digital gift card is purchased via&nbsp;
+                          <a
+                            class="ap-element-underline-button"
+                            [routerLink]="['']"
+                            title="http://vinita.com/">vinita.com</a>,
+                          Vinita shall not be responsible for the non-receipt or the delay in receiving by its
+                          intended recipient on grounds beyond Vinita´s control, including:
+                        </li>
+                      </ol>
+                      <ul>
+                        <li>the deficiencies or the breakdown of telecommunications lines/systems,</li>
+                        <li>the inaccuracy of the details of the recipient of the digital gift card provided by the
+                          purchaser of the gift card;
+                        </li>
+                        <li>the fact that the e-mail sent by Vinita is deemed to be spam or unwanted e-mail.</li>
+                      </ul>
+                      <ol>
+                        <li>Any physical or digital gift cards obtained through any unlawful means shall be null and
+                          void and may not be used to purchase products, nor shall the price be refunded.
+                        </li>
+                        <li>By purchasing, using or attempting to use a gift card you are accepting and agreeing to the
+                          terms and conditions stated above which have been made available upon purchase of the gift
+                          card and which are also available at&nbsp;
+                          <a
+                            class="ap-element-underline-button"
+                            [routerLink]="['']"
+                            title="http://vinita.com/">vinita.com</a>
+                        </li>
+                        <li>
+                          Vinita reserves the right to change any of the terms and conditions listed at any time.
+                        </li>
+                      </ol>
+                    </div>
+                  </div>
+                </div>
+                <!-- Item -->
+                <div class="card-wrapper">
+                  <!-- Header -->
+                  <div
+                    (click)="toggle($event, accordion)"
+                    class="card-header">
+                    <a
+                      aria-expanded="false"
+                      class="card-header-button">
+                      <span class="title">The Vinita Club Terms & Conditions</span>
+                      <div class="right-icon-group">
+                        <!-- Closed icon -->
+                        <div class="normal-icon">
+                          <i aria-hidden="true" class="jki jki-chevron-down-light"></i>
+                        </div>
+                        <!-- Action icon -->
+                        <div class="active-icon">
+                          <i aria-hidden="true" class="jki jki-times-solid"></i>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                  <!-- Expand Card -->
+                  <div class="card-expand">
+                    <div class="card-body">
+                      <p>PLEASE READ THE FOLLOWING TERMS CAREFULLY. THEY CONTAIN IMPORTANT INFORMATION ABOUT YOUR
+                        RIGHTS AND OBLIGATIONS IN CONNECTION WITH THE<em> </em>VINITA CLUB<em>&nbsp;</em>REWARDS<br>PROGRAM
+                        (THE “PROGRAM”).
+                      </p>
+                      <p>
+                        THIS AGREEMENT CONTAINS A MANDATORY DISPUTE RESOLUTION PROVISION AND ARBITRATION AGREEMENT
+                        WITH A CLASS ACTION WAIVER THAT AFFECT YOUR LEGAL RIGHTS. THIS ARBITRATION AGREEMENT REQUIRES
+                        THAT DISPUTES BE RESOLVED IN INDIVIDUAL ARBITRATION OR SMALL CLAIMS COURT PROCEEDINGS. IN
+                        ARBITRATION, THERE IS NO JUDGE OR JURY AND THERE IS LESS DISCOVERY AND APPELLATE REVIEW THAN
+                        IN A COURT PROCEEDING. PLEASE REVIEW THOSE SECTIONS CAREFULLY.
+                      </p>
+                      <p><strong>1. General Information; Definitions; Changes</strong></p>
+                      <p>
+                        These Terms contain the entire understanding between you and us regarding the Program. HB
+                        RESERVES THE RIGHT TO CHANGE THE PROGRAM AND THESE TERMS AT ANY TIME AND FOR ANY REASON.
+                        Accordingly, we have the right to modify, add or delete all or any portion of the Terms,
+                        benefits, Rewards or Honey Club Spend (each as defined below), at any time in our sole
+                        discretion, with or without notice, even if such changes affect the value or Honey Club Spend
+                        you have already accumulated in your Program Account, the value of the Rewards and/or the
+                        time period for redemption, subject to applicable law. By continuing to participate in the
+                        Program, you hereby accept any changes to the Program or Terms. If the Program is terminated,
+                        all unredeemed benefits will be forfeited without any obligation or liability and will not be
+                        honored upon termination or after conclusion of the notice period, if any notice is required
+                        by law.
+                      </p>
+                      <p><strong>2. Membership and Eligibility</strong></p>
+                      <p>
+                        <strong>General Program Participation</strong>: No purchase is necessary to obtain membership
+                        or enroll in the Program. In order to be eligible to participate in the Program, you must be a
+                        U.S. resident, and you must be at least 18 years of age. Further, you must provide us with
+                        certain personal information (e.g., name and valid email address). Participants can enroll
+                        in the Program at checkout in any of our participating store locations, online, or at special
+                        sign-up events (such participants,&nbsp;are referred to as “Participants”). Limit one
+                        Participant per email address. Once enrolled, Participants enter the Program at the Gold Tier
+                        and will be entitled to the Rewards of Gold Tier status as set forth in Section 4 below.
+                      </p>
+                      <p>
+                        <strong>Registration:</strong> As part of the registration process, you must create a
+                        Program account (your “Program Account”) and select a Participant ID and a password. You
+                        agree to maintain the confidentiality of your Participant ID and password, and that you are
+                        fully responsible for all activities that occur under your password or Participant ID or
+                        any other breach of security, and to log out at the end of each session. HB will not be
+                        liable for any loss or damage arising from your failure to comply with these Terms. If you
+                        notify us that you have lost access to your Program Account, we may terminate your Program
+                        Account as proscribed in these Terms. The date on which you register for the Program is referred
+                        to herein as your “Anniversary Date.”
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

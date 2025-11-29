@@ -1,11 +1,13 @@
 import { Component } from '@angular/core';
 import {FormControl, FormGroup, ReactiveFormsModule, Validators} from '@angular/forms';
 import {DateService} from '../../services/date-service';
+import {RouterLink} from '@angular/router';
 
 @Component({
   selector: 'ng-app-modal',
   imports: [
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RouterLink
   ],
   templateUrl: './modal.component.html',
   styleUrl: './modal.component.css',

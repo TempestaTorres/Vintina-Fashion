@@ -4723,3 +4723,68 @@
     margin-right: unset;
   }
 }
+/* Accordion */
+.app .app-element.app-widget-jkit_accordion .jeg-app-kit.jkit-accordion .card-wrapper .card-header .card-header-button {
+  font-family:var( --global-typography-4fff42c-font-family ), sans-serif;
+  font-size:var( --global-typography-4fff42c-font-size );
+  font-weight:var( --global-typography-4fff42c-font-weight );
+  line-height:var( --global-typography-4fff42c-line-height );
+  letter-spacing:var( --global-typography-4fff42c-letter-spacing );
+  word-spacing:var( --global-typography-4fff42c-word-spacing );
+}
+.app .app-element.app-widget-jkit_accordion .jeg-app-kit.jkit-accordion .card-wrapper.expand .card-header .card-header-button {
+  color:var( --global-color-bbd710c );
+  background-color:var( --global-color-accent );
+}
+.app .app-element.app-widget-jkit_accordion .jeg-app-kit.jkit-accordion .card-wrapper:not(.expand) .card-header .card-header-button {
+  color:var( --global-color-primary );
+  background-color:#FFFFFF;
+}
+.app .app-element.app-widget-jkit_accordion .jeg-app-kit.jkit-accordion .card-expand .card-body {
+  color:var( --global-color-text );
+  font-family:var( --global-typography-text-font-family ), sans-serif;
+  font-size:var( --global-typography-text-font-size );
+  font-weight:var( --global-typography-text-font-weight );
+  text-transform:var( --global-typography-text-text-transform );
+  padding:20px 40px 20px 30px;
+}
+.app .app-element.app-widget-jkit_accordion .jeg-app-kit.jkit-accordion .card-expand .card-body strong {
+  font-weight: 500;
+}
+.app .app-element.app-widget-jkit_accordion .jeg-app-kit.jkit-accordion .card-wrapper {
+  border-style:solid;
+  border-width:1px;
+  border-color:var( --global-color-primary );
+}
+.app .app-widget-jkit_accordion .jeg-app-kit.jkit-accordion .card-wrapper .card-expand {
+  display: none;
+}
+.card-expand .card-body ul,
+.card-expand .card-body ol {
+  margin-top: .75rem !important;
+  list-style-position: outside;
+}
+@media (max-width: 1024px) {
+  .app .app-element.app-widget-jkit_accordion .jeg-app-kit.jkit-accordion .card-wrapper .card-header .card-header-button {
+    font-size:var( --global-typography-4fff42c-font-size );
+    line-height:var( --global-typography-4fff42c-line-height );
+    letter-spacing:var( --global-typography-4fff42c-letter-spacing );
+    word-spacing:var( --global-typography-4fff42c-word-spacing );
+    padding:14px 60px 14px 20px;
+  }
+  .app .app-element.app-widget-jkit_accordion .jeg-app-kit.jkit-accordion .card-expand .card-body {
+    font-size:var( --global-typography-text-font-size );
+  }
+}
+@media (max-width: 767px) {
+  .app .app-element.app-widget-jkit_accordion .jeg-app-kit.jkit-accordion .card-wrapper .card-header .card-header-button {
+    font-size:var( --global-typography-4fff42c-font-size );
+    line-height:var( --global-typography-4fff42c-line-height );
+    letter-spacing:var( --global-typography-4fff42c-letter-spacing );
+    word-spacing:var( --global-typography-4fff42c-word-spacing );
+    padding:14px 65px 14px 20px;
+  }
+  .app .app-element.app-widget-jkit_accordion .jeg-app-kit.jkit-accordion .card-expand .card-body {
+    font-size:var( --global-typography-text-font-size );
+  }
+}

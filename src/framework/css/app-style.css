@@ -3639,6 +3639,10 @@ a[data-fn].fn:after {
 .ap-element-button {
   cursor:pointer
 }
+.ap-element-underline-button {
+  text-decoration: underline !important;
+  cursor: pointer;
+}
 :root {
   --ap--preset--font-size--normal:16px;
   --ap--preset--font-size--huge:42px

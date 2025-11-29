@@ -1,8 +1,11 @@
 import {Component, signal, WritableSignal} from '@angular/core';
+import {RouterLink} from '@angular/router';
 
 @Component({
   selector: 'ng-app-sidebar',
-  imports: [],
+  imports: [
+    RouterLink
+  ],
   templateUrl: './sidebar.component.html',
   styleUrl: './sidebar.component.css',
 })

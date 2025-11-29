@@ -5,8 +5,8 @@
       <div class="jeg-app-kit jkit-off-canvas">
         <!-- Toggle Button -->
         <div class="toggle-wrapper">
-          <a href=""
-             class="offcanvas-sidebar-button"
+          <a
+             class="offcanvas-sidebar-button ap-element-button"
              (click)="toggleSidebar($event)">
             <i aria-hidden="true" class="jki jki-menu-7-light"></i>
           </a>
@@ -22,9 +22,9 @@
               <div class="widget-heading">
                 <!-- Close button -->
                 <a
-                  class="offcanvas-close-button"
+                  class="offcanvas-close-button ap-element-button"
                   (click)="toggleSidebar($event)"
-                  href="">
+                  >
                   <i aria-hidden="true" class="jki jki-times-solid"></i>
                 </a>
               </div>
@@ -40,7 +40,7 @@
                           <!-- Image -->
                           <div class="app-element app-element-sidebar-image app-widget app-widget-image">
                             <div class="app-widget-container">
-                              <a href="">
+                              <a [routerLink]="['']">
                                 <img [src]="logoMobileSrc" alt="Vintina logo" decoding="async">
                               </a>
                             </div>
