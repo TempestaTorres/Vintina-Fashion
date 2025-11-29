@@ -1,0 +1,18 @@
+.app-element.app-element-section-main {
+  padding: 50px 0;
+  background-color: rgba(233,227,218);
+}
+.app-element.app-element-section-main > .app-container {
+  max-width: 800px;
+}
+
+@media (max-width: 1024px) {
+  .app-element.app-element-section-main {
+    padding: 50px 15px;
+  }
+}
+@media (max-width: 767px) {
+  .app-element.app-element-section-main {
+    padding: 40px 10px;
+  }
+}

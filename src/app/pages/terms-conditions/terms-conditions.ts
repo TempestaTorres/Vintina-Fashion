@@ -8,7 +8,6 @@ import {AccordionService} from '../../services/accordion-service';
     RouterLink
   ],
   templateUrl: './terms-conditions.html',
-  styleUrl: './terms-conditions.css',
 })
 export class TermsConditions {
   constructor(private accordionService: AccordionService) {
