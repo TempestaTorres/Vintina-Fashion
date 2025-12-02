@@ -1,0 +1,125 @@
+<div class="app app-home page-top">
+  <!-- Hero -->
+  <section class="app-section app-element app-element-hero-top-section app-section-boxed">
+    <!-- Overlay -->
+    <div class="app-background-overlay"></div>
+    <div class="app-container app-column-gap-default">
+      <div class="app-element app-element-no-padding app-column app-col-100">
+        <div class="app-widget-wrap app-element-populated">
+          <!-- Heading -->
+          <div class="app-element app-element-hero-top-section-heading app-widget app-widget-heading">
+            <div class="app-widget-container">
+              <h2 class="app-heading-title">Product Detail</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--  Product section -->
+  <section class="app-element app-element-product-details-section app-section elementor-section-boxed">
+    <div class="app-container app-column-gap-default">
+      <!-- Product gallery -->
+      <div
+        #gallery
+        appObserveElement
+        #intersection="intersection"
+        [isContinuous]="false"
+        (isIntersecting)="isIntersecting($event, gallery)"
+        [ngClass]="{animated: intersection._isIntersecting, fadeInLeft: intersection._isIntersecting}"
+        class="app-column app-element app-element-product-gallery-wrap app-col-50 animated-slow app-invisible">
+
+        @if (thumbnails.length > 0) {
+          <!-- With Swiper -->
+          <div class="app-widget-wrap app-element-populated a-swiper-container">
+            <div class="app-element app-element-product-details-gallery app-arrows-position-inside app-widget app-widget-image-carousel a-widget-swiper">
+              <div class="app-widget-container">
+                <!-- Swiper container -->
+                <div class="app-image-carousel-wrapper swiper-container">
+                  <!-- Slides -->
+                  <div class="app-image-carousel swiper-wrapper">
+                    @for (slide of thumbnails; track $index) {
+
+                      <!-- Slide -->
+                      <div class="swiper-slide">
+                        <a
+                          [class.zoom-in]="zoomed"
+                          (click)="onZoomedClick($event)"
+                          (mouseleave)="onMouseLeave($event)"
+                          (mousemove)="onMouseMove($event)"
+                          class="product-gallery-zoomable-item">
+                          <figure class="swiper-slide-inner">
+                            <img
+                              class="swiper-slide-image"
+                              [src]="slide"
+                              alt="{{ product?.name }}"
+                              decoding="async">
+                          </figure>
+                        </a>
+                      </div>
+
+                    }
+
+                  </div>
+                  <!-- Navigation -->
+                  <div class="swiper-pagination"></div>
+                  <!--  Buttons -->
+                  <div class="app-swiper-button app-swiper-button-prev"><i aria-hidden="true" class="eicon-chevron-left"></i></div>
+                  <div class="app-swiper-button app-swiper-button-next"><i aria-hidden="true" class="eicon-chevron-right"></i></div>
+                </div>
+                @if (product && product.model) {
+                  <!-- Button Model bio -->
+                  <div
+                    (click)="showModalBio()"
+                    class="button-blur button-small"
+                    role="button">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="" viewBox="0 0 16 16" fill="none" role="img" aria-labelledby="title-icon-plus-outline">
+                      <title id="title-icon-plus-outline">Icon of plus outline</title>
+                      <g id="icon-plus-outline">
+                        <path d="M2.5 8H13.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path d="M8 2.5V13.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
+                      </g>
+                    </svg>
+                    Model Bio
+                  </div>
+                }
+              </div>
+            </div>
+          </div>
+
+        } @else {
+          <div class="app-widget-wrap app-element-populated">
+            <div class="app-element app-element-product-details-gallery app-widget app-widget-jkit_post_featured_image">
+              <div class="app-widget-container">
+                <div class="jeg-app-kit jkit-post-featured-image">
+                  <div class="post-featured-image">
+                    <img
+                      class="ap-post-image"
+                      [src]="product?.image"
+                      alt="{{ product?.name }}">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        }
+
+      </div>
+    </div>
+  </section>
+
+<!--  Modal Bio Modal dialog -->
+  @if (product && product.model) {
+
+    <app-modal-bio
+      (bioClosed)="closeModalBio()"
+      [bioImg]="product.model.photo"
+      [bioName]="product.model.name"
+      [bioHeight]="product.model.height"
+      [bioBust]="product.model.bust"
+      [bioWaist]="product.model.waist"
+      [bioHips]="product.model.hips"
+      [bioDress]="product.model.dress"
+      [opened]="bioOpened"></app-modal-bio>
+  }
+</div>

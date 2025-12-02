@@ -12,6 +12,16 @@ export interface ProductType {
   image?: string,
   onSale?: boolean,
   quantity?: number,
+  thumbnail?: string[],
+  model?: {
+    photo: string,
+    name: string,
+    height: string,
+    bust: string,
+    waist: string,
+    hips: string,
+    dress: number,
+  },
 }
 
 export const  Products: ProductType[] = [
@@ -27,7 +37,22 @@ export const  Products: ProductType[] = [
     price: 50.00,
     originalPrice: 65.00,
     image: '/assets/images/sensual-woman-beautiful-young-woman-in-lingerie-smiling-while-standing.jpg',
-    onSale: true
+    onSale: true,
+    thumbnail: [
+      "/assets/images/sensual-woman-beautiful-young-woman-in-lingerie.jpg",
+      "/assets/images/sensual-beauty-beautiful-young-woman-in-lingerie-2.jpg",
+      "/assets/images/pure-beauty.jpg",
+      "/assets/images/flirty-beauty-attractive-young-woman-in-lingerie.jpg"
+    ],
+    model: {
+      photo: "/assets/images/pure-beauty.jpg",
+      name: "keesha",
+      height: '5\'9" / 176cm',
+      bust: '35.5" / 10D',
+      waist: '29" / 74cm',
+      hips: '39.5" / 100cm',
+      dress: 8,
+    }
   },
   {
     id: 85,

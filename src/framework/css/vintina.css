@@ -538,6 +538,9 @@ body:not(.rtl) .app .app-element.app-element-default-icon-list .app-icon-list-it
 .app .app-element.app-element-post-share-links-column.app-column > .app-widget-wrap {
   justify-content:flex-end;
 }
+.app .app-element.app-element-no-padding > .app-element-populated {
+  padding: 0;
+}
 .apsisac-slick-carousal.apsisac-prodesign-16 .apsisac-slider-content,
 .apsisac-slick-carousal.apsisac-prodesign-18 .apsisac-slider-content,
 .apsisac-slick-slider.apsisac-prodesign-17 .apsisac-slider-content,
@@ -545,6 +548,9 @@ body:not(.rtl) .app .app-element.app-element-default-icon-list .app-icon-list-it
 .apsisac-slick-variable.apsisac-prodesign-16 .apsisac-slider-content {
 
   background: rgba(0, 0, 0, .3);
+}
+.swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
+  background-color: var(--jkit-border-color);
 }
 /*==================================================== Mobile =============================================*/
 @media(max-width:1024px) and (min-width:768px) {

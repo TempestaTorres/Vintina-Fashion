@@ -11,12 +11,14 @@ import {PrivacyPolicy} from './pages/privacy-policy/privacy-policy';
 import {ReturnsExchanges} from './pages/returns-exchanges/returns-exchanges';
 import {Contact} from './pages/contact/contact';
 import {FiveTypesOfBras} from './posts/five-types-of-bras/five-types-of-bras';
+import {ProductDetails} from './pages/product-details/product-details';
 
 export const routes: Routes = [
   {path: '', component: Home},
   {path: 'about', component: About},
   {path: 'shop', component: ShopComponent},
   {path: 'product/:type', component: Product},
+  {path: 'product/details/:type', component: ProductDetails},
   {path: 'product-category/:name', component: Category},
   {path: 'product-tag/:tag', component: Category},
   {path: 'cart', component: CartComponent},

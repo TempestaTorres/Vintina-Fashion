@@ -23,6 +23,10 @@ export class BridalShapewear {
   ngOnInit() {
 
     this.scrollTotopService.toTop();
+
+  }
+
+  ngAfterViewInit() {
     this.swiper = new Swiper('.swiper-container', {
 
       speed: 500,
@@ -52,7 +56,6 @@ export class BridalShapewear {
         }
       }
     });
-
   }
 
   ngOnDestroy() {

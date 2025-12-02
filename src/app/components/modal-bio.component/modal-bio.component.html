@@ -1,0 +1,75 @@
+<div
+  [class.opened]="opened"
+  class="app-widget-modal-dialog"
+  data-type='slideout'>
+  <div class="modal-dialog-overlay"></div>
+  <!-- Content -->
+  <div class="modal-dialog-content">
+    <!-- Header -->
+    <div class="modal-dialog-header">
+      <!-- Close Button -->
+      <a
+        (click)="close()"
+        class="close-modal-dialog-button"><i aria-hidden="true" class="jki jki-times-solid"></i></a>
+      <!-- Heading -->
+      <div class="app-element app-element-modal-bio-heading app-widget app-widget-heading">
+        <div class="app-widget-container">
+          <h3 class="app-heading-title">Model Bio</h3>
+        </div>
+      </div>
+    </div>
+    <!-- Modal Content -->
+    <div class="app app-home">
+      <section class="app-element app-element-modal-bio-section app-section app-section-boxed">
+        <div class="app-container">
+          <div class="app-element app-element-modal-bio-content app-column app-col-100" data-element_type="column">
+            <div class="app-widget-wrap app-element-populated">
+              @if (bioImg) {
+                <!-- Image -->
+                <div class="app-element app-element-modal-bio-image app-widget app-widget-image">
+                  <div class="app-widget-container">
+                    <img [src]="bioImg" alt="Modal Image" decoding="async">
+                  </div>
+                </div>
+              }
+              <!-- Heading -->
+              <div class="app-element-modal-bio-name app-widget app-widget-heading">
+                <div class="app-widget-container">
+                  <h3 class="app-heading-title">{{ bioName }}</h3>
+                </div>
+              </div>
+              <!-- Bio -->
+              <div class="app-element app-element-bio-info">
+                <!-- Height -->
+                <div class="bio-details">
+                  <span class="bio-details-title">Height</span>
+                  <span class="bio-details-meta">{{ bioHeight }}</span>
+                </div>
+                <!-- Bust -->
+                <div class="bio-details">
+                  <span class="bio-details-title">Bust</span>
+                  <span class="bio-details-meta">{{ bioBust }}</span>
+                </div>
+                <!-- Waist -->
+                <div class="bio-details">
+                  <span class="bio-details-title">Waist</span>
+                  <span class="bio-details-meta">29" / 74cm</span>
+                </div>
+                <!-- Hips -->
+                <div class="bio-details">
+                  <span class="bio-details-title">Hips</span>
+                  <span class="bio-details-meta">{{ bioWaist }}</span>
+                </div>
+                <!-- Dress -->
+                <div class="bio-details">
+                  <span class="bio-details-title">Dress</span>
+                  <span class="bio-details-meta">{{ bioDress }}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>

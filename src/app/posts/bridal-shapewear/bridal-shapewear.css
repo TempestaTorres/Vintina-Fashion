@@ -71,11 +71,6 @@
 }
 
 /* =============================================== Media 1024 ===========================================*/
-@media (max-width: 1024px) {
-  .app-home .app-element.app-element-wrapper > .app-element-populated {
-    padding:0 10px;
-  }
-}
 @media (max-width: 767px) {
   .app-widget-quote-text-image {
     flex-direction: column;

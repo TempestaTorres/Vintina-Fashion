@@ -8,7 +8,7 @@
 .swiper-container .swiper-slide figure {
   line-height:0
 }
-.swiper-container .elementor-lightbox-content-source {
+.swiper-container .app-lightbox-content-source {
   display:none
 }
 .swiper-container-no-flexbox .swiper-slide {
@@ -374,31 +374,31 @@ button.swiper-pagination-bullet {
 .swiper-scrollbar-cursor-drag {
   cursor:move
 }
-.elementor-pagination-position-outside .swiper-container {
+.app-pagination-position-outside .swiper-container {
   padding-bottom:30px
 }
-.elementor-pagination-position-outside .elementor-swiper-button {
+.app-pagination-position-outside .app-swiper-button {
   top:calc(50% - 30px / 2)
 }
-.elementor-swiper {
+.app-swiper {
   position:relative
 }
-.elementor-main-swiper {
+.app-main-swiper {
   position:static
 }
-.elementor-arrows-position-outside .swiper-container {
+.app-arrows-position-outside .swiper-container {
   width:calc(100% - 60px)
 }
-.elementor-arrows-position-outside .elementor-swiper-button-prev {
+.app-arrows-position-outside .app-swiper-button-prev {
   left:0
 }
-.elementor-arrows-position-outside .elementor-swiper-button-next {
+.app-arrows-position-outside .app-swiper-button-next {
   right:0
 }
 .swiper-image-stretch .swiper-slide .swiper-slide-image {
   width:100%
 }
-.elementor-swiper-button {
+.app-swiper-button {
   position:absolute;
   display:inline-flex;
   z-index:1;
@@ -408,21 +408,21 @@ button.swiper-pagination-bullet {
   top:50%;
   transform:translateY(-50%)
 }
-.elementor-swiper-button svg {
+.app-swiper-button svg {
   fill:hsla(0,0%,93.3%,.9);
   height:1em;
   width:1em
 }
-.elementor-swiper-button-prev {
+.app-swiper-button-prev {
   left:10px
 }
-.elementor-swiper-button-next {
+.app-swiper-button-next {
   right:10px
 }
-.elementor-swiper-button.swiper-button-disabled {
+.app-swiper-button.swiper-button-disabled {
   opacity:.3
 }
-.swiper-container-cube .elementor-swiper-button {
+.swiper-container-cube .app-swiper-button {
   transform:translate3d(0,-50%,1px)
 }
 .swiper-lazy-preloader {

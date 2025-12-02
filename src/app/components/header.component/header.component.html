@@ -86,38 +86,40 @@
                         </li>
                         <!-- Menu with submenu -->
                         <li class="menu-item menu-item-has-children">
-                          <a href=""
+                          <a class="ap-element-button"
                              (click)="submenuOnClick(0)">Pages
                             <i aria-hidden="true" class="jki jki-chevron-down-line"></i>
                           </a>
                           <ul class="sub-menu" [class.dropdown-open]="openSubmenu()">
                             <li class="menu-item">
-                              <a href=""
+                              <a class="ap-element-button"
+                                 [routerLink]="['/product/details', 'lingerie-white']"
                                  (click)="hamburgerOnClick()">Product Detail</a>
                             </li>
                             <li class="menu-item">
-                              <a href=""
+                              <a class="ap-element-button"
                                  (click)="hamburgerOnClick()">FAQ</a>
                             </li>
                             <li class="menu-item">
-                              <a href=""
+                              <a class="ap-element-button"
                                  (click)="hamburgerOnClick()">404 Page</a>
                             </li>
                           </ul>
                         </li>
                         <!-- Menu with submenu -->
                         <li class="menu-item menu-item-has-children">
-                          <a href=""
+                          <a class="ap-element-button"
                           (click)="submenuOnClick(1)">Blog
                             <i aria-hidden="true" class="jki jki-chevron-down-line"></i>
                           </a>
                           <ul class="sub-menu" [class.dropdown-open]="openSubmenu2()">
                             <li class="menu-item">
-                              <a href=""
+                              <a class="ap-element-button"
                                  (click)="hamburgerOnClick()">Blog</a>
                             </li>
                             <li class="menu-item">
-                              <a href=""
+                              <a class="ap-element-button"
+                                 [routerLink]="['/bra-types']"
                                  (click)="hamburgerOnClick()">Single Post</a>
                             </li>
                           </ul>
@@ -125,6 +127,8 @@
                         <!-- Menu item -->
                         <li class="menu-item">
                           <a routerLink="/contact"
+                             routerLinkActive="active"
+                             ariaCurrentWhenActive="page"
                              (click)="hamburgerOnClick()">Contact</a>
                         </li>
                       </ul>

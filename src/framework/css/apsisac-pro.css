@@ -96,7 +96,8 @@
 }
 .apsisac-slider-readmore {
   display:inline-block;
-  text-decoration:none!important
+  text-decoration:none!important;
+  cursor: pointer;
 }
 .apsisac-hide {
   display:none

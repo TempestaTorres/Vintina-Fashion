@@ -1,0 +1,175 @@
+.app-home .app-element.app-element-hero-top-section > .app-container {
+  max-width: 1280px;
+}
+.app-home .app-element.app-element-hero-top-section:not(.app-motion-effects-element-type-background),
+.app-home .app-element.app-element-hero-top-section > .app-motion-effects-container > .app-motion-effects-layer {
+  background-image: url("/assets/images/caucasian-woman-posing-in-lingerie-lying-on-the-bed.jpg");
+  background-position: center center;
+  background-size: cover;
+}
+.app-home .app-element.app-element-hero-top-section > .app-background-overlay {
+  background-color: #000000;
+  opacity: 0.31;
+  transition: background 0.3s,  border-radius 0.3s,  opacity 0.3s;
+}
+.app-home .app-element.app-element-hero-top-section {
+  transition: background 0.3s,  border 0.3s,  border-radius 0.3s,  box-shadow 0.3s;
+  padding: 180px 0 120px 0;
+}
+.app-home .app-element.app-element-hero-top-section-heading {
+  text-align: center;
+}
+.app-home .app-element.app-element-hero-top-section-heading .app-heading-title {
+  color: var( --global-color-bbd710c );
+  font-family: var( --global-typography-secondary-font-family ),  sans-serif;
+  font-size: var( --global-typography-secondary-font-size );
+  font-weight: var( --global-typography-secondary-font-weight );
+  text-transform: var( --global-typography-secondary-text-transform );
+}
+.app-home .app-element.app-element-product-details-section > .app-container {
+  max-width: 1280px;
+}
+.app-home .app-element.app-element-product-details-section {
+  padding: 140px 0 0 0;
+}
+.app-home .app-element.app-element-product-gallery-wrap > .app-element-populated {
+  padding: 0 20px 0 0;
+}
+.app-element.app-widget-jkit_post_featured_image {
+  margin: 0 0 -10px 0;
+}
+/* Swiper */
+.app-home .app-element.app-element-product-details-gallery {
+  --image-carousel-slides-to-show: 1;
+}
+.app-home .app-element.app-element-product-details-gallery .app-swiper-button.app-swiper-button-prev,
+.app-home .app-element.app-element-product-details-gallery .app-swiper-button.app-swiper-button-next {
+  font-size: 18px;
+  /*color: #BDBDBD;*/
+  color: #645b5b;
+  border-radius: 50%;
+  background-color: white;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.app-home .app-element.app-element-product-details-gallery .app-swiper-button.app-swiper-button-prev svg,
+.app-home .app-element.app-element-product-details-gallery .app-swiper-button.app-swiper-button-next svg {
+  fill: #645b5b;
+}
+.app-home .app-image-carousel-wrapper .swiper-pagination-progressbar {
+  background-color: rgba(0,0,0,.32);
+  top: initial;
+  left: 0;
+  bottom: 4px;
+  margin-top: 0;
+  min-height: .125rem;
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+}
+
+.app-home .app-element.app-element-product-details-gallery > .app-widget-container {
+  margin: 0;
+}
+.product-gallery-zoomable-item {
+  cursor: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='44' height='44' fill='none'%3E%3Cpath fill='%23000' fill-opacity='.32' d='M0 0h44v44H0z'/%3E%3Cpath stroke='%23fff' stroke-linecap='square' stroke-linejoin='round' d='M16.5 22h11M22 16.5v11'/%3E%3C/svg%3E") 22 22,zoom-in;
+  display: inline-block;
+  transition-property: transform;
+  transition-duration: .3s;
+  transition-timing-function: cubic-bezier(.4,0,.2,1);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  width: 100%;
+  height: 100%;
+}
+.product-gallery-zoomable-item.zoom-in {
+  cursor:
+    url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%2744%27 height=%2744%27 fill=%27none%27%3E%3Cpath fill=%27%23000%27 fill-opacity=%27.32%27 d=%27M0 0h44v44H0z%27/%3E%3Cpath stroke=%27%23fff%27 stroke-linecap=%27square%27 stroke-linejoin=%27round%27 d=%27M16.5 22h11%27/%3E%3C/svg%3E")
+    22 22,
+    zoom-out;
+}
+.button-blur {
+  display: flex;
+  align-items: center;
+  gap: .375rem;
+  position: absolute;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  min-height: 42px;
+  overflow: hidden;
+  padding: 0.75rem 1.5rem;
+  text-align: center;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 1px;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 1);
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+  transition-duration: 300ms;
+  transition-timing-function: cubic-bezier(0.5, 0, 0.75, 0);
+  border-width: 0;
+  background-color: rgba(0, 0, 0, 0.32);
+  backdrop-filter: blur(2px);
+  z-index: 10;
+  cursor: pointer;
+}
+.button-blur svg {
+  width: 1rem;
+  height: 1rem;
+}
+.button-blur:disabled {
+  pointer-events: none;
+  border-color: transparent;
+  background-color: rgba(0, 0, 0, 0.32);
+  color: rgba(0, 0, 0, 0.32);
+}
+.button-blur:hover {
+  background-color: rgba(255, 255, 255, 1);
+  color: rgba(0, 0, 0, 1);
+}
+.button-small {
+  min-height: 2rem;
+  padding: 7px 0.875rem;
+}
+/*=========================================== Media 1024 =============================================*/
+@media (max-width: 1024px) {
+  .app-home .app-element.app-element-hero-top-section-heading .app-heading-title {
+    font-size: var( --global-typography-secondary-font-size );
+  }
+  .app-home .app-element.app-element-product-details-section {
+    padding: 140px 15px 0 15px;
+  }
+  .app-home .app-element.app-element-product-gallery-wrap > .app-element-populated {
+    padding: 0;
+  }
+}
+/*=========================================== Media 767 ===============================================*/
+@media (max-width: 767px) {
+  .app-home .app-element.app-element-hero-top-section-heading .app-heading-title {
+    font-size: var( --global-typography-secondary-font-size );
+  }
+  .app-home .app-element.app-element-product-details-section {
+    padding: 100px 10px 0 10px;
+  }
+  .app-home .app-element.app-element-product-gallery-wrap > .app-element-populated {
+    padding: 0;
+  }
+}
+@media(min-width:768px) {
+  .app-home .app-element.app-element-product-gallery-wrap {
+    width: 40%;
+  }
+  .app-home .app-element.app-element-2259055f {
+    width: 60%;
+  }
+}
+@media(max-width:1024px) and (min-width:768px) {
+  .app-home .app-element.app-element-product-gallery-wrap {
+    width: 100%;
+  }
+}

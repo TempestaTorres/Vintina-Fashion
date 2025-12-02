@@ -137,6 +137,9 @@
 .modal .side-image.sunday {
   background-image: url("/assets/images/SUN_Pop Up Attentive.jpg");
 }
+.modal .side-image.tuesday {
+  background-image: url("/assets/images/KATE.jpg");
+}
 .side-image-overlay {
   width: 100%;
   height: 100%;

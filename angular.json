@@ -34,6 +34,8 @@
               "src/plugins/jkiticon/jkiticons.css",
               "src/plugins/css/slick.css",
               "src/plugins/css/all.min.css",
+              "src/plugins/css/ekiticons.css",
+              "src/plugins/css/e-icons.min.css",
               "src/styles.css"
             ],
             "scripts": [
