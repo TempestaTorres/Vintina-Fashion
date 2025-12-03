@@ -138,4 +138,13 @@
   .app-element.app-element-modal-heading-traditional .app-heading-title {
     font-size:var( --global-typography-accent-font-size );
   }
+  .modal-dialog-header {
+    padding: .75rem;
+  }
+  .app-home .app-element.app-element-modal-inner-content > .app-element-populated {
+    margin: 0;
+    --column-margin-right: 0px;
+    --column-margin-left: 0px;
+    padding: 0 .75rem 0 .75rem;
+  }
 }

@@ -1,0 +1,100 @@
+.app-element.app-element-modal-image {
+  text-align: left;
+  width: 100px;
+}
+.app-element.app-element-modal-image > .app-widget-container {
+  height: 130px;
+}
+.app-element.app-element-modal-image > .app-widget-container img {
+  height: 100%;
+}
+.app-element-modal-product-name .app-heading-title,
+.app-element.app-element-sizes-header {
+  color:var( --global-color-primary );
+  font-family:var( --global-typography-accent-font-family ), sans-serif;
+  font-size:var( --global-typography-accent-font-size );
+  font-weight:var( --global-typography-accent-font-weight );
+  text-transform:var( --global-typography-fc0661c-text-transform );
+}
+
+.app-element-modal-product-info > .app-element-populated {
+  flex-direction: column;
+}
+.app-element.app-element-sizes-header > .app-element-populated {
+  justify-content: space-between;
+  margin: 0 0 12px 0;
+}
+.app-element.app-element-sizes-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: .25rem;
+  margin: 0 0 12px 0;
+}
+.size-tem {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 2.5rem;
+  padding: .25rem;
+  border: 1px solid rgba(0,0,0,.08);
+  cursor: pointer;
+}
+.size-tem.border-black {
+  border-color: rgba(0,0,0,1) !important;
+}
+.size-tem span {
+  font-size: var(--global-typography-accent-font-size);
+  line-height: 20px;
+}
+.store-message {
+  color: rgba(234,33,33,1);
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: "Inconsolata", sans-serif;
+  line-height: 20px;
+  letter-spacing: 1px;
+  padding-bottom: 0.75rem;
+  display: inline-block;
+}
+.app-element.app-element-availability-text {
+  --global-typography-text-text-transform: uppercase;
+}
+.app-element.app-element-availability-button .app-button {
+  font-family: "Palanquin",  sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  fill: var( --global-color-bbd710c );
+  color: var( --global-color-bbd710c );
+  text-transform: uppercase;
+  background-color: #720917;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #720917;
+  border-radius: 0;
+  padding: 18px;
+  width: 100%;
+}
+.app-element.app-element-availability-button .app-widget-container {
+  margin: 0;
+  width: 100%;
+}
+.text-notice {
+  text-align: center;
+  font-size: 12px;
+  color: rgba(0,0,0,.56);
+}
+/* ========================== Media ========================================*/
+@media(max-width:1024px) {
+  .app-element-modal-product-name .app-heading-title,
+  .app-element.app-element-sizes-header {
+    font-size:var( --global-typography-accent-font-size );
+  }
+}
+/*=================================================== 767 ====================================================*/
+@media (max-width: 767px) {
+  .app-element-modal-product-name .app-heading-title,
+  .app-element.app-element-sizes-header {
+    font-size:var( --global-typography-accent-font-size );
+  }
+}

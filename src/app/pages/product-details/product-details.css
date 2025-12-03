@@ -202,6 +202,17 @@
   border-color: rgba(227, 219, 208, 1);
   background-color: rgba(227, 219, 208, 1);
 }
+.app-home .app-element.app-element-guide-header {
+  color:var( --global-color-primary );
+  font-family:var( --global-typography-accent-font-family ), sans-serif;
+  font-size:var( --global-typography-accent-font-size );
+  font-weight:var( --global-typography-accent-font-weight );
+  text-transform:var( --global-typography-fc0661c-text-transform );
+}
+.app-home .app-element.app-element-guide-header > .app-element-populated {
+  justify-content: space-between;
+  margin: 12px 0 12px 0;
+}
 /*=========================================== Media 1024 =============================================*/
 @media (max-width: 1024px) {
   .app-home .app-element.app-element-hero-top-section-heading .app-heading-title {
@@ -222,6 +233,9 @@
   .app-home .app-element.app-element-button-icon-beige > .app-widget-container {
     margin: 16px 0 0 0;
   }
+  .app-home .app-element.app-element-guide-header {
+    font-size:var( --global-typography-accent-font-size );
+  }
 }
 /*=========================================== Media 767 ===============================================*/
 @media (max-width: 767px) {
@@ -236,6 +250,9 @@
   }
   .app-home .app-element.app-element-product-details-inner-section > .app-element-populated {
     padding: 40px 0 0 0;
+  }
+  .app-home .app-element.app-element-guide-header {
+    font-size:var( --global-typography-accent-font-size );
   }
 }
 @media(min-width:768px) {

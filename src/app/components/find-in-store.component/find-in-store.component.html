@@ -1,0 +1,150 @@
+<div
+  [class.opened]="opened"
+  class="app-widget-modal-dialog"
+  data-type='slideout'>
+  <div class="modal-dialog-overlay"></div>
+  <!-- Content -->
+  <div class="modal-dialog-content">
+    <!-- Header -->
+    <div class="modal-dialog-header">
+      <!-- Close Button -->
+      <a
+        (click)="close()"
+        class="close-modal-dialog-button"><i aria-hidden="true" class="jki jki-times-solid"></i>
+      </a>
+      <!-- Heading -->
+      <div class="app-element app-element-modal-heading-traditional app-widget app-widget-heading">
+        <div class="app-widget-container">
+          <h3 class="app-heading-title">Find in store</h3>
+        </div>
+      </div>
+    </div>
+    <!-- Modal Content -->
+    <div class="app app-home">
+      <section class="app-element app-element-modal-section app-section app-section-boxed">
+        <div class="app-container">
+          <div class="app-element app-element-modal-inner-content app-column app-col-100" data-element_type="column">
+            <div class="app-widget-wrap app-element-populated">
+              @if (product) {
+                <!-- Image -->
+                <div class="app-element app-element-modal-image app-widget app-widget-image">
+                  <div class="app-widget-container">
+                    <img [src]="product.image" alt="Product Image" decoding="async">
+                  </div>
+                </div>
+                <!-- Product Info -->
+                <div class="app-element-modal-product-info app-column">
+                  <div class="app-widget-wrap app-element-populated">
+                    <!-- Product Name -->
+                    <div class="app-element-modal-product-name app-widget app-widget-heading">
+                      <div class="app-widget-container">
+                        <h3 class="app-heading-title">{{ product.name }}</h3>
+                      </div>
+                    </div>
+                    <span class="product-price">
+                      <bdi>{{ product.price | currency: 'USD' : 'symbol' : '.2-2' : 'en-US' }}</bdi>
+                    </span>
+                  </div>
+                </div>
+                <!-- Sizes Header -->
+                <div class="app-element app-element-sizes-header app-column app-col-100">
+                  <div class="app-widget-wrap app-element-populated">
+                    <span>Size</span>
+                    <!-- Button -->
+                    <div class="app-element app-widget-button-link-icon app-widget app-widget-button">
+                      <div class="app-widget-container">
+                        <div class="app-button-wrapper">
+                          <a
+                            (click)="onSizeGuideClick()"
+                            class="app-button">
+                              <span class="app-button-content-wrapper">
+                                <span class="app-button-text">size guide</span>
+                              </span>
+                            <i aria-hidden="true" class=" icon icon-chevron-right"></i>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Sizes grid -->
+                <div class="app-element app-element-sizes-grid">
+                  <a class="size-tem border-black"
+                     (click)="sizeItemClicked($event)"><span>8</span></a>
+                  <a
+                    (click)="sizeItemClicked($event)"
+                    class="size-tem"><span>10</span></a>
+                  <a class="size-tem"
+                     (click)="sizeItemClicked($event)"><span>12</span></a>
+                  <a class="size-tem"
+                     (click)="sizeItemClicked($event)"><span>14</span></a>
+                  <a class="size-tem line-through"
+                     (click)="sizeItemClicked($event)"><span>16</span></a>
+                  <a class="size-tem line-through"
+                     (click)="sizeItemClicked($event)"><span>18</span></a>
+                </div>
+                <!-- Cup header -->
+                <div class="app-element app-element-sizes-header app-column app-col-100">
+                  <div class="app-widget-wrap app-element-populated">
+                    <span>Cup</span>
+                  </div>
+                </div>
+                <!-- Cup Sizes -->
+                <div class="app-element app-element-sizes-grid">
+                  <a class="size-tem line-through"
+                     (click)="sizeCupItemClicked($event)"><span>A</span></a>
+                  <a
+                    (click)="sizeCupItemClicked($event)"
+                    class="size-tem line-through"><span>B</span></a>
+                  <a class="size-tem line-through"
+                     (click)="sizeCupItemClicked($event)"><span>C</span></a>
+                  <a class="size-tem line-through"
+                     (click)="sizeCupItemClicked($event)"><span>D</span></a>
+                  <a class="size-tem line-through"
+                     (click)="sizeCupItemClicked($event)"><span>DD</span></a>
+                  <a class="size-tem line-through"
+                     (click)="sizeCupItemClicked($event)"><span>E</span></a>
+                  <a class="size-tem line-through"
+                     (click)="sizeCupItemClicked($event)"><span>F</span></a>
+                  <a class="size-tem border-black"
+                     (click)="sizeCupItemClicked($event)"><span>G</span></a>
+                </div>
+                <!--In stock -->
+                @if (inStore) {
+                  <span class="store-message">1 more left in stock</span>
+                }
+                <!-- Store availability -->
+                <div class="app-element app-element-availability-text app-widget app-widget-text-editor">
+                  <div class="app-widget-container">Boutique Pickup availability</div>
+                </div>
+                <!-- Button -->
+                <div class="app-element app-element-availability-button app-widget app-widget-button">
+                  <div class="app-widget-container">
+                    <div class="app-button-wrapper">
+                      <a
+                        (click)="checkAvailability()"
+                        class="app-button ap-element-button">
+                        <span class="app-button-content-wrapper">
+                          @if (!processing) {
+                            <span class="app-button-text">Check Availability</span>
+                          } @else {
+                            <span class="app-widget-loading-bar-white"></span>
+                          }
+
+                        </span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <!-- Text -->
+                <p class="text-notice">Please note that due to frequent store inventory
+                  changes, an item’s availability cannot be guaranteed. We recommend contacting our boutiques.
+                </p>
+              }
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>

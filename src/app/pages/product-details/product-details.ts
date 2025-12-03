@@ -7,6 +7,8 @@ import {ObserveElementDirective} from '../../directives/scroll-observer';
 import {NgClass} from '@angular/common';
 import {ScrollTotopService} from '../../services/scrolltotop-service';
 import {ModalPayLaterComponent} from '../../components/modal-pay-later.component/modal-pay-later.component';
+import {FindInStoreComponent} from '../../components/find-in-store.component/find-in-store.component';
+import {ProductFormComponent} from '../../components/product-form.component/product-form.component';
 declare var Swiper: any;
 
 @Component({
@@ -15,7 +17,9 @@ declare var Swiper: any;
     ModalBioComponent,
     ObserveElementDirective,
     NgClass,
-    ModalPayLaterComponent
+    ModalPayLaterComponent,
+    FindInStoreComponent,
+    ProductFormComponent
   ],
   templateUrl: './product-details.html',
   styleUrl: './product-details.css',
@@ -25,8 +29,13 @@ export class ProductDetails {
   public zoomed: boolean = false;
   public bioOpened: boolean = false;
   public payLaterOpened: boolean = false;
+  public findInStoreOpened: boolean = false;
+  public sizeGuidOpened: boolean = false;
   private swiper: any;
   private swInitialized: boolean = false;
+  // Tabs
+  public tabDescActive: boolean = true;
+  public tabAdditionalInfoActive: boolean = false;
 
   public product: ProductType | undefined = undefined;
   public thumbnails: Array<string> = [];
@@ -57,12 +66,26 @@ export class ProductDetails {
     this.swiper.destroy();
   }
 
+  public toggleTab(tabIndex: number): void {
+    if (tabIndex === 0) {
+      this.tabDescActive = true;
+      this.tabAdditionalInfoActive = false;
+    }
+    else if (tabIndex === 1) {
+      this.tabDescActive = false;
+      this.tabAdditionalInfoActive = true;
+    }
+  }
+
   public showModalBio(): void {
     this.bioOpened = true;
   }
 
   public showModalPayLater(): void {
     this.payLaterOpened = true;
+  }
+  public showModalFindInStore(): void {
+    this.findInStoreOpened = true;
   }
 
   public closeModalBio(): void {
@@ -71,6 +94,20 @@ export class ProductDetails {
 
   public closeModalPayLater(): void {
     this.payLaterOpened = false;
+  }
+  public closeModalFindInStore(): void {
+    this.findInStoreOpened = false;
+  }
+  public closeModalSizeGuide(): void {
+    this.sizeGuidOpened = false;
+  }
+
+  public onOpenSizeGuideClick(): void {
+    this.sizeGuidOpened = true;
+  }
+
+  public addToBag(): void {
+    alert("added toBag");
   }
 
   public onZoomedClick(e: MouseEvent): void {

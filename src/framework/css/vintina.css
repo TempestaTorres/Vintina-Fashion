@@ -140,6 +140,9 @@ body:not(.rtl) .app .app-element.app-element-default-icon-list .app-icon-list-it
   --icon-list-icon-size:14px;
   --icon-vertical-offset:0px;
 }
+.app .app-element.app-element-default-icon-list.list-styled {
+  --icon-list-icon-size:6px;
+}
 .app .app-element.app-element-default-icon-list .app-icon-list-item > .app-icon-list-text,
 .app .app-element.app-element-default-icon-list .app-icon-list-item > a {
   font-family:var( --global-typography-text-font-family ), sans-serif;
@@ -150,6 +153,48 @@ body:not(.rtl) .app .app-element.app-element-default-icon-list .app-icon-list-it
 .app .app-element.app-element-default-icon-list .app-icon-list-text {
   color:var( --global-color-text );
   transition:color 0.3s;
+}
+.app .app-element.app-element-default-icon-list.list-styled .app-icon-list-text {
+  color:var( --global-color-primary );
+}
+/* Text Icon List */
+.app .app-element.app-element-text-icon-list .app-icon-list-items:not(.app-inline-items) .app-icon-list-item:not(:last-child) {
+  padding-bottom:calc(15px/2);
+}
+.app .app-element.app-element-text-icon-list .app-icon-list-items:not(.app-inline-items) .app-icon-list-item:not(:first-child) {
+  margin-top:calc(15px/2);
+}
+.app .app-element.app-element-text-icon-list .app-icon-list-items.app-inline-items .app-icon-list-item {
+  margin-right:calc(15px/2);
+  margin-left:calc(15px/2);
+}
+.app .app-element.app-element-text-icon-list .app-icon-list-items.app-inline-items {
+  margin-right:calc(-15px/2);
+  margin-left:calc(-15px/2);
+}
+body.rtl .app .app-element.app-element-text-icon-list .app-icon-list-items.app-inline-items .app-icon-list-item::after {
+  left:calc(-15px/2);
+}
+body:not(.rtl) .app .app-element.app-element-text-icon-list .app-icon-list-items.app-inline-items .app-icon-list-item::after {
+  right:calc(-15px/2);
+}
+.app .app-element.app-element-text-icon-list .app-icon-list-icon i {
+  transition:color 0.3s;
+}
+.app .app-element.app-element-text-icon-list .app-icon-list-icon svg {
+  transition:fill 0.3s;
+}
+.app .app-element.app-element-text-icon-list {
+  --icon-list-icon-size:14px;
+  --icon-vertical-offset:0px;
+  width:auto;
+}
+.app .app-element.app-element-text-icon-list .app-icon-list-text {
+  color:var( --global-color-primary );
+  transition:color 0.3s;
+}
+.app .app-element.app-element-text-icon-list.align-right > .app-widget-container {
+  margin:0 0 0 40px;
 }
 /*Social Icons*/
 .app .app-element.app-widget-jkit_social_share .jeg-app-kit.jkit-social-share {

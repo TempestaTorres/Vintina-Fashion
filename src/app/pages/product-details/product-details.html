@@ -183,13 +183,154 @@
           <div class="app-element app-element-button-icon-beige app-widget app-widget-button">
             <div class="app-widget-container">
               <div class="app-button-wrapper">
-                <a class="app-button">
+                <a
+                  (click)="showModalFindInStore()"
+                  class="app-button">
                   <span class="app-button-content-wrapper">
                     <span class="i-icon"><i aria-hidden="true" class="fas fa-map-marker-alt"></i></span>
                     <span class="app-button-text">Find in store</span>
                   </span>
                   <span><i aria-hidden="true" class=" icon icon-chevron-right"></i></span>
                 </a>
+              </div>
+            </div>
+          </div>
+          <!-- Tabs -->
+          <div class="app-element app-widget-jkit_tabs app-widget app-widget-jkit_tabs">
+            <div class="app-widget-container">
+              <div class="jeg-app-kit jkit-tabs layout-horizontal">
+                <!-- Tab Navigation -->
+                <div class="tab-navigation">
+                  <ul class="tab-nav-list">
+                    <!-- Tab Nav Description -->
+                    <li
+                      class="tab-nav"
+                      [class.active]="tabDescActive"
+                      (click)="toggleTab(0)">
+                      <span class="tab-title">Description</span>
+                      <!-- If you want add some info -->
+                      <div class="tab-content">
+                        <div class="tab-description"></div>
+                      </div>
+                    </li>
+                    <!-- Tab Nav Additional Info -->
+                    <li
+                      class="tab-nav"
+                      [class.active]="tabAdditionalInfoActive"
+                      (click)="toggleTab(1)">
+                      <span class="tab-title">Additional Information</span>
+                      <!-- If you want add some info -->
+                      <div class="tab-content">
+                        <div class="tab-description"></div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <!-- Tabs -->
+                <div class="tab-content-list">
+                  <!-- Description -->
+                  <div
+                    class="tab-content"
+                    [class.active]="tabDescActive">
+                    <!-- Tab section Ajax for information -->
+                    <div class="app app-home">
+                      <!-- Description -->
+                      <section class="app-section app-element app-section-boxed">
+                        <div class="app-container app-column-gap-default">
+                          <div class="app-element app-element-no-padding app-column app-col-100">
+                            <div class="app-widget-wrap app-element-populated">
+                              <!-- Icon List Example -->
+                              <div class="app-element app-element-default-icon-list list-styled app-icon-list--layout-traditional app-list-item-link-full_width app-widget app-widget-icon-list">
+                                <div class="app-widget-container">
+                                  <ul class="app-icon-list-items">
+                                    <!-- List Item -->
+                                    <li class="app-icon-list-item">
+                                      <span class="app-icon-list-icon"><i aria-hidden="true" class="fas fa-circle"></i></span>
+                                      <span class="app-icon-list-text">Bombshell add-2-cups push-up padding</span>
+                                    </li>
+                                    <!-- List Item -->
+                                    <li class="app-icon-list-item">
+                                      <span class="app-icon-list-icon"><i aria-hidden="true" class="fas fa-circle"></i></span>
+                                      <span class="app-icon-list-text">Underwire</span>
+                                    </li>
+                                    <!-- List Item -->
+                                    <li class="app-icon-list-item">
+                                      <span class="app-icon-list-icon"><i aria-hidden="true" class="fas fa-circle"></i></span>
+                                      <span class="app-icon-list-text">Adjustable straps</span>
+                                    </li>
+                                    <!-- List Item -->
+                                    <li class="app-icon-list-item">
+                                      <span class="app-icon-list-icon"><i aria-hidden="true" class="fas fa-circle"></i></span>
+                                      <span class="app-icon-list-text">Keyhole back</span>
+                                    </li>
+                                  </ul>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </section>
+                      <!-- Product form -->
+                      <app-product-form [productType]="product?.type"
+                                        (openSizeGuide)="onOpenSizeGuideClick()"
+                                        (addedToBag)="addToBag()"></app-product-form>
+                    </div>
+                  </div>
+                  <!-- Additional Info -->
+                  <div
+                    class="tab-content"
+                    [class.active]="tabAdditionalInfoActive">
+
+                    <div class="app app-home">
+                      <section class="app-section app-element app-section-boxed">
+                        <div class="app-container app-column-gap-default">
+                          <div class="app-element app-element-no-padding app-column app-col-100">
+                            <div class="app-widget-wrap app-element-populated">
+                              <!-- Text Icon List -->
+                              <div class="app-element app-element-text-icon-list app-widget__width-auto app-icon-list--layout-traditional app-list-item-link-full_width app-widget app-widget-icon-list">
+                                <div class="app-widget-container">
+                                  <ul class="app-icon-list-items">
+                                    <!-- Item -->
+                                    <li class="app-icon-list-item">
+                                      <span class="app-icon-list-text">Composition :</span>
+                                    </li>
+                                    <!-- Item -->
+                                    <li class="app-icon-list-item">
+                                      <span class="app-icon-list-text">Cup Lining :</span>
+                                    </li>
+                                    <!-- Item -->
+                                    <li class="app-icon-list-item">
+                                      <span class="app-icon-list-text">Cup Lace :</span>
+                                    </li>
+                                  </ul>
+                                </div>
+                              </div>
+                              <!-- Text Icon List -->
+                              <div class="app-element app-element-text-icon-list align-right app-widget__width-auto app-icon-list--layout-traditional app-list-item-link-full_width app-widget app-widget-icon-list">
+                                <div class="app-widget-container">
+                                  <ul class="app-icon-list-items">
+                                    <!-- Item -->
+                                    <li class="app-icon-list-item">
+                                      <span class="app-icon-list-text">82% polyamide, 18% elastane</span>
+                                    </li>
+                                    <!-- Item -->
+                                    <li class="app-icon-list-item">
+                                      <span class="app-icon-list-text">100% polyamide</span>
+                                    </li>
+                                    <!-- Item -->
+                                    <li class="app-icon-list-item">
+                                      <span class="app-icon-list-text">100% polyester</span>
+                                    </li>
+                                  </ul>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </section>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -216,4 +357,10 @@
   <app-modal-pay-later
     (payLaterClosed)="closeModalPayLater()"
     [opened]="payLaterOpened"></app-modal-pay-later>
+  <!--  Madal Find In store -->
+  <app-find-in-store
+    (findInStoreClosed)="closeModalFindInStore()"
+    (openSizeGuide)="onOpenSizeGuideClick()"
+  [opened]="findInStoreOpened"
+  [productType]="product?.type"></app-find-in-store>
 </div>

@@ -1,0 +1,106 @@
+<section class="app-section app-element app-section-boxed">
+  <div class="app-container app-column-gap-default">
+    <div class="app-element app-element-product-form-container app-column app-col-100">
+      <div class="app-widget-wrap app-element-populated">
+        <!-- Size Table -->
+        <div class="app-element app-element-product-form-table app-widget app-widget__width-auto app-widget-mobile__width-auto app-widget-tablet__width-auto">
+          <div class="app-widget-container">
+            <!-- Header -->
+            <div class="app-element app-element-product-form-table-header">
+              <span>size</span>
+              <!-- Button -->
+              <div class="app-element app-widget-button-link-icon app-widget app-widget-button">
+                <div class="app-widget-container">
+                  <div class="app-button-wrapper">
+                    <a
+                      (click)="onSizeGuideClick()"
+                      class="app-button">
+                              <span class="app-button-content-wrapper">
+                                <span class="app-button-text">size guide</span>
+                              </span>
+                      <i aria-hidden="true" class=" icon icon-chevron-right"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Table -->
+            <div class="app-element app-element-product-form-table-grid app-grid-6">
+              <div class="app-grid">
+                <a class="size-item app-grid-item"
+                   (click)="sizeItemClicked($event)"><span>8</span></a>
+                <a
+                  (click)="sizeItemClicked($event)"
+                  class="size-item app-grid-item"><span>10</span></a>
+                <a class="size-item app-grid-item"
+                   (click)="sizeItemClicked($event)"><span>12</span></a>
+                <a class="size-item app-grid-item"
+                   (click)="sizeItemClicked($event)"><span>14</span></a>
+                <a class="size-item app-grid-item line-through"
+                   (click)="sizeItemClicked($event)"><span>16</span></a>
+                <a class="size-item app-grid-item line-through"
+                   (click)="sizeItemClicked($event)"><span>18</span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Cup Table -->
+        <div class="app-element app-element-product-form-table app-widget app-widget__width-auto app-widget-mobile__width-auto app-widget-tablet__width-auto">
+          <div class="app-widget-container">
+            <!-- Header -->
+            <div class="app-element app-element-product-form-table-header">
+              <span>cup</span>
+            </div>
+            <!-- Table -->
+            <div class="app-element app-element-product-form-table-grid app-grid-6">
+              <div class="app-grid">
+                <a class="size-item app-grid-item"
+                   (click)="sizeItemCupClicked($event)"><span>A</span></a>
+                <a
+                  (click)="sizeItemCupClicked($event)"
+                  class="size-item app-grid-item"><span>B</span></a>
+                <a class="size-item app-grid-item"
+                   (click)="sizeItemCupClicked($event)"><span>C</span></a>
+                <a class="size-item app-grid-item"
+                   (click)="sizeItemCupClicked($event)"><span>D</span></a>
+                <a class="size-item app-grid-item line-through"
+                   (click)="sizeItemCupClicked($event)"><span>DD</span></a>
+                <a class="size-item app-grid-item line-through"
+                   (click)="sizeItemCupClicked($event)"><span>E</span></a>
+                <a class="size-item app-grid-item line-through"
+                   (click)="sizeItemCupClicked($event)"><span>F</span></a>
+                <a class="size-item app-grid-item line-through"
+                   (click)="sizeItemCupClicked($event)"><span>G</span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Messages -->
+        <!--In stock -->
+        @if (error) {
+          <span class="text-error-message">1 more left in stock</span>
+        }
+        <!-- Button Add to bag -->
+        <div
+          [class.disabled]="btnDisabled"
+          class="app-element app-element-add-to-bag-button app-widget app-widget-button">
+          <div class="app-widget-container">
+            <div class="app-button-wrapper">
+              <a
+                (click)="addToBag()"
+                class="app-button ap-element-button">
+                <span class="app-button-content-wrapper">
+                  @if (!processing) {
+                    <span class="app-button-text">Add to bag</span>
+                  } @else {
+                    <span class="app-widget-loading-bar-white"></span>
+                  }
+                </span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
