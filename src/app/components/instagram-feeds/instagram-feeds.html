@@ -1,0 +1,63 @@
+<section class="app-section app-element-instagram-feeds-section app-section-stretched">
+  <!-- Heading -->
+  <div class="app-element app-element-instagram-feeds-heading app-widget app-widget-heading">
+    <div class="app-widget-container">
+      <h3 class="app-heading-title">AS SEEN ON</h3>
+    </div>
+  </div>
+  <!--  Wrapper -->
+  <div class="instagram-feeds-timeline">
+      <!-- Swiper container Initialized if hide text add fs-desktop or fs-mobile style-->
+      <div
+        class="fs-slider fs-slider-container fs-desktop fs-wide-timeline">
+        <!--  Prev Button -->
+        <div class="centered-content fs-slider-prev-button" role="button" tabindex="0">
+          <svg width="30" height="30" xmlns="http://www.w3.org/2000/svg"
+               aria-labelledby="fs-chevron-left"><title id="fs-chevron-left">Chevron pointing left</title>
+            <g>
+              <path class="fs-arrow" fill="none" stroke-width="1px" d="m22.5,0l-15,15l15,15" stroke="#222"></path>
+            </g>
+          </svg>
+        </div>
+        <!-- Slides -->
+        <div class="swiper-wrapper fs-wrapper fs-slider-feed fs-timeline">
+
+          @for (feed of feeds; track $index) {
+            <!-- Slide 3-->
+            <div class="swiper-slide fs-entry-container">
+              <!--  Thumbnail button -->
+              <div
+                (click)="onTimeLineClick($index)"
+                [ngStyle]="{'background-image': 'url(' + feed.image + ')'}"
+                class="fs-timeline-entry" role="button">
+                <div class="fs-text-container">
+                  <!--  Icon -->
+                  <div class="fs-service-icon">
+                    <i class="fs-icon fs-fa-instagram" role="presentation"></i>
+                  </div>
+                  @if (feed.hasLink) {
+                    <!-- Link -->
+                    <div class="fs-has-links"><i class="fs-icon fs-fa-tag fa fa-tag" role="presentation"></i></div>
+                  }
+                  <!-- Hidden text if fs-desktop or fs-mobile-->
+                  <div class="fs-timeline-text">
+                    <div class="fs-entry-title">{{ feed.title }}</div>
+                  </div>
+                  <div class="fs-entry-date">{{ feed.date }}</div>
+                </div>
+              </div>
+            </div>
+          }
+        </div>
+        <!-- Next Button -->
+        <div class="centered-content fs-slider-next-button" role="button" tabindex="0">
+          <svg width="30" height="30" xmlns="http://www.w3.org/2000/svg"
+               aria-labelledby="fs-chevron-right"><title id="fs-chevron-right">Chevron pointing right</title>
+            <g>
+              <path class="fs-arrow" stroke="#222" d="m7.5,0l15,15l-15,15" fill="none"></path>
+            </g>
+          </svg>
+        </div>
+      </div>
+  </div>
+</section>

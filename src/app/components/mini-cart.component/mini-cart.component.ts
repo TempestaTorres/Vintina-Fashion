@@ -2,7 +2,7 @@ import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {ProductType} from '../../product/product-type';
 import {AddToCart} from '../../services/add-to-cart';
 import {ProductService} from '../../services/product-service';
-import {RouterLink} from '@angular/router';
+import {Router, RouterLink} from '@angular/router';
 import {CurrencyPipe} from '@angular/common';
 declare var Swiper: any;
 
@@ -28,7 +28,8 @@ export class MiniCartComponent {
 
   private swiper: any | null = null;
 
-  constructor(private  cartService: AddToCart, private productService: ProductService) {
+  constructor(private  cartService: AddToCart, private productService: ProductService,
+              private router: Router) {
   }
 
   public close(): void {
@@ -50,10 +51,12 @@ export class MiniCartComponent {
   ngOnDestroy() {
 
     this.stopTimer();
-    if (this.swiper !== null) {
-      this.swiper.destroy();
-      this.swiper = null;
-    }
+  }
+
+  public onSubmit(e: SubmitEvent): void {
+    e.preventDefault();
+    this.router.navigate(['/checkout']).then();
+
   }
 
   public counterClicked(product: ProductType, increment: number): void {

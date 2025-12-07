@@ -62,7 +62,9 @@
                     <div class="app-element app-element-section-form app-element-no-padding app-column app-col-100">
                       <div class="app-widget-wrap app-element-populated">
 
-                        <form class="mini-cart-form" novalidate>
+                        <form
+                          (submit)="onSubmit($event)"
+                          class="mini-cart-form" novalidate>
                           <div class="mini-cart-form-content">
                             <!-- Login Panel -->
                             <div class="mini-cart-form-login-panel">
@@ -257,7 +259,7 @@
                                   <div class="app-widget-container">
                                     <!-- Swiper container -->
                                     <div
-                                      class="app-image-carousel-wrapper swiper swiper-container carousel-swiper-mini-cart-related">
+                                      class="app-image-carousel-wrapper swiper carousel-swiper-mini-cart-related">
                                       <!-- Slides -->
                                       <div class="app-image-carousel swiper-wrapper">
                                         <!-- Slide -->

@@ -10,6 +10,7 @@ import {ModalPayLaterComponent} from '../../components/modal-pay-later.component
 import {FindInStoreComponent} from '../../components/find-in-store.component/find-in-store.component';
 import {ProductFormComponent} from '../../components/product-form.component/product-form.component';
 import {MiniCartComponent} from '../../components/mini-cart.component/mini-cart.component';
+import {InstagramFeeds} from '../../components/instagram-feeds/instagram-feeds';
 
 declare var Swiper: any;
 
@@ -22,7 +23,8 @@ declare var Swiper: any;
     ModalPayLaterComponent,
     FindInStoreComponent,
     ProductFormComponent,
-    MiniCartComponent
+    MiniCartComponent,
+    InstagramFeeds
   ],
   templateUrl: './product-details.html',
   styleUrl: './product-details.css',
@@ -133,6 +135,10 @@ export class ProductDetails {
       this.miniCartOpened = true;
       this.miniCartAdded = false;
     }, 500);
+  }
+
+  public onInstagramTimelineClick(index: number): void {
+    console.log('onInstagramTimelineClick', index);
   }
 
   public onZoomedClick(e: MouseEvent): void {

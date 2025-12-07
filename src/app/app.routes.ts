@@ -14,6 +14,7 @@ import {FiveTypesOfBras} from './posts/five-types-of-bras/five-types-of-bras';
 import {ProductDetails} from './pages/product-details/product-details';
 import {Signup} from './pages/signup/signup';
 import {Login} from './pages/login/login';
+import {Checkout} from './pages/checkout/checkout';
 
 export const routes: Routes = [
   {path: '', component: Home},
@@ -32,4 +33,5 @@ export const routes: Routes = [
   {path: 'contact', component: Contact},
   {path: 'signup', component: Signup},
   {path: 'login', component: Login},
+  {path: 'checkout', component: Checkout},
 ];
