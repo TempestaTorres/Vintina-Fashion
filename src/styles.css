@@ -223,7 +223,7 @@
 }
 .fs-wrapper .fs-detail-right .fs-detail-title {
   padding: 1.5rem 2.5rem !important;
-  font-family: futura-pt, sans-serif !important;
+  font-family:var( --global-typography-accent-font-family ), sans-serif !important;
   font-size: 14px !important;
   line-height: 20px !important;
   color: rgba(0, 0, 0, 1) !important;
@@ -246,7 +246,7 @@
 }
 
 .fs-wrapper .fs-detail-right .fs-post-info a {
-  font-family: futura-pt, sans-serif !important;
+  font-family:var( --global-typography-accent-font-family ), sans-serif !important;
   font-size: 14px !important;
   line-height: 20px !important;
   letter-spacing: 1px !important;
@@ -267,7 +267,7 @@
   height: 1px;
   width: 50%;
   background-color: rgba(0, 0, 0, 0.08);
-  font-family: futura-pt, sans-serif;
+  font-family:var( --global-typography-accent-font-family ), sans-serif;
   font-size: 14px;
   line-height: 20px;
   letter-spacing: 1px;
@@ -302,7 +302,7 @@
 
 .fs-wrapper .fs-detail-right #fs-detail-products .fs-product-column:first-child .fs-shopify-options {
   margin-left: auto !important;
-  margin-right: 0.25rem !important;
+  margin-right: auto !important;
 }
 
 .fs-wrapper .fs-detail-right #fs-detail-products .fs-product-column:first-child .fs-shopify-options:last-child {
@@ -314,7 +314,7 @@
 }
 
 .fs-wrapper .fs-detail-right #fs-detail-products .fs-product-column:last-child .fs-shopify-options {
-  margin-left: 0.25rem !important;
+  margin-left: auto !important;
   margin-right: auto !important;
 }
 
@@ -366,7 +366,7 @@
 }
 
 .fs-wrapper .fs-detail-right #fs-detail-products .fs-product-column .fs-shopify-options .fs-view .fs-product-name {
-  font-family: futura-pt, sans-serif !important;
+  font-family:var( --global-typography-accent-font-family ), sans-serif;
   font-size: 14px !important;
   line-height: 20px !important;
   letter-spacing: 1px !important;
@@ -393,7 +393,7 @@
   align-items: center;
   justify-content: center;
   background-color: rgba(0, 0, 0, 1) !important;
-  font-family: futura-pt, sans-serif !important;
+  font-family:var( --global-typography-accent-font-family ), sans-serif;
   font-size: 14px !important;
   line-height: 20px !important;
   letter-spacing: 1px !important;
@@ -418,7 +418,7 @@
 }
 
 .fs-wrapper .fs-detail-right #fs-detail-products .fs-product-column .fs-shopify-options > div {
-  padding: 0px !important;
+  padding: 0 !important;
 }
 
 .fs-wrapper .fs-detail-right #fs-detail-products .fs-product-column .fs-shopify-options > div p {
@@ -428,7 +428,7 @@
   max-height: 2rem !important;
   cursor: not-allowed;
   background-color: rgba(0, 0, 0, 0.32) !important;
-  font-family: futura-pt, sans-serif !important;
+  font-family:var( --global-typography-accent-font-family ), sans-serif;
   font-size: 14px !important;
   line-height: 20px !important;
   letter-spacing: 1px !important;
@@ -597,4 +597,55 @@
     width: 40px !important;
   }
 
+}
+.oke-stars {
+  line-height:1;
+  position:relative;
+  display:inline-block
+}
+.oke-stars-background svg {
+  overflow:visible
+}
+.oke-stars-foreground {
+  overflow:hidden;
+  position:absolute;
+  top:0;
+  left:0
+}
+.oke-sr {
+  --oke-starRating-spaceAbove: 0;
+  --oke-starRating-spaceBelow: 0;
+  display:inline-block;
+  padding-top:var(--oke-starRating-spaceAbove);
+  padding-bottom:var(--oke-starRating-spaceBelow)
+}
+.oke-sr .oke-is-clickable {
+  cursor:pointer
+}
+.oke-sr--hidden {
+  display:none
+}
+.oke-sr-count,
+.oke-sr-rating,
+.oke-sr-stars {
+  display:inline-block;
+  vertical-align:middle
+}
+.oke-sr-stars {
+  line-height:1;
+  margin-right:8px
+}
+.oke-sr-rating {
+  display:none
+}
+.oke-sr-count--brackets:before {
+  content:"("
+}
+.oke-sr-count--brackets:after {
+  content:")"
+}
+.oke-sr {
+  --oke-stars-foregroundColor: #000000;
+  --oke-stars-backgroundColor: #E5E5E5;
+  --oke-stars-borderWidth: 0;
 }

@@ -370,4 +370,11 @@
   (miniCartClosed)="closeModalMiniCart()"></app-mini-cart>
   <!--  Instagram Feeds -->
   <app-instagram-feeds (timelineClicked)="onInstagramTimelineClick($event)"></app-instagram-feeds>
+
+  @if (tmLineIndex >= 0) {
+    <!--  Modal Instagram -->
+    <app-modal-instagram (instagramFeedClose)="closeModalInstagram()"
+                         (viewProduct)="goToNextProduct($event)"
+                         [tmIndex]="tmLineIndex"></app-modal-instagram>
+  }
 </div>

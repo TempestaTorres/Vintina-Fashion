@@ -1,69 +1,274 @@
+export interface AccessoryType {
+  name: string,
+  price: number,
+  position: { x: string, y: string },
+}
+export interface Details {
+  name: string,
+  image: string,
+  type: string,
+  price: number,
+}
 export interface InstagramFeed {
   image: string,
   title: string,
   date: string,
   hasLink: boolean,
+  author?: string,
+  productType?: string,
+  accessories?: AccessoryType[],
+  details?: Details[]
 }
 export const Feeds: InstagramFeed[] = [
   {
+    image: '/assets/images/post-41.jpg',
+    title: "Don't miss out on the bestseller in red! This show always sells out 💋✨",
+    date: '07 DECEMBER 2025',
+    hasLink: false,
+    author: 'Vintina',
+  },
+  {
+    image: '/assets/images/post-42.jpg',
+    title: "Forget the sugar cookies - this is what’s waiting by the fire tonight 😉 We are head over heels for bianca_richards wearing the Whitney Black corset set 💋",
+    date: '06 DECEMBER 2025',
+    hasLink: false,
+    author: 'Vintina',
+  },
+  {
+    image: '/assets/images/post-43.jpg',
+    title: "Sorry Santa, I tried to be good. Glossy black foil hearts. Stockings that speak for themselves, with Too Naughty to Be Nice printed down the legs. This isn’t li...",
+    date: '06 DECEMBER 2025',
+    hasLink: false,
+    author: 'Vintina',
+  },
+  {
+    image: '/assets/images/post-44.jpg',
+    title: "Whitney Black didn’t just return… she upgraded. Shop the collection that never stays in stock! 🖤",
+    date: '05 DECEMBER 2025',
+    hasLink: false,
+    author: 'Vintina',
+  },
+  {
+    image: '/assets/images/post-48.jpg',
+    title: "The easiest way to misbehave this season? The new Vicki brief, honey 🖤",
+    date: '04 DECEMBER 2025',
+    hasLink: false,
+    author: 'Vintina',
+  },
+  {
     image: '/assets/images/post-1.jpg',
-    title: "All I want for the holidays is… Kate! Sweet and sultry, finished with ice-blue crystals by Preciosa®. Cool blue lace. Hot nights ahead... ❄️🔥",
+    title: "All I want for the holidays is… Vintina! Sweet and sultry, finished with ice-blue crystals by Preciosa®. Cool blue lace. Hot nights ahead... ❄️🔥",
     date: '03 DECEMBER 2025',
     hasLink: false,
+    author: 'Vintina',
+    accessories: [
+      {
+        name: 'Vintina Bra',
+        price: 170.00,
+        position: {x: '27.41%', y: '55%'}
+      },
+      {
+        name: 'Vintina Suspender',
+        price: 125.00,
+        position: {x: '42.67%', y: '59.02%'}
+      },
+      {
+        name: 'Vinita Thonh',
+        price: 95.00,
+        position: {x: '48.25%', y: '62.89%'}
+      },
+      {
+        name: 'Sky Blue Suspender Stockings',
+        price: 45.00,
+        position: {x: '61.5%', y: '62.3%'}
+      },
+      {
+        name: 'Vintina Robe',
+        price: 300.00,
+        position: {x: '18.95%', y: '37.26%'}
+      },
+    ]
+
   },
   {
     image: '/assets/images/post-2.jpg',
     title: "Sweet as sugar, cool as ice 🧊🩵 Kate’s balconette and detachable choker set lets you play multiple ways. Wear the choker as a harness with gold pasties, or not...",
     date: '02 DECEMBER 2025',
     hasLink: false,
+    author: 'Vintina',
+    accessories: [
+      {
+        name: 'Vintina Bra',
+        price: 170.00,
+        position: {x: '40.29%', y: '53.06%'}
+      },
+      {
+        name: 'Vintina Suspender',
+        price: 125.00,
+        position: {x: '62.69%', y: '57.08%'}
+      },
+      {
+        name: 'Vintina Brief',
+        price: 110.00,
+        position: {x: '73.66%', y: '58.57%'}
+      },
+      {
+        name: 'Sky Blue Suspender Stockings',
+        price: 45.00,
+        position: {x: '90.58%', y: '51.86%'}
+      },
+    ]
   },
   {
     image: '/assets/images/post-3.jpg',
     title: "Call me Ice Queen ❄️ I melt for no one… except Kate. Shop the new collection in-store and online now 🩵",
     date: '02 DECEMBER 2025',
     hasLink: true,
+    author: 'Vintina',
+    accessories: [
+      {
+        name: 'Vintina Babydoll',
+        price: 220.00,
+        position: {x: '38.74%', y: '65.13%'}
+      },
+      {
+        name: 'Vintina Robe',
+        price: 300.00,
+        position: {x: '55.54%', y: '84.05%'}
+      },
+      {
+        name: 'Vintina Thong',
+        price: 95.00,
+        position: {x: '61.62%', y: '62.74%'}
+      },
+      {
+        name: 'Vintina Suspender',
+        price: 125.00,
+        position: {x: '56.73%', y: '39.34%'}
+      },
+      {
+        name: 'Sky Blue Suspender Stockings',
+        price: 45.00,
+        position: {x: '77.23%', y: '39.2%'}
+      },
+      {
+        name: 'Vintina Bra',
+        price: 170.00,
+        position: {x: '35.52%', y: '39.94%'}
+      },
+    ]
   },
   {
     image: '/assets/images/post-4.jpg',
     title: "Blue Christmas? Kate’s here to melt the ice, honey. A baby-blue fantasy of luxurious lace cutaways and whisper-soft sheer tulle made for temptation. Unwrap her,...",
     date: '02 DECEMBER 2025',
     hasLink: true,
+    author: 'Vintina',
+    accessories: [
+      {
+        name: 'Vintina Bra',
+        price: 170.00,
+        position: {x: '51.22%', y: '50.16%'}
+      },
+      {
+        name: 'Vintina Suspender',
+        price: 125.00,
+        position: {x: '64.15%', y: '39.66%'}
+      },
+      {
+        name: 'Vintina Thong',
+        price: 95.00,
+        position: {x: '68.68%', y: '43.23%'}
+      },
+      {
+        name: 'Sky Blue Suspender Stockings',
+        price: 45.00,
+        position: {x: '81.44%', y: '41.45%'}
+      },
+      {
+        name: 'Vintina Babydoll',
+        price: 220.00,
+        position: {x: '40.97%', y: '73.77%'}
+      },
+      {
+        name: 'Vintina Brief',
+        price: 120.00,
+        position: {x: '57.85%', y: '81.74%'}
+      },
+    ]
   },
   {
     image: '/assets/images/post-5.jpg',
     title: "PSA: 40% OFF ends tonight! 💋 Jael corset set",
     date: '01 DECEMBER 2025',
     hasLink: true,
+    author: 'Vintina',
   },
   {
     image: '/assets/images/post-6.jpg',
     title: "Final hours. Last chance. 40% OFF ends tonight! 💋",
     date: '01 DECEMBER 2025',
     hasLink: true,
+    author: 'Vintina',
   },
   {
     image: '/assets/images/post-7.jpg',
     title: "Final hours to shop! 💋 40% OFF. Ends tonight. Phoenix set.",
     date: '01 DECEMBER 2025',
     hasLink: true,
+    author: 'Vintina',
   },
   {
     image: '/assets/images/post-8.jpg',
     title: "Lusting after Aluna Pink? Now is your chance. It’s 40% OFF! Shop online & in-store now, while stocks last 🩷",
     date: '30 NOVEMBER 2025',
     hasLink: true,
+    author: 'Vintina',
   },
   {
     image: '/assets/images/post-9.jpg',
     title: "Most-wanted Taisha. Now 40% OFF. While stocks last ⛓️💋",
     date: '30 NOVEMBER 2025',
     hasLink: true,
+    author: 'Vintina',
   },
   {
     image: '/assets/images/post-10.jpg',
     title: "🚨New styles added 🚨 Most wanted Kukuro Purple now 40% off 💋 Shop now, while stocks last...",
     date: '30 NOVEMBER 2025',
     hasLink: true,
+    author: 'Vintina',
+    accessories: [
+      {
+        name: 'Kukuro Purple Bra',
+        price: 160.00,
+        position: {x: '51.97%', y: '60.97%'}
+      },
+      {
+        name: 'Kukuro Purple Suspender',
+        price: 140.00,
+        position: {x: '73.05%', y: '55.61%'}
+      },
+      {
+        name: 'Kukuro Purple Thong',
+        price: 95.00,
+        position: {x: '82.2%', y: '45.86%'}
+      },
+    ],
+    details: [
+      {
+        name: 'Kukuro Purple Bra',
+        image: '/assets/images/Kukuro_Bra_Thong_Front.webp',
+        type: 'kukuro-purple-bra',
+        price: 120.00
+      },
+      {
+        name: 'Kukuro Purple Suspender',
+        image: '/assets/images/Kukuro_Bra_SuspenderGartersStockings_Thong_Front.jpg',
+        type: 'kukuro-purple-suspender',
+        price: 140.00
+      },
+    ]
   },
   {
     image: '/assets/images/post-11.jpg',

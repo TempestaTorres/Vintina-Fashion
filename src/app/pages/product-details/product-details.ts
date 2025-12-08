@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 import {ModalBioComponent} from '../../components/modal-bio.component/modal-bio.component';
 import {ProductType} from '../../product/product-type';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {ProductService} from '../../services/product-service';
 import {ObserveElementDirective} from '../../directives/scroll-observer';
 import {NgClass} from '@angular/common';
@@ -11,6 +11,7 @@ import {FindInStoreComponent} from '../../components/find-in-store.component/fin
 import {ProductFormComponent} from '../../components/product-form.component/product-form.component';
 import {MiniCartComponent} from '../../components/mini-cart.component/mini-cart.component';
 import {InstagramFeeds} from '../../components/instagram-feeds/instagram-feeds';
+import {ModalInstagram} from '../../components/modal-instagram/modal-instagram';
 
 declare var Swiper: any;
 
@@ -24,7 +25,8 @@ declare var Swiper: any;
     FindInStoreComponent,
     ProductFormComponent,
     MiniCartComponent,
-    InstagramFeeds
+    InstagramFeeds,
+    ModalInstagram
   ],
   templateUrl: './product-details.html',
   styleUrl: './product-details.css',
@@ -38,6 +40,7 @@ export class ProductDetails {
   public sizeGuidOpened: boolean = false;
   public miniCartOpened: boolean = false;
   public miniCartAdded: boolean = false;
+  public  tmLineIndex: number = -1;
   private swiper: any;
   private swInitialized: boolean = false;
   // Tabs
@@ -48,7 +51,7 @@ export class ProductDetails {
   public thumbnails: Array<string> = [];
 
   constructor(private activatedRoute: ActivatedRoute, private productService: ProductService,
-              private scrollTotopService: ScrollTotopService) {
+              private scrollTotopService: ScrollTotopService, private router: Router) {
   }
 
   public ngOnInit() {
@@ -56,21 +59,6 @@ export class ProductDetails {
     this.scrollTotopService.toTop();
 
     this.productInit();
-
-    this.zoomed = false;
-    this.bioOpened = false;
-    this.payLaterOpened = false;
-    this.findInStoreOpened = false;
-    this.sizeGuidOpened = false;
-    this.miniCartOpened = false;
-    this.miniCartAdded = false;
-    // Tabs
-    this.tabDescActive = true;
-    this.tabAdditionalInfoActive = false;
-
-    if (this.swInitialized) {
-      this.swiper.destroy();
-    }
 
   }
 
@@ -123,6 +111,10 @@ export class ProductDetails {
     this.miniCartAdded = false;
   }
 
+  public closeModalInstagram(): void {
+    this.tmLineIndex = -1;
+  }
+
   public onOpenSizeGuideClick(): void {
     this.sizeGuidOpened = true;
   }
@@ -138,7 +130,7 @@ export class ProductDetails {
   }
 
   public onInstagramTimelineClick(index: number): void {
-    console.log('onInstagramTimelineClick', index);
+    this.tmLineIndex = index;
   }
 
   public onZoomedClick(e: MouseEvent): void {
@@ -229,14 +221,43 @@ export class ProductDetails {
 
       if (params['type']) {
 
+        this.scrollTotopService.toTop();
+        this.zoomed = false;
+        this.bioOpened = false;
+        this.payLaterOpened = false;
+        this.findInStoreOpened = false;
+        this.sizeGuidOpened = false;
+        this.miniCartOpened = false;
+        this.miniCartAdded = false;
+        this.tmLineIndex = -1;
+
+        // Tabs
+        this.tabDescActive = true;
+        this.tabAdditionalInfoActive = false;
+
+        if (this.swInitialized) {
+          this.swiper.destroy(true, false);
+        }
+
         this.product = this.productService.getProductByType(params['type']);
 
         if (this.product) {
           if (this.product.thumbnail) {
             this.thumbnails = this.product.thumbnail;
+
+            if (this.thumbnails.length > 0) {
+              setTimeout(() => {
+                this.swInit();
+              }, 500);
+
+            }
           }
         }
       }
     });
+  }
+  goToNextProduct(type: string): void {
+    this.router.navigate(['/product/details', type], { relativeTo: null });
+
   }
 }

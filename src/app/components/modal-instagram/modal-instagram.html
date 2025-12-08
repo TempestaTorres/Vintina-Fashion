@@ -1,0 +1,233 @@
+<div
+  [class.fs-desktop]="isDesktopDevice"
+  [class.fs-mobile]="isMobile"
+  class="fs-slider fs-prepended-detail fs-wrapper">
+  <div class="fs-timeline-detail">
+    <div class="fs-detail-outer-container fs-add-to-cart-enabled" role="dialog" aria-modal="true">
+      <!-- Detail section -->
+      <div class="fs-detail-container">
+        <div class="fs-detail-content">
+          <!-- Image Side -->
+          <div class="fs-detail-left">
+            <div class="fs-image-container">
+              <!-- Main Image -->
+              <img [src]="timeline[tmIndex].image" id="fs_main_image" class="fs-detail-image" alt="Main Image"
+                   decoding="async">
+              @if (timeline[tmIndex].accessories !== undefined) {
+                @for (accessory of timeline[tmIndex].accessories; track $index) {
+
+                  <!-- Overlink -->
+                  <a class="ap-element-button">
+                    <div
+                      [class.fs-overlink-active]="linkActive[$index]"
+                      class="fs-overlink"
+                      [style.top]="accessory.position.x"
+                      [style.left]="accessory.position.y">
+                      <div>{{ $index + 1 }}</div>
+                      <div class="fs-overlink-text fs-overlink-text-right">
+                        <div class="fs-arrow-up"></div>
+                        <div class="fs-overlink-actual-text">
+                          <div class="fs-overlink-product-name">{{ accessory.name }}</div>
+                          <div
+                            class="fs-overlink-product-price">{{ accessory.price | currency: 'USD' : 'symbol' : '.2-2' : 'en-US' }}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                }
+              }
+            </div>
+          </div>
+          <!-- Detail side -->
+          <div class="fs-detail-right">
+            <!-- Navigation -->
+            <div class="fs-detail-nav-bar-arrows">
+              <!-- Prev button -->
+              <div id="fs-prev-post"
+                   (click)="prevClick()"
+                   [class.fs-hidden]="prevBtnActive"
+                   class="fs-detail-nav-button fs-detail-nav-button--inside"
+                   role="button"
+                   tabindex="0">
+                <svg width="30" height="30" xmlns="http://www.w3.org/2000/svg">
+                  <g>
+                    <path class="fs-arrow" fill="none" stroke-width="1px" d="m22.5,0l-15,15l15,15" id="fs-left-path"
+                          stroke="#222"></path>
+                  </g>
+                </svg>
+              </div>
+              <!-- Next button -->
+              <div id="fs-next-post"
+                   (click)="nextClick()"
+                   [class.fs-hidden]="nextBtnActive"
+                   class="fs-detail-nav-button fs-detail-nav-button--inside"
+                   role="button"
+                   tabindex="0">
+                <svg width="30" height="30" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+                  <g>
+                    <path class="fs-arrow" stroke="#222" id="fs-right-path" d="m7.5,0l15,15l-15,15" fill="none"></path>
+                  </g>
+                </svg>
+              </div>
+              <!-- Close button -->
+              <div class="fs-detail-nav-bar-close">
+                <div
+                  (click)="onClose()"
+                  id="fs-detail-close"
+                  class="fs-detail-nav-button"
+                  role="button"
+                  tabindex="0">
+                  <svg width="30" height="30" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+                    <g stroke="#222" class="fs-arrow" stroke-width="1px" fill="none">
+                      <path d="m0,0l30,30"></path>
+                      <path d="m30,0l-30,30"></path>
+                    </g>
+                  </svg>
+                </div>
+              </div>
+              <div class="apsisac-clearfix"></div>
+            </div>
+            <!-- Heading -->
+            <div class="fs-products-title fs-plural-products"></div>
+
+            @if (timeline[tmIndex].accessories !== undefined && timeline[tmIndex].details === undefined) {
+              @for (accessory of timeline[tmIndex].accessories; track $index) {
+
+                <!-- Accessories -->
+                <div class="fs-text-link-container fs-has-shopify fs-lots-of-text-links">
+                  <!-- Button Hover -->
+                  <a
+                    (mouseover)="onLinkHover($index)"
+                    (mouseleave)="onLinkLeave($index)"
+                    class="ap-element-button fs-text-product fs-link-list">
+                    <span class="fs-link-text-all">
+                      <span class="fs-link-text-number">{{ $index + 1 }}<span class="fs-slashes"> // </span></span>
+                      <span class="fs-link-text">
+                        {{ accessory.name }}
+                        <span
+                          class="fs-product-price">{{ accessory.price | currency: 'USD' : 'symbol' : '.2-2' : 'en-US' }}</span>
+                      </span>
+                    </span>
+                  </a>
+                  <!-- Button Add to cart -->
+                  <a class="fs-shopify-add-cart fs-shopify-add-cart-container ap-element-button" tabindex="0">Add to
+                    Cart</a>
+                </div>
+              }
+            } @else if (timeline[tmIndex].accessories !== undefined && timeline[tmIndex].details !== undefined) {
+
+              <!-- Details -->
+              <div id="fs-detail-products">
+
+                @for (detail of timeline[tmIndex].details; track $index) {
+
+                  <div class="fs-product-column">
+                    <!-- Image -->
+                    <a
+                      (click)="onLinkClick(detail.type)"
+                      (mouseover)="onLinkHover($index)"
+                      (mouseleave)="onLinkLeave($index)"
+                      class="fs-shop-link fs-link-list">
+                      <div class="fs-detail-product-container">
+                        <img class="fs-detail-product-image" [src]="detail.image" alt="Product Image" decoding="async">
+                      </div>
+                    </a>
+                    <!-- Text link -->
+                    <div class="fs-shopify-options">
+                      <div class="fs-view">
+                        <a
+                          (click)="onLinkClick(detail.type)"
+                          (mouseover)="onLinkHover($index)"
+                          (mouseleave)="onLinkLeave($index)"
+                          class="ap-element-button">
+
+                          <div class="fs-product-price">{{ detail.price | currency: 'USD' : 'symbol' : '.2-2' : 'en-US' }}</div>
+                          <span class="fs-product-name">{{ detail.name }}</span>
+                        </a>
+                      </div>
+                    </div>
+                    <!-- Reviews -->
+                    <!-- Rating Stars -->
+                    <div class="app-element app-widget app-widget-star-rating-traditional app--star-style-star_unicode">
+                      <div class="app-widget-container">
+                        <div class="app-star-rating__wrapper">
+                          <div class="app-star-rating fs-stars" title="4.5/5">
+                            <i class="app-star-full">★</i>
+                            <i class="app-star-full">★</i>
+                            <i class="app-star-full">★</i>
+                            <i class="app-star-full">★</i>
+                            <i class="app-star-5">★</i>
+                            <span class="app-screen-only">4.5/5</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                }
+              </div>
+            }
+            <!-- Divider -->
+            <div class="fs-divider"></div>
+            <div class="apsisac-clearfix"></div>
+            <!-- Title -->
+            <div class="fs-detail-title">{{ timeline[tmIndex].title }}</div>
+            <!-- Info -->
+            <div class="fs-post-info">
+              <a class="ap-element-button">
+                <span class="fs-service-username">{{ timeline[tmIndex].author }}</span>
+                <span class="fs-slashes">//</span>
+                INSTAGRAM
+                <span class="fs-slashes">//</span>
+                <span class="fs-detail-date">{{ timeline[tmIndex].date }}</span>
+              </a>
+            </div>
+            <!-- Share Links -->
+            <div class="fs-detail-shares">
+              <!-- Link -->
+              <a class="fs-share fs-facebook-share ap-element-button" aria-label="share on facebook">
+                <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"
+                     preserveAspectRatio="none">
+                  <path
+                    d="M80 299.3V512H196V299.3h86.5l18-97.8H196V166.9c0-51.7 20.3-71.5 72.7-71.5c16.3 0 29.4 .4 37 1.2V7.9C291.4 4 256.4 0 236.2 0C129.3 0 80 50.5 80 159.4v42.1H14v97.8H80z"></path>
+                </svg>
+              </a>
+              <!-- Link -->
+              <a class="fs-share fs-link-share ap-element-button" aria-label="share by email">
+                <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
+                     preserveAspectRatio="none">
+                  <path
+                    d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48L48 64zM0 176L0 384c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-208L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z"></path>
+                </svg>
+              </a>
+              <!-- Link -->
+              <a class="fs-share fs-link-share fs-x-share ap-element-button" aria-label="share on X">
+                <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
+                     preserveAspectRatio="none">
+                  <path fill="#666"
+                        d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"></path>
+                </svg>
+              </a>
+              <!-- Link -->
+              <a class="fs-share fs-link-share ap-element-button" aria-label="share on pinterest">
+                <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"
+                     preserveAspectRatio="none">
+                  <path
+                    d="M496 256c0 137-111 248-248 248-25.6 0-50.2-3.9-73.4-11.1 10.1-16.5 25.2-43.5 30.8-65 3-11.6 15.4-59 15.4-59 8.1 15.4 31.7 28.5 56.8 28.5 74.8 0 128.7-68.8 128.7-154.3 0-81.9-66.9-143.2-152.9-143.2-107 0-163.9 71.8-163.9 150.1 0 36.4 19.4 81.7 50.3 96.1 4.7 2.2 7.2 1.2 8.3-3.3 .8-3.4 5-20.3 6.9-28.1 .6-2.5 .3-4.7-1.7-7.1-10.1-12.5-18.3-35.3-18.3-56.6 0-54.7 41.4-107.6 112-107.6 60.9 0 103.6 41.5 103.6 100.9 0 67.1-33.9 113.6-78 113.6-24.3 0-42.6-20.1-36.7-44.8 7-29.5 20.5-61.3 20.5-82.6 0-19-10.2-34.9-31.4-34.9-24.9 0-44.9 25.7-44.9 60.2 0 22 7.4 36.8 7.4 36.8s-24.5 103.8-29 123.2c-5 21.4-3 51.6-.9 71.2C65.4 450.9 0 361.1 0 256 0 119 111 8 248 8s248 111 248 248z"></path>
+                </svg>
+              </a>
+              <!-- Link -->
+              <a class="fs-share fs-link-share ap-element-button" aria-label="permalink">
+                <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"
+                     preserveAspectRatio="none">
+                  <path
+                    d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
