@@ -58,9 +58,9 @@
                                 <!-- Category -->
                                 <div class="product-categories">
                                   <object>
-                                <span>
-                                  <a [routerLink]="['/product-category', product.category.name]" rel="tag">{{ product.category.name | titlecase }}</a>
-                                </span>
+                                    <span>
+                                      <a [routerLink]="['/product-category', product.category.name]" rel="tag">{{ product.category.name | titlecase }}</a>
+                                    </span>
                                   </object>
                                 </div>
                                 <!-- Name -->
@@ -69,18 +69,18 @@
                                 <span class="price">
                                 @if (product.originalPrice) {
                                   <del aria-hidden="true">
-                                <span class="price-amount">
-                                  <bdi>{{ product.originalPrice | currency: 'USD' : 'symbol' : '.2-2' : 'en-US' }}</bdi>
-                                </span>
-                              </del>
+                                    <span class="price-amount">
+                                      <bdi>{{ product.originalPrice | currency: 'USD' : 'symbol' : '.2-2' : 'en-US' }}</bdi>
+                                    </span>
+                                  </del>
                                 }
 
                                   <ins>
-                                <span class="price-amount">
-                                  <bdi>{{ product.price | currency: 'USD' : 'symbol' : '.2-2' : 'en-US' }}</bdi>
+                                    <span class="price-amount">
+                                      <bdi>{{ product.price | currency: 'USD' : 'symbol' : '.2-2' : 'en-US' }}</bdi>
+                                    </span>
+                                  </ins>
                                 </span>
-                              </ins>
-                            </span>
                               </a>
                               <!-- Button Add to cart -->
                               <a

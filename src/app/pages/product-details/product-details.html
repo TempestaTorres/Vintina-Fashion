@@ -338,6 +338,223 @@
       </div>
     </div>
   </section>
+  <!--  Services -->
+  <section class="app-section app-element app-element-product-details-services app-section-boxed">
+    <div class="app-container app-column-gap-no">
+      <div class="app-element app-element-top-column-services app-column app-col-100">
+        <div class="app-widget-wrap app-element-populated">
+          <section
+            #services
+            appObserveElement
+            #intersection3="intersection"
+            [isContinuous]="false"
+            (isIntersecting)="isIntersecting($event, services)"
+            [ngClass]="{animated: intersection3._isIntersecting, fadeInDown: intersection3._isIntersecting}"
+            class="app-section app-inner-section app-element app-element-product-services-inner-section app-section-full_width animated-slow app-invisible">
+              <div class="app-container app-column-gap-no">
+                <!-- Free Shipping -->
+                <div class="app-column app-col-25 app-element app-element-free-shipping-column">
+                  <div class="app-widget-wrap app-element-populated">
+                    <div class="app-element app-element-icon-box-global app-widget-icon-box app-position-left app-vertical-align-middle app-view-default app-mobile-position-top app-widget">
+                      <div class="app-widget-container">
+                        <div class="app-icon-box-wrapper">
+                          <!-- Icon -->
+                          <div class="app-icon-box-icon">
+                            <span class="app-icon">
+                              <i aria-hidden="true" class="jki jki-truck-1-light"></i>
+                            </span>
+                          </div>
+                          <!-- Description -->
+                          <div class="app-icon-box-content">
+                            <h4 class="app-icon-box-title"><span>Free Shipping</span></h4>
+                            <p class="app-icon-box-description">Orders Over $200</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- 24/7 Support -->
+                <div class="app-column app-col-25 app-element app-element-support-column">
+                  <div class="app-widget-wrap app-element-populated">
+                    <!-- Icon box -->
+                    <div
+                      class="app-element app-element-icon-box-global app-view-default app-position-left app-vertical-align-middle app-mobile-position-top app-widget app-widget-icon-box">
+                      <div class="app-widget-container">
+                        <div class="app-icon-box-wrapper">
+                          <!-- Icon -->
+                          <div class="app-icon-box-icon">
+                          <span class="app-icon">
+                            <i aria-hidden="true" class="jki jki-support-light"></i>
+                          </span>
+                          </div>
+                          <!-- Description -->
+                          <div class="app-icon-box-content">
+                            <h4 class="app-icon-box-title"><span>24/7 Support</span></h4>
+                            <p class="app-icon-box-description">Ready For You</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Return -->
+                <div class="app-column app-col-25 app-element app-element-return-column">
+                  <div class="app-widget-wrap app-element-populated">
+                    <!-- Icon box -->
+                    <div
+                      class="app-element app-element-icon-box-global app-view-default app-position-left app-vertical-align-middle app-mobile-position-top app-widget app-widget-icon-box">
+                      <div class="app-widget-container">
+                        <div class="app-icon-box-wrapper">
+                          <!-- Icon -->
+                          <div class="app-icon-box-icon">
+                          <span class="app-icon">
+                            <i aria-hidden="true" class="jki jki-money-light"></i>
+                          </span>
+                          </div>
+                          <!-- Description -->
+                          <div class="app-icon-box-content">
+                            <h4 class="app-icon-box-title"><span>14 Days Return</span></h4>
+                            <p class="app-icon-box-description">Free Return</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Quick payment -->
+                <div class="app-column app-col-25 app-element app-element-quick-payment-column">
+                  <div class="app-widget-wrap app-element-populated">
+                    <!-- Icon box -->
+                    <div
+                      class="app-element app-element-icon-box-global app-view-default app-position-left app-vertical-align-middle app-mobile-position-top app-widget app-widget-icon-box">
+                      <div class="app-widget-container">
+                        <div class="app-icon-box-wrapper">
+                          <!-- Icon -->
+                          <div class="app-icon-box-icon">
+                          <span class="app-icon">
+                            <i aria-hidden="true" class="jki jki-credit-card1-light"></i>
+                          </span>
+                          </div>
+                          <!-- Description -->
+                          <div class="app-icon-box-content">
+                            <h4 class="app-icon-box-title"><span>Quick Payment</span></h4>
+                            <p class="app-icon-box-description">100% Secure</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          </section>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--  Related products -->
+  @if (relatedProducts.length > 0) {
+    <section class="app-section app-element app-element-related-products app-section-boxed">
+      <div class="app-container app-column-gap-default">
+        <div class="app-column app-col-100 app-element app-element-no-padding">
+          <div class="app-widget-wrap app-element-populated">
+            <!-- Heading -->
+            <div
+              #relatedHeading
+              appObserveElement
+              #intersection4="intersection"
+              [isContinuous]="false"
+              (isIntersecting)="isIntersecting($event, relatedHeading)"
+              [ngClass]="{animated: intersection4._isIntersecting, fadeInLeft: intersection4._isIntersecting}"
+              class="app-element app-element-heading-secondary animated-slow app-widget app-widget-heading app-invisible">
+                <div class="app-widget-container">
+                  <h2 class="app-heading-title">Related Products</h2>
+                </div>
+            </div>
+            <!-- Product cards Grid -->
+            <div class="app-element app-widget app-widget-jkit_product_grid">
+              <div class="app-widget-container">
+                <div class="jeg-app-kit jkit-product-grid jkit-pagination-disable post-element">
+                  <div class="jkit-block-container">
+                    <div class="commerce">
+                      <ul class="products jkit-products jkit-align-left">
+
+                        @for (product of relatedProducts; track $index) {
+
+                          @if ($index < 4) {
+
+                            <li
+                              [class.last]="($index + 1) % 4 === 0"
+                              class="product type-product has-post-thumbnail product-type-simple jkit-product-block">
+
+                              <a
+                                (click)="goToNextProduct(product.type)"
+                                class="jkit-product ap-element-button">
+
+                                <div class="product-link">
+                                  @if (product.onSale) {
+                                    <span class="onsale text jkit-onsale-position-left jkit-onsale-position-top">Sale</span>
+                                  }
+                                  @if (product.image) {
+                                    <img [src]="product.image" alt="Sensual woman." decoding="async" loading="lazy">
+                                  }
+                                </div>
+                                <!-- Category -->
+                                <div class="product-categories">
+                                  <object>
+                                    <span>
+                                      <a [routerLink]="['/product-category', product.category.name]" rel="tag">{{ product.category.name | titlecase }}</a>
+                                    </span>
+                                  </object>
+                                </div>
+                                <!-- Name -->
+                                <h2 class="product-title">{{ product.name }}</h2>
+                                <!-- Price -->
+                                <span class="price">
+                                @if (product.originalPrice) {
+                                  <del aria-hidden="true">
+                                    <span class="price-amount">
+                                      <bdi>{{ product.originalPrice | currency: 'USD' : 'symbol' : '.2-2' : 'en-US' }}</bdi>
+                                    </span>
+                                  </del>
+                                }
+
+                                  <ins>
+                                    <span class="price-amount">
+                                      <bdi>{{ product.price | currency: 'USD' : 'symbol' : '.2-2' : 'en-US' }}</bdi>
+                                    </span>
+                                  </ins>
+                                </span>
+                              </a>
+                              <!-- Button Add to cart -->
+                              <a
+                                [id]="$index"
+                                [class.loading]="loading($index)"
+                                [class.added]="addedClass($index)"
+                                (click)="addToMainCart($event, product)"
+                                class="button add_to_cart_button ajax_add_to_cart">
+                                <i class="fas fa-shopping-cart"></i>
+                                Add to cart
+                              </a>
+                              <!-- Button view cart -->
+                              <a (click)="viewCartClick($event)"
+                                 class="added_to_cart ap-element-button"
+                                 [class.active]="addedClass($index)"
+                                 title="View cart">View cart</a>
+                            </li>
+                          }
+                        }
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  }
 
 <!--  Modal Bio Modal dialog -->
   @if (product && product.model) {

@@ -2,6 +2,7 @@ import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {ProductService} from '../../services/product-service';
 import {ProductType} from '../../product/product-type';
 import {CurrencyPipe} from '@angular/common';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-find-in-store',
@@ -22,16 +23,26 @@ export class FindInStoreComponent {
   public inStore: boolean = true;
   public processing: boolean = false;
 
-  constructor(private productService: ProductService) { }
+  constructor(private productService: ProductService, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
+
+    this.activatedRoute.params.subscribe((params) => {
+      if (params['type']) {
+        this.product = this.productService.getProductByType(params['type']);
+
+        if (this.product) {
+          this.product.quantity = 1;
+
+        }
+      }
+    });
 
     if (this.productType) {
       this.product = this.productService.getProductByType(this.productType);
 
       if (this.product) {
         this.product.quantity = 1;
-
 
       }
     }

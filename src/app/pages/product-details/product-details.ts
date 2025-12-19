@@ -1,10 +1,10 @@
 import {Component} from '@angular/core';
 import {ModalBioComponent} from '../../components/modal-bio.component/modal-bio.component';
 import {ProductType} from '../../product/product-type';
-import {ActivatedRoute, Router} from '@angular/router';
+import {ActivatedRoute, Router, RouterLink} from '@angular/router';
 import {ProductService} from '../../services/product-service';
 import {ObserveElementDirective} from '../../directives/scroll-observer';
-import {NgClass} from '@angular/common';
+import {CurrencyPipe, NgClass, TitleCasePipe} from '@angular/common';
 import {ScrollTotopService} from '../../services/scrolltotop-service';
 import {ModalPayLaterComponent} from '../../components/modal-pay-later.component/modal-pay-later.component';
 import {FindInStoreComponent} from '../../components/find-in-store.component/find-in-store.component';
@@ -12,6 +12,7 @@ import {ProductFormComponent} from '../../components/product-form.component/prod
 import {MiniCartComponent} from '../../components/mini-cart.component/mini-cart.component';
 import {InstagramFeeds} from '../../components/instagram-feeds/instagram-feeds';
 import {ModalInstagram} from '../../components/modal-instagram/modal-instagram';
+import {AddToCart} from '../../services/add-to-cart';
 
 declare var Swiper: any;
 
@@ -26,7 +27,10 @@ declare var Swiper: any;
     ProductFormComponent,
     MiniCartComponent,
     InstagramFeeds,
-    ModalInstagram
+    ModalInstagram,
+    TitleCasePipe,
+    RouterLink,
+    CurrencyPipe
   ],
   templateUrl: './product-details.html',
   styleUrl: './product-details.css',
@@ -47,11 +51,16 @@ export class ProductDetails {
   public tabDescActive: boolean = true;
   public tabAdditionalInfoActive: boolean = false;
 
+  // Signals
+  private signalsAdded: boolean[] = [false, false, false, false];
+  private signalsloading: boolean[] = [false, false, false, false];
+
+  public relatedProducts: ProductType[] = [];
   public product: ProductType | undefined = undefined;
   public thumbnails: Array<string> = [];
 
   constructor(private activatedRoute: ActivatedRoute, private productService: ProductService,
-              private scrollTotopService: ScrollTotopService, private router: Router) {
+              private scrollTotopService: ScrollTotopService, private router: Router, private  cartService: AddToCart) {
   }
 
   public ngOnInit() {
@@ -252,12 +261,61 @@ export class ProductDetails {
 
             }
           }
+          else {
+            this.thumbnails = [];
+          }
+          // Related products
+          let categories: ProductType[] = this.productService.getProductsByCategory(this.product.category.name);
+
+          this.relatedProducts = categories.filter(category => category.name !== this.product?.name);
+          this.signalsAdded = [false, false, false, false];
+          this.signalsloading = [false, false, false, false];
+
         }
       }
     });
   }
   goToNextProduct(type: string): void {
     this.router.navigate(['/product/details', type], { relativeTo: null });
+
+  }
+  viewCartClick(e: MouseEvent): void {
+    e.preventDefault();
+
+    this.router.navigate(['/cart']);
+  }
+
+  public loading(index: number): boolean {
+    return this.signalsloading[index];
+  }
+
+  public addedClass(index: number): boolean {
+    return this.signalsAdded[index];
+  }
+  public addToMainCart(e: MouseEvent, product: ProductType): void {
+    e.preventDefault();
+
+    // Add product to cart
+    if (product) {
+      product.quantity = 1;
+      this.cartService.addToCart(product);
+
+    }
+
+    let targetElement: HTMLElement | null = e.currentTarget as HTMLElement;
+
+    if (targetElement) {
+
+      let index: number = parseInt(targetElement.id);
+      this.signalsloading[index] = true;
+
+      setTimeout(() => {
+
+        this.signalsloading[index] = false;
+        this.signalsAdded[index] = true;
+
+      }, 1000);
+    }
 
   }
 }

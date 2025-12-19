@@ -213,6 +213,78 @@
   justify-content: space-between;
   margin: 12px 0 12px 0;
 }
+.app-home .app-element.app-element-product-details-services > .app-container {
+  max-width: 1280px;
+}
+.app-home .app-element.app-element-product-details-services:not(.app-motion-effects-element-type-background),
+.app-home .app-element.app-element-product-details-services > .app-motion-effects-container > .app-motion-effects-layer {
+  background-color: #FFFFFF;
+}
+.app-home .app-element.app-element-product-details-services {
+  transition: background 0.3s,  border 0.3s,  border-radius 0.3s,  box-shadow 0.3s;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 80px 0 80px 0;
+}
+.app-home .app-element.app-element-product-details-services > .app-background-overlay {
+  transition: background 0.3s,  border-radius 0.3s,  opacity 0.3s;
+}
+.app-home .app-element.app-element-top-column-services > .app-element-populated {
+  --column-margin-right: 0px;
+  --column-margin-left: 0px;
+  padding: 0;
+  margin: 0;
+}
+.app-home .app-element.app-element-product-services-inner-section,
+.app-home .app-element.app-element-product-services-inner-section > .app-background-overlay {
+  border-radius: 20px;
+}
+.app-home .app-element.app-element-product-services-inner-section {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 0;
+}
+.app-home .app-element.app-element-free-shipping-column > .app-element-populated {
+  border-style: solid;
+  border-width: 0 1px 0 0;
+  border-color: #EAEAEA;
+  transition: background 0.3s,  border 0.3s,  border-radius 0.3s,  box-shadow 0.3s;
+  padding: 0 0 0 70px;
+}
+.app-home .app-element.app-element-free-shipping-column > .app-element-populated > .app-background-overlay {
+  transition: background 0.3s,  border-radius 0.3s,  opacity 0.3s;
+}
+.app-home .app-element.app-element-support-column > .app-element-populated {
+  border-style: solid;
+  border-width: 0 1px 0 0;
+  border-color: #EAEAEA;
+  transition: background 0.3s,  border 0.3s,  border-radius 0.3s,  box-shadow 0.3s;
+  padding: 0 20px 0 40px;
+}
+.app-home .app-element.app-element-support-column > .app-element-populated > .app-background-overlay {
+  transition: background 0.3s,  border-radius 0.3s,  opacity 0.3s;
+}
+.app-home .app-element.app-element-return-column > .app-element-populated {
+  border-style: solid;
+  border-width: 0 1px 0 0;
+  border-color: #EAEAEA;
+  transition: background 0.3s,  border 0.3s,  border-radius 0.3s,  box-shadow 0.3s;
+  padding: 0 20px 0 40px;
+}
+.app-home .app-element.app-element-return-column > .app-element-populated > .app-background-overlay {
+  transition: background 0.3s,  border-radius 0.3s,  opacity 0.3s;
+}
+.app-home .app-element.app-element-quick-payment-column > .app-element-populated {
+  padding: 0 0 0 40px;
+}
+.app-home .app-element.app-element-related-products > .app-container {
+  max-width: 1280px;
+}
+.app-home .app-element.app-element-related-products {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 80px 0 140px 0;
+}
 /*=========================================== Media 1024 =============================================*/
 @media (max-width: 1024px) {
   .app-home .app-element.app-element-hero-top-section-heading .app-heading-title {
@@ -236,6 +308,35 @@
   .app-home .app-element.app-element-guide-header {
     font-size:var( --global-typography-accent-font-size );
   }
+  .app-home .app-element.app-element-product-details-services {
+    padding: 0 15px 0 15px;
+  }
+  .app-home .app-element.app-element-product-services-inner-section {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 0;
+  }
+  .app-home .app-element.app-element-free-shipping-column > .app-element-populated {
+    border-width: 0 1px 0 0;
+    padding: 0 0 20px 40px;
+  }
+  .app-home .app-element.app-element-support-column > .app-element-populated {
+    border-width: 0;
+    padding: 0 0 0 80px;
+  }
+  .app-home .app-element.app-element-return-column > .app-element-populated {
+    border-width: 0 1px 0 0;
+    padding: 0 0 0 40px;
+  }
+  .app-home .app-element.app-element-quick-payment-column > .app-element-populated {
+    margin: 0;
+    --column-margin-right: 0px;
+    --column-margin-left: 0px;
+    padding: 0 0 0 80px;
+  }
+  .app-home .app-element.app-element-related-products {
+    padding: 80px 15px 100px 15px;
+  }
 }
 /*=========================================== Media 767 ===============================================*/
 @media (max-width: 767px) {
@@ -254,6 +355,46 @@
   .app-home .app-element.app-element-guide-header {
     font-size:var( --global-typography-accent-font-size );
   }
+  .app-home .app-element.app-element-product-details-services {
+    padding: 80px 10px 80px 10px;
+  }
+  .app-home .app-element.app-element-free-shipping-column {
+    width: 50%;
+  }
+  .app-home .app-element.app-element-free-shipping-column > .app-element-populated {
+    margin: 0 5px 0 0;
+    --column-margin-right: 5px;
+    --column-margin-left: 0px;
+    padding: 0;
+  }
+  .app-home .app-element.app-element-support-column {
+    width: 50%;
+  }
+  .app-home .app-element.app-element-support-column > .app-element-populated {
+    border-width: 0;
+    padding: 0 0 0 25px;
+  }
+  .app-home .app-element.app-element-return-column {
+    width: 50%;
+  }
+  .app-home .app-element.app-element-return-column > .app-element-populated {
+    margin: 0 5px 0 0;
+    --column-margin-right: 5px;
+    --column-margin-left: 0px;
+    padding: 40px 0 0 0;
+  }
+  .app-home .app-element.app-element-quick-payment-column {
+    width: 50%;
+  }
+  .app-home .app-element.app-element-quick-payment-column > .app-element-populated {
+    margin: 0;
+    --column-margin-right: 0px;
+    --column-margin-left: 0px;
+    padding: 40px 0 0 25px;
+  }
+  .app-home .app-element.app-element-related-products {
+    padding: 0 10px 100px 10px;
+  }
 }
 @media(min-width:768px) {
   .app-home .app-element.app-element-product-gallery-wrap {
@@ -269,5 +410,17 @@
   }
   .app-home .app-element.app-element-product-details-inner-section {
     width: 100%;
+  }
+  .app-home .app-element.app-element-free-shipping-column {
+    width: 50%;
+  }
+  .app-home .app-element.app-element-support-column {
+    width: 50%;
+  }
+  .app-home .app-element.app-element-return-column {
+    width: 50%;
+  }
+  .app-home .app-element.app-element-quick-payment-column {
+    width: 50%;
   }
 }
