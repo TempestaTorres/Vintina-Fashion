@@ -1,0 +1,123 @@
+.app-widget-modal-dialog.app-element-size-guide-modal-dialog .modal-dialog-content {
+  width: 100%;
+}
+.tabs-wrapper {
+  width: 100%;
+}
+.tabs-block-navigation {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  width: 100%;
+  margin-bottom: 1.5rem;
+  border: 0 solid rgba(0,0,0,.08);
+  border-bottom-width: 1px;
+}
+.modal-tab-button {
+  font-weight: 500;
+  font-family: var(--global-typography-text-font-family), sans-serif;
+  text-transform: uppercase;
+  font-size: 14px;
+  letter-spacing: 1px;
+  line-height: 20px;
+  padding-top: .25rem;
+  padding-bottom: .75rem;
+  color: rgba(0,0,0,.56);
+}
+.modal-tab-button.active {
+  color: #000000;
+}
+.bottom-line {
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  z-index: 1;
+  height: 1px;
+  background-color: black;
+  transition: transform 0.4s;
+  transform: translateX(0);
+}
+.tab-content-item {
+  display: flex;
+  flex-direction: column;
+  height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: all .4s;
+}
+.tab-content-item.active {
+  opacity: 1;
+  height: auto;
+}
+.wysiwyg {
+  overflow-x: auto;
+}
+.accordion-item {
+  padding-bottom: 1.5rem;
+}
+.accordion-item-title {
+  padding-bottom: 0;
+}
+.accordion-item-description .wysiwyg {
+  padding-top: 1.5rem;
+}
+.accordion-item-title .heading {
+  flex: 1 1 0;
+  margin-right: 2rem;
+}
+.accordion-item-button-wrapper {
+  position: relative;
+  height: .75rem;
+  width: .75rem;
+  flex-shrink: 0;
+}
+.how-to-measure {
+  display: flex;
+  align-items: stretch;
+  background-color: rgba(233,227,218,1);
+}
+.how-to-measure > .container {
+  display: flex;
+  flex: 1 1 0;
+  align-items: center;
+  justify-content: center;
+}
+.how-to-measure .wysiwyg-size-guide {
+  overflow-x: auto;
+  padding: 2.5rem;
+}
+.wysiwyg-size-guide p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 20px;
+}
+@media (min-width: 768px) {
+
+  .app-widget-modal-dialog.app-element-size-guide-modal-dialog .modal-dialog-content {
+    max-width: 71.11111%;
+  }
+
+  .app-element.app-element-modal-size-guid-section > .app-container {
+    width: 100%;
+    height: calc(100dvh - 160px);
+  }
+}
+@media (min-width: 1025px) {
+  .app .app-element.app-element-modal-size-guid-section {
+    padding: 0 5rem 5rem 5rem;
+    height: 100%;
+  }
+}
+@media (max-width: 1024px) {
+  .app .app-element.app-element-modal-size-guid-section {
+    padding: 0 2rem 2rem 2rem;
+    height: 100%;
+  }
+}
+@media (max-width: 768px) {
+  .app .app-element.app-element-modal-size-guid-section {
+    padding: 0 1rem 1.5rem 1rem;
+    height: 100%;
+  }
+}

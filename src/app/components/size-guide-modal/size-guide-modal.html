@@ -1,0 +1,614 @@
+<div [class.opened]="opened"
+     class="app-widget-modal-dialog app-element-size-guide-modal-dialog"
+     data-type='slideout'>
+  <div class="modal-dialog-overlay"></div>
+  <!-- Content -->
+  <div class="modal-dialog-content" aria-modal="true" role="dialog">
+    <!-- Header -->
+    <div class="modal-dialog-header">
+      <!-- Close Button -->
+      <a
+        (click)="close()"
+        class="close-modal-dialog-button"><i aria-hidden="true" class="jki jki-times-solid"></i>
+      </a>
+      <!-- Heading -->
+    </div>
+    <!-- Modal Content -->
+    <div class="app app-home">
+      <section class="app-element app-element-modal-size-guid-section app-section app-section-stretched">
+        <div class="app-container">
+          <!-- Tabs -->
+          <div class="tabs-wrapper">
+            <div class="tabs-block-navigation">
+              <a
+                (click)="tabClicked(0, $event)"
+                [class.active]="activeTabs[0]"
+                class="ap-element-button modal-tab-button">Size Guide</a>
+              <a
+                (click)="tabClicked(1, $event)"
+                [class.active]="activeTabs[1]"
+                class="ap-element-button modal-tab-button">Size conversion</a>
+              <a
+                (click)="tabClicked(2, $event)"
+                [class.active]="activeTabs[2]"
+                class="ap-element-button modal-tab-button">how to measure</a>
+              <div
+                [style]="currentLinePosition"
+                class="bottom-line"></div>
+            </div>
+            <!-- Tab content -->
+            <div
+              [class.active]="activeTabs[0]"
+              class="tab-content-item">
+
+              <div class="wysiwyg wysiwyg-size-guide">
+                <table>
+                  <tbody>
+                  <tr>
+                    <td>SIZE</td>
+                    <td>XXS</td>
+                    <td>XS</td>
+                    <td>S</td>
+                    <td>M</td>
+                    <td>L</td>
+                    <td>XL</td>
+                    <td>XXL</td>
+                  </tr>
+                  <tr>
+                    <td>CM</td>
+                    <td>82-86</td>
+                    <td>86-90</td>
+                    <td>90-95</td>
+                    <td>95-100</td>
+                    <td>100-105</td>
+                    <td>105-110</td>
+                    <td>110-116</td>
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
+
+            </div>
+            <!-- Tab content -->
+            <div
+              [class.active]="activeTabs[1]"
+              class="tab-content-item">
+
+              <div class="wysiwyg wysiwyg-size-guide">
+                <table>
+                  <tbody>
+                  <tr>
+                    <td>HB Size</td>
+                    <td>AU</td>
+                    <td>UK</td>
+                    <td>USA</td>
+                    <td>EUROPE</td>
+                    <td>CHINA</td>
+                  </tr>
+                  <tr>
+                    <td>XXS</td>
+                    <td>6</td>
+                    <td>6</td>
+                    <td>2</td>
+                    <td>34</td>
+                    <td>34</td>
+                  </tr>
+                  <tr>
+                    <td>XS</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>4</td>
+                    <td>36</td>
+                    <td>36</td>
+                  </tr>
+                  <tr>
+                    <td>S</td>
+                    <td>10</td>
+                    <td>10</td>
+                    <td>6</td>
+                    <td>38</td>
+                    <td>38</td>
+                  </tr>
+                  <tr>
+                    <td>M</td>
+                    <td>12</td>
+                    <td>12</td>
+                    <td>8</td>
+                    <td>40</td>
+                    <td>40</td>
+                  </tr>
+                  <tr>
+                    <td>L</td>
+                    <td>14</td>
+                    <td>14</td>
+                    <td>10</td>
+                    <td>42</td>
+                    <td>42</td>
+                  </tr>
+                  <tr>
+                    <td>XL</td>
+                    <td>16</td>
+                    <td>16</td>
+                    <td>12</td>
+                    <td>44</td>
+                    <td>44</td>
+                  </tr>
+                  <tr>
+                    <td>XXL</td>
+                    <td>18</td>
+                    <td>18</td>
+                    <td>14</td>
+                    <td>46</td>
+                    <td>46</td>
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
+              <!-- Accordion -->
+              <div>
+                <!-- Accordion Item -->
+                <div
+                  [class.open]="activeAccordionItem[0]"
+                  class="accordion-item accordion-size-guide-ic">
+                  <!-- Button -->
+                  <a
+                    (click)="accordionItemClicked(0)"
+                    class="ap-element-button accordion-item-title" tabindex="-1">
+                    <div class="heading">
+                      <span>Bras</span>
+                    </div>
+                    <div class="accordion-item-button-wrapper">
+                      <i class="fas fa-plus accordion-item-icon-open"></i>
+                      <i class="fas fa-minus accordion-item-icon-close"></i>
+                    </div>
+                  </a>
+                  <!-- Content -->
+                  <div class="accordion-item-description">
+                    <div class="wysiwyg wysiwyg-size-guide">
+                      <table>
+                        <tbody>
+                        <tr>
+                          <td>USA/CAN</td>
+                          <td>AUS</td>
+                          <td>UK</td>
+                          <td>EUROPE</td>
+                          <td>FRANCE</td>
+                          <td>CHINA</td>
+                        </tr>
+                        <tr>
+                          <td>30A</td>
+                          <td>8A</td>
+                          <td>30A</td>
+                          <td>65A</td>
+                          <td>80A</td>
+                          <td>65A</td>
+                        </tr>
+                        <tr>
+                          <td>30B</td>
+                          <td>8B</td>
+                          <td>30B</td>
+                          <td>65B</td>
+                          <td>80B</td>
+                          <td>65B</td>
+                        </tr>
+                        <tr>
+                          <td>30C</td>
+                          <td>8C</td>
+                          <td>30C</td>
+                          <td>65C</td>
+                          <td>80C</td>
+                          <td>65C</td>
+                        </tr>
+                        <tr>
+                          <td>30D</td>
+                          <td>8D</td>
+                          <td>30D</td>
+                          <td>65D</td>
+                          <td>80D</td>
+                          <td>65D</td>
+                        </tr>
+                        <tr>
+                          <td>30DD/E</td>
+                          <td>8DD</td>
+                          <td>30DD</td>
+                          <td>65E</td>
+                          <td>80DD</td>
+                          <td>65E</td>
+                        </tr>
+                        <tr>
+                          <td>30DDD/F</td>
+                          <td>8E</td>
+                          <td>30E</td>
+                          <td>65F</td>
+                          <td>80E</td>
+                          <td>65F</td>
+                        </tr>
+                        <tr>
+                          <td>30G</td>
+                          <td>8F</td>
+                          <td>30F</td>
+                          <td>65G</td>
+                          <td>80F</td>
+                          <td>65G</td>
+                        </tr>
+                        <tr>
+                          <td>30H</td>
+                          <td>8G</td>
+                          <td>30G</td>
+                          <td>65H</td>
+                          <td>80G</td>
+                          <td>65H</td>
+                        </tr>
+                        <tr>
+                          <td>32A</td>
+                          <td>10A</td>
+                          <td>32A</td>
+                          <td>70A</td>
+                          <td>85A</td>
+                          <td>70A</td>
+                        </tr>
+                        <tr>
+                          <td>32B</td>
+                          <td>10B</td>
+                          <td>32B</td>
+                          <td>70B</td>
+                          <td>85B</td>
+                          <td>70B</td>
+                        </tr>
+                        <tr>
+                          <td>32C</td>
+                          <td>10C</td>
+                          <td>32C</td>
+                          <td>70C</td>
+                          <td>85C</td>
+                          <td>70C</td>
+                        </tr>
+                        <tr>
+                          <td>32D</td>
+                          <td>10D</td>
+                          <td>32D</td>
+                          <td>70D</td>
+                          <td>85D</td>
+                          <td>70D</td>
+                        </tr>
+                        <tr>
+                          <td>32DD/E</td>
+                          <td>10DD</td>
+                          <td>32DD</td>
+                          <td>70E</td>
+                          <td>85DD</td>
+                          <td>70E</td>
+                        </tr>
+                        <tr>
+                          <td>32DDD/F</td>
+                          <td>10E</td>
+                          <td>32E</td>
+                          <td>70F</td>
+                          <td>85E</td>
+                          <td>70F</td>
+                        </tr>
+                        <tr>
+                          <td>32G</td>
+                          <td>10F</td>
+                          <td>32F</td>
+                          <td>70G</td>
+                          <td>85F</td>
+                          <td>70G</td>
+                        </tr>
+                        <tr>
+                          <td>32H</td>
+                          <td>10G</td>
+                          <td>32G</td>
+                          <td>70H</td>
+                          <td>85G</td>
+                          <td>70H</td>
+                        </tr>
+                        <tr>
+                          <td>34A</td>
+                          <td>12A</td>
+                          <td>34A</td>
+                          <td>75A</td>
+                          <td>90A</td>
+                          <td>75A</td>
+                        </tr>
+                        <tr>
+                          <td>34B</td>
+                          <td>12B</td>
+                          <td>34B</td>
+                          <td>75B</td>
+                          <td>90B</td>
+                          <td>75B</td>
+                        </tr>
+                        <tr>
+                          <td>34C</td>
+                          <td>12C</td>
+                          <td>34C</td>
+                          <td>75C</td>
+                          <td>90C</td>
+                          <td>75C</td>
+                        </tr>
+                        <tr>
+                          <td>34D</td>
+                          <td>12D</td>
+                          <td>34D</td>
+                          <td>75D</td>
+                          <td>90D</td>
+                          <td>75D</td>
+                        </tr>
+                        <tr>
+                          <td>34DD/E</td>
+                          <td>12DD</td>
+                          <td>34DD</td>
+                          <td>75E</td>
+                          <td>90DD</td>
+                          <td>75E</td>
+                        </tr>
+                        <tr>
+                          <td>34DDD/F</td>
+                          <td>12E</td>
+                          <td>34E</td>
+                          <td>75F</td>
+                          <td>90E</td>
+                          <td>75F</td>
+                        </tr>
+                        <tr>
+                          <td>34G</td>
+                          <td>12F</td>
+                          <td>34F</td>
+                          <td>75G</td>
+                          <td>90F</td>
+                          <td>75H</td>
+                        </tr>
+                        <tr>
+                          <td>34H</td>
+                          <td>12G</td>
+                          <td>34G</td>
+                          <td>75H</td>
+                          <td>90G</td>
+                          <td>75G</td>
+                        </tr>
+                        <tr>
+                          <td>36A</td>
+                          <td>14A</td>
+                          <td>36A</td>
+                          <td>80A</td>
+                          <td>95A</td>
+                          <td>80A</td>
+                        </tr>
+                        <tr>
+                          <td>36B</td>
+                          <td>14B</td>
+                          <td>36B</td>
+                          <td>80B</td>
+                          <td>95B</td>
+                          <td>80B</td>
+                        </tr>
+                        <tr>
+                          <td>36C</td>
+                          <td>14C</td>
+                          <td>36C</td>
+                          <td>80C</td>
+                          <td>95C</td>
+                          <td>80C</td>
+                        </tr>
+                        <tr>
+                          <td>40H</td>
+                          <td>18G</td>
+                          <td>40G</td>
+                          <td>90H</td>
+                          <td>105G</td>
+                          <td>90H</td>
+                        </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+                <!-- Accordion Item -->
+                <div
+                  [class.open]="activeAccordionItem[1]"
+                  class="accordion-item accordion-size-guide-ic">
+                  <!-- Button -->
+                  <a
+                    (click)="accordionItemClicked(1)"
+                    class="ap-element-button accordion-item-title" tabindex="-1">
+                    <div class="heading">
+                      <span>Bralettes</span>
+                    </div>
+                    <div class="accordion-item-button-wrapper">
+                      <i class="fas fa-plus accordion-item-icon-open"></i>
+                      <i class="fas fa-minus accordion-item-icon-close"></i>
+                    </div>
+                  </a>
+                  <!-- Content -->
+                  <div class="accordion-item-description">
+                    <div class="wysiwyg wysiwyg-size-guide">
+                      <table>
+                        <tbody>
+                        <tr>
+                          <td>HB Size</td>
+                          <td>USA</td>
+                          <td>AU</td>
+                          <td>UK</td>
+                          <td>EUROPE</td>
+                          <td>CHINA</td>
+                        </tr>
+                        <tr>
+                          <td>XXS</td>
+                          <td>2</td>
+                          <td>6</td>
+                          <td>6</td>
+                          <td>34</td>
+                          <td>34</td>
+                        </tr>
+                        <tr>
+                          <td>XS</td>
+                          <td>4</td>
+                          <td>8</td>
+                          <td>8</td>
+                          <td>36</td>
+                          <td>36</td>
+                        </tr>
+                        <tr>
+                          <td>S</td>
+                          <td>6</td>
+                          <td>10</td>
+                          <td>10</td>
+                          <td>38</td>
+                          <td>38</td>
+                        </tr>
+                        <tr>
+                          <td>M</td>
+                          <td>8</td>
+                          <td>12</td>
+                          <td>12</td>
+                          <td>40</td>
+                          <td>40</td>
+                        </tr>
+                        <tr>
+                          <td>L</td>
+                          <td>10</td>
+                          <td>14</td>
+                          <td>14</td>
+                          <td>42</td>
+                          <td>42</td>
+                        </tr>
+                        <tr>
+                          <td>XL</td>
+                          <td>12</td>
+                          <td>16</td>
+                          <td>16</td>
+                          <td>44</td>
+                          <td>44</td>
+                        </tr>
+                        <tr>
+                          <td>XXL</td>
+                          <td>14</td>
+                          <td>18</td>
+                          <td>18</td>
+                          <td>46</td>
+                          <td>46</td>
+                        </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+                <!-- Accordion Item -->
+                <div
+                  [class.open]="activeAccordionItem[2]"
+                  class="accordion-item accordion-size-guide-ic">
+                  <!-- Button -->
+                  <a
+                    (click)="accordionItemClicked(2)"
+                    class="ap-element-button accordion-item-title" tabindex="-1">
+                    <div class="heading">
+                      <span>Bottoms</span>
+                    </div>
+                    <div class="accordion-item-button-wrapper">
+                      <i class="fas fa-plus accordion-item-icon-open"></i>
+                      <i class="fas fa-minus accordion-item-icon-close"></i>
+                    </div>
+                  </a>
+                  <!-- Content -->
+                  <div class="accordion-item-description">
+                    <div class="wysiwyg wysiwyg-size-guide">
+                      <table>
+                        <tbody>
+                        <tr>
+                          <td>HB Size</td>
+                          <td>USA</td>
+                          <td>AU</td>
+                          <td>UK</td>
+                          <td>EUROPE</td>
+                          <td>CHINA</td>
+                        </tr>
+                        <tr>
+                          <td>XXS</td>
+                          <td>2</td>
+                          <td>6</td>
+                          <td>6</td>
+                          <td>34</td>
+                          <td>34</td>
+                        </tr>
+                        <tr>
+                          <td>XS</td>
+                          <td>4</td>
+                          <td>8</td>
+                          <td>8</td>
+                          <td>36</td>
+                          <td>36</td>
+                        </tr>
+                        <tr>
+                          <td>S</td>
+                          <td>6</td>
+                          <td>10</td>
+                          <td>10</td>
+                          <td>38</td>
+                          <td>38</td>
+                        </tr>
+                        <tr>
+                          <td>M</td>
+                          <td>8</td>
+                          <td>12</td>
+                          <td>12</td>
+                          <td>40</td>
+                          <td>40</td>
+                        </tr>
+                        <tr>
+                          <td>L</td>
+                          <td>10</td>
+                          <td>14</td>
+                          <td>14</td>
+                          <td>42</td>
+                          <td>42</td>
+                        </tr>
+                        <tr>
+                          <td>XL</td>
+                          <td>12</td>
+                          <td>16</td>
+                          <td>16</td>
+                          <td>44</td>
+                          <td>44</td>
+                        </tr>
+                        <tr>
+                          <td>XXL</td>
+                          <td>14</td>
+                          <td>18</td>
+                          <td>18</td>
+                          <td>46</td>
+                          <td>46</td>
+                        </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+            <!-- Tab content -->
+            <div
+              [class.active]="activeTabs[2]"
+              class="tab-content-item">
+              <div class="how-to-measure">
+                <div class="container">
+                  <div class="wysiwyg wysiwyg-size-guide">
+                    <p>
+                      <strong><span>HOW TO MEASURE HIPS</span></strong>
+                    </p>
+                    <p>Wrap the tape measure around the fullest part of your hips. Use the mirror to make sure the tape
+                      measure is straight all the way around. The tape measure should be snug and parallel to the
+                      ground.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+</div>

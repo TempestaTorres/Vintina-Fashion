@@ -594,4 +594,8 @@
                          (viewProduct)="goToNextProduct($event)"
                          [tmIndex]="tmLineIndex"></app-modal-instagram>
   }
+  <!--  Sizes-->
+    <app-size-guide-modal
+    [opened]="sizeGuidOpened"
+    (sizeGuidClosed)="closeModalSizeGuide()"></app-size-guide-modal>
 </div>

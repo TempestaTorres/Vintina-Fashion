@@ -13,6 +13,7 @@ import {MiniCartComponent} from '../../components/mini-cart.component/mini-cart.
 import {InstagramFeeds} from '../../components/instagram-feeds/instagram-feeds';
 import {ModalInstagram} from '../../components/modal-instagram/modal-instagram';
 import {AddToCart} from '../../services/add-to-cart';
+import {SizeGuideModal} from '../../components/size-guide-modal/size-guide-modal';
 
 declare var Swiper: any;
 
@@ -30,7 +31,8 @@ declare var Swiper: any;
     ModalInstagram,
     TitleCasePipe,
     RouterLink,
-    CurrencyPipe
+    CurrencyPipe,
+    SizeGuideModal
   ],
   templateUrl: './product-details.html',
   styleUrl: './product-details.css',
