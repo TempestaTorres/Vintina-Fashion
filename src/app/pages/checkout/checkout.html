@@ -256,6 +256,7 @@
                             [class.active]="labelActive"
                             class="floating-label" for="email"><span>Email</span></label>
                           <input
+                            class="form-control form-control-input"
                             formControlName="email"
                             (input)="onInputChange()"
                             (blur)="onInputChange()"
@@ -3522,7 +3523,7 @@
                                 [routerLink]="['/privacy-policy']"
                                 class="link-button-warning"
                                 target="_blank"
-                                >Privacy Policy</a>
+                              >Privacy Policy</a>
                               and
                               <a
                                 [routerLink]="['/terms-conditions']"
@@ -3585,9 +3586,191 @@
         </footer>
       </div>
     </div>
+    <!-- Order Summery -->
+    <div class="order-summary">
+      <div class="inner">
+        <aside>
+          <section class="section-order-summary">
+            <div class="inner">
+              <!-- Products -->
+              <div class="products-order-info">
+                <!-- AS a GIFT -->
+                <div class="purchasing-as-gift">
+                  <div class="inner">
+                    <!-- Heading / Description -->
+                    <div class="heading-description-widget">
+                      <h3 class="heading-title">Purchasing as a gift?</h3>
+                      <span class="heading-description">
+                        Write a personalised gift message, select when to send it. We'll handle the rest!
+                      </span>
+                    </div>
+                    <!-- Launch gift modal button -->
+                    <div
+                      [class.active]="giftMeesageReceived"
+                      [class.expanded]="dropdownExpanded"
+                      class="open-modal-window-widget has-drop-down">
+                      <div class="open-modal-window-widget-main-content">
+                        <button
+                          class="open-modal-window-widget-button"
+                          (click)="onSendGiftClick()">
+                          <div class="button-content">
+                            <span class="icon-wrapper">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14" focusable="false"
+                                 aria-hidden="true"><g
+                              clip-path="url(#giftCard_svg__a)"><path stroke-linecap="round" stroke-linejoin="round"
+                                                                      d="M7 8v4.5"></path><path
+                              d="M1.5 5.755c0-.693.562-1.255 1.255-1.255h8.49c.693 0 1.255.562 1.255 1.255v.99C12.5 7.438 11.938 8 11.245 8h-8.49A1.255 1.255 0 0 1 1.5 6.745zM2.5 8h9v2.75a1.75 1.75 0 0 1-1.75 1.75h-5.5a1.75 1.75 0 0 1-1.75-1.75z"></path><path
+                              d="M4.524 4.017c.566.58 2.41.499 2.41.499s.08-1.888-.486-2.468c-.566-.579-1.455-.607-1.986-.064-.531.544-.503 1.454.062 2.033m4.952 0c-.566.58-2.41.499-2.41.499s-.08-1.888.486-2.468c.566-.579 1.455-.607 1.986-.064.531.544.503 1.454-.062 2.033"></path></g><defs><clipPath
+                              id="giftCard_svg__a"><path fill="#fff" d="M0 0h14v14H0z"></path></clipPath></defs>
+                            </svg>
+                          </span>
+                            <span class="button-text">Add a gift message</span>
+                            <span class="icon-wrapper">
+                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14" focusable="false"
+                                  aria-hidden="true"><path
+                               stroke-linecap="round" d="M2 7h10M7 2v10"></path>
+                             </svg>
+                          </span>
+                            <!-- Dropdown -->
+                            <div class="dropdown-meta-heading">
+                              <span class="dropdown-meta-heading-title">To:&nbsp;{{ giftMessageInfo.To }}</span>
+                            </div>
+                            <span class="dropdown-icon-wrapper">
+                              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14" focusable="false"
+                                   aria-hidden="true"><path
+                                stroke-linecap="round" stroke-linejoin="round"
+                                d="M12 4.75 7.354 9.396a.5.5 0 0 1-.708 0L2 4.75"></path>
+                              </svg>
+                            </span>
+                          </div>
+                        </button>
+                        <!-- Separator -->
+                        <div class="special-separator-widget">
+                          <div role="separator"></div>
+                        </div>
+                        <!-- Button Edit -->
+                        <button
+                          (click)="onEditGiftClick()"
+                          class="action-button-widget">
+                          <span class="action-icon-wrapper">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14" focusable="false"
+                                 aria-hidden="true"><path
+                              stroke-linejoin="round"
+                              d="M9.19 2.31a1.5 1.5 0 0 1 2.12 0l.354.354a1.5 1.5 0 0 1 0 2.121l-6.477 6.477a1.5 1.5 0 0 1-.846.424l-1.737.252a.5.5 0 0 1-.567-.567l.252-1.737a1.5 1.5 0 0 1 .424-.846z"></path><path
+                              d="m8 3.5 1.237 1.237 1.238 1.238"></path>
+                            </svg>
+                          </span>
+                        </button>
+                        <!-- Separator -->
+                        <div class="special-separator-widget">
+                          <div role="separator"></div>
+                        </div>
+                        <!-- Button Delete -->
+                        <button
+                          (click)="onDeleteGiftClick()"
+                          class="action-delete-button-widget">
+                          <span class="action-icon-wrapper">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14" focusable="false"
+                                 aria-hidden="true"><path
+                              d="M3 4h8v4.5c0 1.4 0 2.1-.273 2.635a2.5 2.5 0 0 1-1.092 1.093C9.1 12.5 8.4 12.5 7 12.5s-2.1 0-2.635-.273a2.5 2.5 0 0 1-1.093-1.092C3 10.6 3 9.9 3 8.5z"></path><path
+                              stroke-linecap="round" d="M8.25 6.75v3m-2.5-3v3M2 4h10"></path><path
+                              stroke-linejoin="round" d="M9 4v-.75a2 2 0 1 0-4 0V4"></path>
+                            </svg>
+                          </span>
+                        </button>
+                        <div class="popup-widget" [class.active]="removePopup">
+                          <div class="inner">
+                            <div class="popup-widget-content-wrapper">
+                              <div class="popup-widget-content">
+                                <div class="popup-widget-text-wrapper">
+                                  <p>Are you sure you want to remove your gift message?</p>
+                                </div>
+                                <button (click)="removeGiftClick()" class="custom-button remove-button" type="button">Remove</button>
+                              </div>
+                              <!-- Close button -->
+                              <a class="popup-widget-close-button" (click)="closePopup()">
+                                <i aria-hidden="true" class="jki jki-times-solid"></i>
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <!--  Gift Message Info -->
+                      <div class="meta-dropdown">
+                        <div class="meta-dropdown-panel">
+                          <div class="meta-dropdown-list" role="list">
+                            <!-- Content Item From -->
+                            <div class="meta-dropdown-list-item" role="listitem">
+                              <span class="icon-wrapper">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14" focusable="false"
+                                     aria-hidden="true"><g
+                                  clip-path="url(#profile_svg__a)"><circle cx="7" cy="7" r="5.5"></circle><circle cx="7"
+                                                                                                                  cy="5.5"
+                                                                                                                  r="1.75"></circle><path
+                                  stroke-linecap="round" stroke-linejoin="round"
+                                  d="m10.5 11-.088-.11A4.37 4.37 0 0 0 7 9.25a4.37 4.37 0 0 0-3.412 1.64L3.5 11"></path></g><defs><clipPath
+                                  id="profile_svg__a"><path fill="#fff"
+                                                            d="M0 0h14v14H0z"></path></clipPath></defs>
+                                </svg>
+                              </span>
+                              <span class="text-wrapper">From:&nbsp;{{ giftMessageInfo.From }}</span>
+                            </div>
+                            <!-- Content Item Email -->
+                            <div class="meta-dropdown-list-item" role="listitem">
+                              <span class="icon-wrapper">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14" focusable="false"
+                                     aria-hidden="true"><path
+                                  d="M1 4.5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2z"></path><path
+                                  stroke-linecap="round" d="m3.25 5.25 3.515 1.875a.5.5 0 0 0 .47 0L10.75 5.25"></path>
+                                </svg>
+                              </span>
+                              <span class="text-wrapper">{{ giftMessageInfo.Email }}</span>
+                            </div>
+                            <!-- Content Item Delivery -->
+                            <div class="meta-dropdown-list-item" role="listitem">
+                              <span class="icon-wrapper">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14" focusable="false"
+                                     aria-hidden="true"><path
+                                  stroke-linejoin="round"
+                                  d="m7.875 11.697 4.003-8.578c.296-.635-.362-1.293-.997-.997L2.303 6.125c-.453.212-.35.884.146.949l3.385.446a.75.75 0 0 1 .646.646l.446 3.385c.065.495.737.599.949.146"></path>
+                                </svg>
+                              </span>
+                              <span class="text-wrapper">{{ giftMessageInfo.DeliveryMethod }}</span>
+                            </div>
+                            <!-- Content Item Message -->
+                            <div class="meta-dropdown-list-item" role="listitem">
+                              <span class="icon-wrapper">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14" focusable="false"
+                                     aria-hidden="true"><g
+                                  clip-path="url(#note_svg__a)"><path stroke-linejoin="round"
+                                                                      d="M10.5 1.5h-7a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h4.172a2 2 0 0 0 1.414-.586l2.828-2.828a2 2 0 0 0 .586-1.414V3.5a2 2 0 0 0-2-2"></path><path
+                                  d="M8.5 12.5v-3a1 1 0 0 1 1-1h3"></path><path stroke-linecap="round"
+                                                                                stroke-linejoin="round"
+                                                                                d="M4.25 4.25h5.5m-5.5 2.5h2.5"></path></g><defs><clipPath
+                                  id="note_svg__a"><path fill="#fff" d="M0 0h14v14H0z"></path></clipPath></defs>
+                                </svg>
+                              </span>
+                              <span class="text-wrapper">{{ giftMessageInfo.Message }}</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </aside>
+      </div>
+    </div>
   </section>
 </div>
 <app-modal-text-prompt
-[type]="promptType"
-[opened]="prompting"
-(closed)="onPromptClose()"></app-modal-text-prompt>
+  [type]="promptType"
+  [opened]="prompting"
+  (closed)="onPromptClose()"></app-modal-text-prompt>
+<app-modal-send-gift
+  [opened]="sendGift"
+  (closed)="onSendGiftClose()"
+  (giftInfoSaved)="onSendGiftInfoSaved($event)"></app-modal-send-gift>

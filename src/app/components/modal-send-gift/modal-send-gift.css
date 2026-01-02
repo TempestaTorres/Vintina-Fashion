@@ -1,0 +1,98 @@
+.basic-modal-window-heading .heading-title {
+  margin: 0;
+  font-family: var( --global-typography-accent-font-family ), sans-serif;
+  font-size: var( --global-typography-accent-font-size );
+  font-weight: var( --global-typography-accent-font-weight);
+  text-transform: uppercase;
+}
+.modal-text {
+  font-family: var(--global-typography-text-font-family), sans-serif;
+  font-size: 12px;
+  line-height: 21px;
+  font-weight: 400;
+}
+.gift-form {
+  position: relative;
+}
+.gift-form > .inner {
+  display: grid;
+  gap:21px;
+  grid-template-columns: minmax(0,1fr);
+  position: relative;
+  padding-bottom: 14px;
+}
+.gift-message-input-group {
+  display: grid;
+  gap:28px;
+  grid-template-columns: minmax(0,1fr);
+  position: relative;
+}
+.when-send-message {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.when-send-message > .heading-title {
+  font-family: var(--global-typography-text-font-family), sans-serif;
+  font-size: 14px;
+  font-weight: 450;
+  line-height: 21px;
+}
+.radio-label-wrapper span {
+  font-family: var( --global-typography-text-font-family ), sans-serif;
+  font-size: 10px;
+  font-weight: 450;
+  letter-spacing: normal;
+  line-height: 16px;
+}
+@media screen and (min-width: 580px) {
+  .radio-label-wrapper span {
+    font-family: var( --global-typography-text-font-family ), sans-serif;
+    font-size: 12px;
+    font-weight: 450;
+    letter-spacing: normal;
+    line-height: 18px;
+  }
+}
+.radio-content-heading > .heading-title {
+  margin: 0;
+  font-family: var(--global-typography-text-font-family), sans-serif;
+  font-size: 14px;
+  font-weight: 450;
+  line-height: 21px;
+  text-align: center;
+  text-transform: none;
+}
+.gift-message-agreement-wrapper {
+  padding: 9px;
+  width: 100%;
+  min-height: 100%;
+  background-color: rgb(235, 227, 215);
+  border: 1px solid rgb(211, 204, 193);
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.gift-message-agreement-wrapper .gift-message-agreement {
+  display: inline;
+  font-family: var( --global-typography-text-font-family ), sans-serif;
+  font-size: 10px;
+  font-weight: 450;
+  letter-spacing: normal;
+  line-height: 15px;
+}
+.button-loading-wrapper > div svg {
+  fill: #ffffff!important;
+}
+.cool-button + .invalid-feedback {
+  width: 100%;
+  text-align: center;
+}
+@media screen and (min-width: 580px) {
+  .basic-modal-window {
+    max-width: 640px;
+  }
+}

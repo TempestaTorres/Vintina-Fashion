@@ -7,13 +7,15 @@ import {FormControl, FormGroup, ReactiveFormsModule, Validators} from '@angular/
 import {CustomValidators} from '../../validators/validators';
 import {Phones, PhoneType} from '../../phones/phones-types';
 import {ModalTextPrompt} from '../../components/modal-text-prompt/modal-text-prompt';
+import {GiftInfo, ModalSendGift} from '../../components/modal-send-gift/modal-send-gift';
 
 @Component({
   selector: 'app-checkout',
   imports: [
     RouterLink,
     ReactiveFormsModule,
-    ModalTextPrompt
+    ModalTextPrompt,
+    ModalSendGift
   ],
   templateUrl: './checkout.html',
   styleUrl: './checkout.css',
@@ -72,6 +74,24 @@ export class Checkout {
 
   public prompting: boolean = false;
   public promptType: string = '';
+  public sendGift: boolean = false;
+  public giftMeesageReceived: boolean = false;
+  public dropdownExpanded: boolean = false;
+
+  public removePopup: boolean = false;
+
+  protected giftMessageInfo: GiftInfo = {
+    To: '',
+    From: '',
+    Email: '',
+    Phone: '',
+    Message: '',
+    DeliveryMethod: '',
+    Month: '',
+    Year: 0,
+    Day: 0,
+    Time: ''
+  }
 
   public formCheckoutGroup: FormGroup = new FormGroup({
     email: new FormControl('', [Validators.email]),
@@ -469,7 +489,58 @@ export class Checkout {
     this.prompting = true;
     this.promptType = type;
   }
+  public onSendGiftClick(): void {
+
+    if (!this.giftMeesageReceived) {
+      this.sendGift = true;
+    }
+    else {
+      this.dropdownExpanded = !this.dropdownExpanded;
+    }
+  }
+
+  public onEditGiftClick(): void {
+    this.sendGift = true;
+  }
+
+  public onDeleteGiftClick(): void {
+    this.removePopup = true;
+  }
+
+  public removeGiftClick(): void {
+    this.giftMeesageReceived = false;
+    this.dropdownExpanded = false;
+    this.removePopup = false;
+
+    this.giftMessageInfo = {
+      To: '',
+      From: '',
+      Email: '',
+      Phone: '',
+      Message: '',
+      DeliveryMethod: '',
+      Month: '',
+      Year: 0,
+      Day: 0,
+      Time: ''
+    };
+  }
+
+  public closePopup(): void {
+    this.removePopup = false;
+  }
   public onPromptClose(): void {
     this.prompting = false;
+  }
+
+  public onSendGiftClose(): void {
+    this.sendGift = false;
+  }
+
+  public onSendGiftInfoSaved(e: any): void {
+    this.giftMessageInfo = e;
+    this.giftMeesageReceived = true;
+    this.sendGift = false;
+    console.log('GiftInfoSaved', this.giftMessageInfo);
   }
 }

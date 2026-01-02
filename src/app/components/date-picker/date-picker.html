@@ -1,0 +1,185 @@
+<div class="date-time-widget-wrapper">
+  <div class="date-widget">
+    <div class="inner">
+      <div class="date-widget-buttons-wrapper">
+        <button
+          (click)="buttonPrevClick()"
+          [class.disabled]="buttonPrevDisabled"
+          class="date-widget-button button-prev"
+          type="button">
+          <span class="date-widget-button-icon-wrapper">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14" focusable="false"
+                                     aria-hidden="true"><path
+                                  stroke-linecap="round" stroke-linejoin="round"
+                                  d="M12.5 7h-11m0 0 3.826-4.75M1.5 7l3.826 4.75"></path>
+                                </svg>
+                              </span>
+        </button>
+        <button
+          (click)="buttonNextClick()"
+          class="date-widget-button button-next"
+          type="button">
+          <span class="date-widget-button-icon-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14" focusable="false"
+                 aria-hidden="true"><path
+              stroke-linecap="round" stroke-linejoin="round"
+              d="M1.5 7h11m0 0-3.826 4.75M12.5 7 8.674 2.25"></path>
+            </svg>
+          </span>
+        </button>
+      </div>
+      <table>
+        <caption>{{ currentMonthAndYear }}</caption>
+        <thead>
+        <tr>
+          <th [class.active]="weekday[1]"><span>Mo</span></th>
+          <th [class.active]="weekday[2]"><span>Tu</span></th>
+          <th [class.active]="weekday[3]"><span>We</span></th>
+          <th [class.active]="weekday[4]"><span>Th</span></th>
+          <th [class.active]="weekday[5]"><span>Fr</span></th>
+          <th [class.active]="weekday[6]"><span>Sa</span></th>
+          <th [class.active]="weekday[0]"><span>Su</span></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          @for (day of week1; track $index) {
+            <td>
+              @if (day > 0) {
+                <button [class.disabled]="buttonEnabled1[$index]"
+                        [class.outline]="buttonToday1[$index]"
+                        [class.active]="buttonActive1[$index]"
+                        class="date-widget-date-button"
+                        type="button"
+                        (click)="onDayPicked(day, $index)">{{ day }}
+                </button>
+              }
+            </td>
+          }
+        </tr>
+        <tr>
+          @for (day of week2; track $index) {
+            <td>
+              <button [class.disabled]="buttonEnabled2[$index]"
+                      [class.outline]="buttonToday2[$index]"
+                      [class.active]="buttonActive2[$index]"
+                      class="date-widget-date-button"
+                      type="button"
+                      (click)="onDayPicked(day, $index + 7)">{{ day }}
+              </button>
+            </td>
+          }
+        </tr>
+        <tr>
+          @for (day of week3; track $index) {
+            <td>
+              <button [class.disabled]="buttonEnabled3[$index]"
+                      [class.outline]="buttonToday3[$index]"
+                      [class.active]="buttonActive3[$index]"
+                      class="date-widget-date-button"
+                      type="button"
+                      (click)="onDayPicked(day, $index + 14)">{{ day }}
+              </button>
+            </td>
+          }
+        </tr>
+        <tr>
+          @for (day of week4; track $index) {
+            <td>
+              <button [class.disabled]="buttonEnabled4[$index]"
+                      [class.outline]="buttonToday4[$index]"
+                      [class.active]="buttonActive4[$index]"
+                      class="date-widget-date-button"
+                      type="button"
+                      (click)="onDayPicked(day, $index + 21)">{{ day }}
+              </button>
+            </td>
+          }
+        </tr>
+        <tr>
+          @for (day of week5; track $index) {
+            <td>
+              @if (day > 0) {
+                <button [class.disabled]="buttonEnabled5[$index]"
+                        [class.outline]="buttonToday5[$index]"
+                        [class.active]="buttonActive5[$index]"
+                        class="date-widget-date-button"
+                        type="button"
+                        (click)="onDayPicked(day, $index + 28)">{{ day }}
+                </button>
+              }
+            </td>
+          }
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="time-widget">
+    <div class="inner">
+      <label for="time-widget-time-select"><span>Time</span></label>
+      <select
+        #select
+        (change)="onTimeChange(select)"
+        id="time-widget-time-select" autocomplete="on">
+        <option value="" disabled selected>Pick a time</option>
+        <option value="0000">12:00 AM</option>
+        <option value="0030">12:30 AM</option>
+        <option value="0100">1:00 AM</option>
+        <option value="0130">1:30 AM</option>
+        <option value="0200">2:00 AM</option>
+        <option value="0230">2:30 AM</option>
+        <option value="0300">3:00 AM</option>
+        <option value="0330">3:30 AM</option>
+        <option value="0400">4:00 AM</option>
+        <option value="0430">4:30 AM</option>
+        <option value="0500">5:00 AM</option>
+        <option value="0530">5:30 AM</option>
+        <option value="0600">6:00 AM</option>
+        <option value="0630">6:30 AM</option>
+        <option value="0700">7:00 AM</option>
+        <option value="0730">7:30 AM</option>
+        <option value="0800">8:00 AM</option>
+        <option value="0830">8:30 AM</option>
+        <option value="0900">9:00 AM</option>
+        <option value="0930">9:30 AM</option>
+        <option value="1000">10:00 AM</option>
+        <option value="1030">10:30 AM</option>
+        <option value="1100">11:00 AM</option>
+        <option value="1130">11:30 AM</option>
+        <option value="1200">12:00 PM</option>
+        <option value="1230">12:30 PM</option>
+        <option value="1300">1:00 PM</option>
+        <option value="1330">1:30 PM</option>
+        <option value="1400">2:00 PM</option>
+        <option value="1430">2:30 PM</option>
+        <option value="1500">3:00 PM</option>
+        <option value="1530">3:30 PM</option>
+        <option value="1600">4:00 PM</option>
+        <option value="1630">4:30 PM</option>
+        <option value="1700">5:00 PM</option>
+        <option value="1730">5:30 PM</option>
+        <option value="1800">6:00 PM</option>
+        <option value="1830">6:30 PM</option>
+        <option value="1900">7:00 PM</option>
+        <option value="1930">7:30 PM</option>
+        <option value="2000">8:00 PM</option>
+        <option value="2030">8:30 PM</option>
+        <option value="2100">9:00 PM</option>
+        <option value="2130">9:30 PM</option>
+        <option value="2200">10:00 PM</option>
+        <option value="2230">10:30 PM</option>
+        <option value="2300">11:00 PM</option>
+        <option value="2330">11:30 PM</option>
+      </select>
+      <div class="time-widget-select-button">
+        <span>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14" focusable="false" aria-hidden="true"><path
+            stroke-linecap="round" stroke-linejoin="round"
+            d="M12 4.75 7.354 9.396a.5.5 0 0 1-.708 0L2 4.75"></path>
+          </svg>
+        </span>
+      </div>
+    </div>
+  </div>
+</div>

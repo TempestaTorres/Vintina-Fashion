@@ -569,3 +569,4 @@ body:not([class*=app-page-]) .site-main {
   transform: rotate(180deg);
   opacity: 1;
 }
+/* Special widgets */

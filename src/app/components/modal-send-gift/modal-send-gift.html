@@ -1,0 +1,642 @@
+<div
+  [class.opened]="opened"
+  class="basic-modal-wrapper">
+  <div class="basic-modal-window">
+    <div class="inner">
+      <!-- Header -->
+      <div class="header">
+        <!-- Heading -->
+        <div class="basic-modal-window-heading">
+          <h2 class="heading-title">Gift message</h2>
+        </div>
+        <!-- Button close -->
+        <button
+          (click)="close()"
+          class="basic-modal-window-close-button">
+          <span>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14" focusable="false" aria-hidden="true"><path
+              stroke-linecap="round" d="M2.5 2.5 7 7m4.5 4.5L7 7m0 0 4.5-4.5M7 7l-4.5 4.5"></path>
+            </svg>
+          </span>
+        </button>
+      </div>
+      <!-- Content -->
+      <div class="content">
+        <form
+          (submit)="onSubmit($event)"
+          [formGroup]="giftForm"
+          class="gift-form"
+          novalidate>
+          <div class="inner">
+            <!-- Gift message -->
+            <div class="gift-message-input-group">
+              <!--  To / From -->
+              <div class="input-controls-wrapper">
+                <!-- To -->
+                <div class="input-wrapper">
+                  <label
+                    [class.active]="giftToLabelActive"
+                    class="floating-label" for="giftnote-to"><span>To</span>
+                  </label>
+                  <input
+                    formControlName="giftnote_to"
+                    (input)="onInputGiftnoteToChange()"
+                    (blur)="onInputGiftnoteToChange()"
+                    (focus)="onInputGiftnoteToChange()"
+                    class="form-control form-control-input"
+                    type="text"
+                    id="giftnote-to"
+                    placeholder="To">
+                  @if (giftnoteTo?.errors?.['required'] && (giftnoteTo?.dirty || giftnoteTo?.touched)) {
+                    <span class="invalid-feedback">Recipient's name required</span>
+                  }
+                </div>
+                <!-- From -->
+                <div class="input-wrapper">
+                  <label
+                    [class.active]="giftFromLabelActive"
+                    class="floating-label" for="giftnote-from"><span>From</span>
+                  </label>
+                  <input
+                    formControlName="giftnote_from"
+                    (input)="onInputGiftnoteFromChange()"
+                    (blur)="onInputGiftnoteFromChange()"
+                    (focus)="onInputGiftnoteFromChange()"
+                    class="form-control form-control-input"
+                    type="text"
+                    id="giftnote-from"
+                    placeholder="From">
+                  @if (giftnoteFrom?.errors?.['required'] && (giftnoteFrom?.dirty || giftnoteFrom?.touched)) {
+                    <span class="invalid-feedback">Sender's name required</span>
+                  }
+                </div>
+              </div>
+              <!-- Email / Phone -->
+              <div class="input-controls-wrapper">
+                <!-- Email -->
+                <div class="input-wrapper">
+                  <label
+                    [class.active]="giftEmailLabelActive"
+                    class="floating-label prepended-label"
+                    for="giftnote_email"><span>Recipient's email</span>
+                  </label>
+                  <div class="special-control-wrapper">
+                    <div class="prepended-icon-wrapper">
+                      <span>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14" focusable="false"
+                             aria-hidden="true"><path
+                          d="M1 4.5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2z"></path><path
+                          stroke-linecap="round" d="m3.25 5.25 3.515 1.875a.5.5 0 0 0 .47 0L10.75 5.25"></path>
+                        </svg>
+                      </span>
+                    </div>
+                    <input
+                      formControlName="giftnote_email"
+                      (input)="onInputGiftnoteEmailChange()"
+                      (blur)="onInputGiftnoteEmailChange()"
+                      (focus)="onInputGiftnoteEmailChange()"
+                      class="form-control-input-special"
+                      type="email"
+                      id="giftnote_email"
+                      placeholder="Recipient's email">
+                    @if (giftnoteEmail?.errors?.['required'] && (giftnoteEmail?.dirty || giftnoteEmail?.touched)) {
+                      <span class="invalid-feedback">Recipient's email required</span>
+                    } @else if (giftnoteEmail?.errors?.['email'] && (giftnoteEmail?.dirty || giftnoteEmail?.touched)) {
+                      <span class="invalid-feedback">Enter a valid email address</span>
+                    }
+                  </div>
+                </div>
+                <!-- Phone -->
+                <div class="input-wrapper">
+                  <label
+                    [class.active]="giftPhoneLabelActive"
+                    class="floating-label prepended-label"
+                    for="giftnote_phone"><span>Recipient's phone number</span>
+                  </label>
+                  <div class="special-control-wrapper">
+                    <div class="prepended-icon-wrapper">
+                                          <span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14"
+                                                 focusable="false" aria-hidden="true"><path
+                                              d="M3.25 3.25c0-.966.784-1.75 1.75-1.75h4c.966 0 1.75.784 1.75 1.75v7.5A1.75 1.75 0 0 1 9 12.5H5a1.75 1.75 0 0 1-1.75-1.75z"></path><path
+                                              stroke-linecap="round" stroke-linejoin="round" d="M6 10.5h2"></path><path
+                                              stroke-linecap="round" d="M6 2h2"></path>
+                                            </svg>
+                                          </span>
+                    </div>
+                    <input
+                      formControlName="giftnote_phone"
+                      (input)="onInputGiftPhoneChange()"
+                      (blur)="onInputGiftPhoneChange()"
+                      (focus)="onInputGiftPhoneChange()"
+                      class="form-control-input-special"
+                      type="tel"
+                      id="giftnote_phone"
+                      placeholder="Recipient's phone number">
+                    @if (giftnotePhone?.errors?.['required'] && (giftnotePhone?.dirty || giftnotePhone?.touched)) {
+                      <span class="invalid-feedback">Recipient's phone required</span>
+                    }
+                    <div class="special-accessory">
+                      @if (phoneCodeDetected || (giftnotePhone?.errors?.['phone'] && (giftnotePhone?.dirty || giftnotePhone?.touched))) {
+
+                        <div class="select-phone-wrapper">
+                          <div class="image-wrapper">
+                            <img [src]="currentPhoneFlag" alt="Flag" loading="eager">
+                          </div>
+                          <span>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14"
+                                 focusable="false" aria-hidden="true"><path
+                              stroke-linecap="round" stroke-linejoin="round"
+                              d="M12 4.75 7.354 9.396a.5.5 0 0 1-.708 0L2 4.75"></path>
+                            </svg>
+                          </span>
+                        </div>
+                        <select
+                          (change)="onInputGiftPhoneSelectChange()"
+                          formControlName="giftnote_phone_select"
+                          id="sms-phone-select"
+                          class="phone-country-select">
+                          <option value="AF">Afghanistan(+93)</option>
+                          <option value="AX">Åland Islands(+358)</option>
+                          <option value="AL">Albania(+355)</option>
+                          <option value="DZ">Algeria(+213)</option>
+                          <option value="AD">Andorra(+376)</option>
+                          <option value="AO">Angola(+244)</option>
+                          <option value="AI">Anguilla(+1)</option>
+                          <option value="AG">Antigua &amp; Barbuda(+1)</option>
+                          <option value="AR">Argentina(+54)</option>
+                          <option value="AM">Armenia(+374)</option>
+                          <option value="AW">Aruba(+297)</option>
+                          <option value="AC">Ascension Island(+247)</option>
+                          <option value="AU">Australia(+61)</option>
+                          <option value="AT">Austria(+43)</option>
+                          <option value="AZ">Azerbaijan(+994)</option>
+                          <option value="BS">Bahamas(+1)</option>
+                          <option value="BH">Bahrain(+973)</option>
+                          <option value="BD">Bangladesh(+880)</option>
+                          <option value="BB">Barbados(+1)</option>
+                          <option value="BY">Belarus(+375)</option>
+                          <option value="BE">Belgium(+32)</option>
+                          <option value="BZ">Belize(+501)</option>
+                          <option value="BJ">Benin(+229)</option>
+                          <option value="BM">Bermuda(+1)</option>
+                          <option value="BT">Bhutan(+975)</option>
+                          <option value="BO">Bolivia(+591)</option>
+                          <option value="BA">Bosnia &amp; Herzegovina(+387)</option>
+                          <option value="BW">Botswana(+267)</option>
+                          <option value="BR">Brazil(+55)</option>
+                          <option value="IO">British Indian Ocean Territory(+246)</option>
+                          <option value="VG">British Virgin Islands(+1)</option>
+                          <option value="BN">Brunei(+673)</option>
+                          <option value="BG">Bulgaria(+359)</option>
+                          <option value="BF">Burkina Faso(+226)</option>
+                          <option value="BI">Burundi(+257)</option>
+                          <option value="KH">Cambodia(+855)</option>
+                          <option value="CM">Cameroon(+237)</option>
+                          <option value="CA">Canada(+1)</option>
+                          <option value="CV">Cape Verde(+238)</option>
+                          <option value="BQ">Caribbean Netherlands(+599)</option>
+                          <option value="KY">Cayman Islands(+1)</option>
+                          <option value="CF">Central African Republic(+236)</option>
+                          <option value="TD">Chad(+235)</option>
+                          <option value="CL">Chile(+56)</option>
+                          <option value="CN">China(+86)</option>
+                          <option value="CX">Christmas Island(+61)</option>
+                          <option value="CC">Cocos (Keeling) Islands(+891)</option>
+                          <option value="CO">Colombia(+57)</option>
+                          <option value="KM">Comoros(+269)</option>
+                          <option value="CG">Congo - Brazzaville(+242)</option>
+                          <option value="CD">Congo - Kinshasa(+243)</option>
+                          <option value="CK">Cook Islands(+682)</option>
+                          <option value="CR">Costa Rica(+506)</option>
+                          <option value="HR">Croatia(+385)</option>
+                          <option value="CW">Curaçao(+599)</option>
+                          <option value="CY">Cyprus(+357)</option>
+                          <option value="CZ">Czechia(+420)</option>
+                          <option value="CI">Côte d’Ivoire(+225)</option>
+                          <option value="DK">Denmark(+45)</option>
+                          <option value="DJ">Djibouti(+253)</option>
+                          <option value="DM">Dominica(+1)</option>
+                          <option value="DO">Dominican Republic(+1)</option>
+                          <option value="EC">Ecuador(+593)</option>
+                          <option value="EG">Egypt(+20)</option>
+                          <option value="SV">El Salvador(+503)</option>
+                          <option value="GQ">Equatorial Guinea(+240)</option>
+                          <option value="ER">Eritrea(+291)</option>
+                          <option value="EE">Estonia(+372)</option>
+                          <option value="SZ">Eswatini(+268)</option>
+                          <option value="ET">Ethiopia(+251)</option>
+                          <option value="FK">Falkland Islands(+500)</option>
+                          <option value="FO">Faroe Islands(+298)</option>
+                          <option value="FJ">Fiji(+679)</option>
+                          <option value="FI">Finland(+358)</option>
+                          <option value="FR">France(+33)</option>
+                          <option value="GF">French Guiana(+594)</option>
+                          <option value="PF">French Polynesia(+689)</option>
+                          <option value="TF">French Southern Territories(+262)</option>
+                          <option value="GA">Gabon(+241)</option>
+                          <option value="GM">Gambia(+220)</option>
+                          <option value="GE">Georgia(+995)</option>
+                          <option value="DE">Germany(+49)</option>
+                          <option value="GH">Ghana(+233)</option>
+                          <option value="GI">Gibraltar(+350)</option>
+                          <option value="GR">Greece(+30)</option>
+                          <option value="GL">Greenland(+299)</option>
+                          <option value="GD">Grenada(+1)</option>
+                          <option value="GP">Guadeloupe(+590)</option>
+                          <option value="GT">Guatemala(+502)</option>
+                          <option value="GG">Guernsey(+44)</option>
+                          <option value="GN">Guinea(+224)</option>
+                          <option value="GW">Guinea-Bissau(+245)</option>
+                          <option value="GY">Guyana(+592)</option>
+                          <option value="HT">Haiti(+509)</option>
+                          <option value="HN">Honduras(+504)</option>
+                          <option value="HK">Hong Kong SAR(+852)</option>
+                          <option value="HU">Hungary(+36)</option>
+                          <option value="IS">Iceland(+354)</option>
+                          <option value="IN">India(+91)</option>
+                          <option value="ID">Indonesia(+62)</option>
+                          <option value="IQ">Iraq(+964)</option>
+                          <option value="IE">Ireland(+353)</option>
+                          <option value="IM">Isle of Man(+44)</option>
+                          <option value="IL">Israel(+972)</option>
+                          <option value="IT">Italy(+39)</option>
+                          <option value="JM">Jamaica(+1)</option>
+                          <option value="JP">Japan(+81)</option>
+                          <option value="JE">Jersey(+44)</option>
+                          <option value="JO">Jordan(+962)</option>
+                          <option value="KZ">Kazakhstan(+7)</option>
+                          <option value="KE">Kenya(+254)</option>
+                          <option value="KI">Kiribati(+686)</option>
+                          <option value="XK">Kosovo(+383)</option>
+                          <option value="KW">Kuwait(+965)</option>
+                          <option value="KG">Kyrgyzstan(+996)</option>
+                          <option value="LA">Laos(+856)</option>
+                          <option value="LV">Latvia(+371)</option>
+                          <option value="LB">Lebanon(+961)</option>
+                          <option value="LS">Lesotho(+266)</option>
+                          <option value="LR">Liberia(+231)</option>
+                          <option value="LY">Libya(+218)</option>
+                          <option value="LI">Liechtenstein(+423)</option>
+                          <option value="LT">Lithuania(+370)</option>
+                          <option value="LU">Luxembourg(+352)</option>
+                          <option value="MO">Macao SAR(+853)</option>
+                          <option value="MG">Madagascar(+261)</option>
+                          <option value="MW">Malawi(+265)</option>
+                          <option value="MY">Malaysia(+60)</option>
+                          <option value="MV">Maldives(+960)</option>
+                          <option value="ML">Mali(+223)</option>
+                          <option value="MT">Malta(+356)</option>
+                          <option value="MQ">Martinique(+596)</option>
+                          <option value="MR">Mauritania(+222)</option>
+                          <option value="MU">Mauritius(+230)</option>
+                          <option value="YT">Mayotte(+262)</option>
+                          <option value="MX">Mexico(+52)</option>
+                          <option value="MD">Moldova(+373)</option>
+                          <option value="MC">Monaco(+377)</option>
+                          <option value="MN">Mongolia(+976)</option>
+                          <option value="ME">Montenegro(+382)</option>
+                          <option value="MS">Montserrat(+1)</option>
+                          <option value="MA">Morocco(+212)</option>
+                          <option value="MZ">Mozambique(+258)</option>
+                          <option value="MM">Myanmar (Burma)(+95)</option>
+                          <option value="NA">Namibia(+264)</option>
+                          <option value="NR">Nauru(+674)</option>
+                          <option value="NP">Nepal(+977)</option>
+                          <option value="NL">Netherlands(+31)</option>
+                          <option value="NC">New Caledonia(+687)</option>
+                          <option value="NZ">New Zealand(+64)</option>
+                          <option value="NI">Nicaragua(+505)</option>
+                          <option value="NE">Niger(+227)</option>
+                          <option value="NG">Nigeria(+234)</option>
+                          <option value="NU">Niue(+683)</option>
+                          <option value="NF">Norfolk Island(+672)</option>
+                          <option value="MK">North Macedonia(+389)</option>
+                          <option value="NO">Norway(+47)</option>
+                          <option value="OM">Oman(+968)</option>
+                          <option value="PK">Pakistan(+92)</option>
+                          <option value="PS">Palestinian Territories(+970)</option>
+                          <option value="PA">Panama(+507)</option>
+                          <option value="PG">Papua New Guinea(+675)</option>
+                          <option value="PY">Paraguay(+595)</option>
+                          <option value="PE">Peru(+51)</option>
+                          <option value="PH">Philippines(+63)</option>
+                          <option value="PN">Pitcairn Islands(+64)</option>
+                          <option value="PL">Poland(+48)</option>
+                          <option value="PT">Portugal(+351)</option>
+                          <option value="QA">Qatar(+974)</option>
+                          <option value="RE">Réunion(+262)</option>
+                          <option value="RO">Romania(+40)</option>
+                          <option value="RU">Russia(+7)</option>
+                          <option value="RW">Rwanda(+250)</option>
+                          <option value="WS">Samoa(+685)</option>
+                          <option value="SM">San Marino(+378)</option>
+                          <option value="ST">São Tomé &amp; Príncipe(+239)</option>
+                          <option value="SA">Saudi Arabia(+966)</option>
+                          <option value="SN">Senegal(+221)</option>
+                          <option value="RS">Serbia(+381)</option>
+                          <option value="SC">Seychelles(+248)</option>
+                          <option value="SL">Sierra Leone(+232)</option>
+                          <option value="SG">Singapore(+65)</option>
+                          <option value="SX">Sint Maarten(+1)</option>
+                          <option value="SK">Slovakia(+421)</option>
+                          <option value="SI">Slovenia(+386)</option>
+                          <option value="SB">Solomon Islands(+677)</option>
+                          <option value="SO">Somalia(+252)</option>
+                          <option value="ZA">South Africa(+27)</option>
+                          <option value="GS">South Georgia &amp; South Sandwich Islands(+500)
+                          </option>
+                          <option value="KR">South Korea(+82)</option>
+                          <option value="SS">South Sudan(+211)</option>
+                          <option value="ES">Spain(+34)</option>
+                          <option value="LK">Sri Lanka(+94)</option>
+                          <option value="BL">St. Barthélemy(+590)</option>
+                          <option value="SH">St. Helena(+290)</option>
+                          <option value="KN">St. Kitts &amp; Nevis(+1)</option>
+                          <option value="LC">St. Lucia(+1)</option>
+                          <option value="MF">St. Martin(+590)</option>
+                          <option value="PM">St. Pierre &amp; Miquelon(+508)</option>
+                          <option value="VC">St. Vincent &amp; Grenadines(+1)</option>
+                          <option value="SD">Sudan(+249)</option>
+                          <option value="SR">Suriname(+597)</option>
+                          <option value="SJ">Svalbard &amp; Jan Mayen(+47)</option>
+                          <option value="SE">Sweden(+46)</option>
+                          <option value="CH">Switzerland(+41)</option>
+                          <option value="TW">Taiwan(+886)</option>
+                          <option value="TJ">Tajikistan(+992)</option>
+                          <option value="TZ">Tanzania(+255)</option>
+                          <option value="TH">Thailand(+66)</option>
+                          <option value="TL">Timor-Leste(+670)</option>
+                          <option value="TG">Togo(+228)</option>
+                          <option value="TK">Tokelau(+690)</option>
+                          <option value="TO">Tonga(+676)</option>
+                          <option value="TT">Trinidad &amp; Tobago(+1)</option>
+                          <option value="TA">Tristan da Cunha(+2908)</option>
+                          <option value="TN">Tunisia(+216)</option>
+                          <option value="TR">Türkiye(+90)</option>
+                          <option value="TM">Turkmenistan(+993)</option>
+                          <option value="TC">Turks &amp; Caicos Islands(+1)</option>
+                          <option value="TV">Tuvalu(+688)</option>
+                          <option value="UM">U.S. Outlying Islands(+1)</option>
+                          <option value="UG">Uganda(+256)</option>
+                          <option value="UA">Ukraine(+380)</option>
+                          <option value="AE">United Arab Emirates(+971)</option>
+                          <option value="GB">United Kingdom(+44)</option>
+                          <option value="US">United States(+1)</option>
+                          <option value="UY">Uruguay(+598)</option>
+                          <option value="UZ">Uzbekistan(+998)</option>
+                          <option value="VU">Vanuatu(+678)</option>
+                          <option value="VA">Vatican City(+39)</option>
+                          <option value="VE">Venezuela(+58)</option>
+                          <option value="VN">Vietnam(+84)</option>
+                          <option value="WF">Wallis &amp; Futuna(+681)</option>
+                          <option value="EH">Western Sahara(+212)</option>
+                          <option value="YE">Yemen(+967)</option>
+                          <option value="ZM">Zambia(+260)</option>
+                          <option value="ZW">Zimbabwe(+263)</option>
+                        </select>
+                      }
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Text Field -->
+              <div class="input-controls-wrapper">
+                <div class="input-wrapper">
+                  <label
+                    [class.active]="giftTextFieldLabelActive"
+                    class="floating-label"
+                    for="giftnote_textfield"><span>Message</span>
+                  </label>
+                  <div class="special-control-wrapper">
+                    <div class="field">
+                      <textarea
+                        (input)="onInputGiftTextareaChange()"
+                        (blur)="onInputGiftTextareaChange()"
+                        (focus)="onInputGiftTextareaChange()"
+                        formControlName="giftnote_textarea"
+                        class="form-control-input-special"
+                        id="giftnote_textfield"
+                        rows="3"
+                        maxlength="210"
+                        autocomplete="on"
+                        placeholder="Message"
+                        required></textarea>
+                      @if (giftnoteTextarea?.errors?.['required'] && (giftnoteTextarea?.dirty || giftnoteTextarea?.touched)) {
+                        <span class="invalid-feedback top">Message required</span>
+                      }
+                      <div class="form-control-input-special-full-overlay">g</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- When send message -->
+            <div class="when-send-message">
+              <!-- Heading -->
+              <span class="heading-title">When should we send your message?</span>
+              <!-- Radio Accordion -->
+              <div class="radio-accordion-widget-wrapper">
+                <!-- On delivery -->
+                <div class="radio-accordion-widget">
+                  <!-- Header -->
+                  <div
+                    [class.active]="onDeliveryChecked"
+                    class="radio-accordion-widget-header">
+                    <!-- Button -->
+                    <div class="radio-button-wrapper">
+                      <input
+                        (click)="optionOnDeliveryClick()"
+                        formControlName="giftDeliveryMethod"
+                        class="option-radio"
+                        id="on-delivery"
+                        type="radio"
+                        value="on delivery"
+                        aria-label="On delivery">
+                    </div>
+                    <!--  Button label -->
+                    <div>
+                      <label
+                        [class.active]="onDeliveryChecked"
+                        class="option-label" for="on-delivery">
+                        <div class="inner">
+                          <p>On Delivery</p>
+                        </div>
+                      </label>
+                    </div>
+                    <!-- Icon -->
+                    <div class="radio-icon-wrapper">
+                      <div class="inner">
+                        <span>
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14" focusable="false"
+                               aria-hidden="true"><g
+                            clip-path="url(#delivery_svg__a)"><path stroke-linecap="round" stroke-linejoin="round"
+                                                                    d="m1.06 1.226.71-.006a.75.75 0 0 1 .731.556l2.29 8.544m1.53.884 6.619-1.773M3.857 6.834l5.795-1.553a1 1 0 0 1 1.225.707l.999 3.727M2.822 2.97l3.961-1.062a1 1 0 0 1 1.225.708l.776 2.897m-2.462 5.692a1.25 1.25 0 1 1-2.415.647 1.25 1.25 0 0 1 2.415-.647"></path></g><defs><clipPath
+                            id="delivery_svg__a"><path fill="#fff" d="M0 0h14v14H0z"></path></clipPath></defs>
+                          </svg>
+                        </span>
+                      </div>
+                    </div>
+                    <!-- Label -->
+                    <div class="radio-label-wrapper">
+                      <span>Your message will be sent when the gift arrives at its destination</span>
+                    </div>
+                  </div>
+                </div>
+                <!-- Send now -->
+                <div class="radio-accordion-widget">
+                  <!-- Header -->
+                  <div
+                    [class.active]="onSendNowChecked"
+                    class="radio-accordion-widget-header">
+                    <!-- Button -->
+                    <div class="radio-button-wrapper">
+                      <input
+                        (click)="optionOnSendNowClick()"
+                        formControlName="giftDeliveryMethod"
+                        class="option-radio"
+                        id="send-now"
+                        type="radio"
+                        value="send now"
+                        aria-label="Send now">
+                    </div>
+                    <!--  Button label -->
+                    <div>
+                      <label
+                        [class.active]="onSendNowChecked"
+                        class="option-label" for="send-now">
+                        <div class="inner">
+                          <p>Send now</p>
+                        </div>
+                      </label>
+                    </div>
+                    <!-- Icon -->
+                    <div class="radio-icon-wrapper">
+                      <div class="inner">
+                        <span>
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14" focusable="false"
+                               aria-hidden="true"><circle
+                            cx="9.5" cy="10.25" r="1.5" stroke-linecap="round" stroke-linejoin="round"></circle><circle
+                            cx="3.75" cy="10.25" r="1.5" stroke-linecap="round" stroke-linejoin="round"></circle><path
+                            stroke-linecap="round" stroke-linejoin="round"
+                            d="M1 5.5h4.5m-.25 4.75H8m-5.25-8h5.344a2 2 0 0 1 1.904 1.385L10.47 5.1a1 1 0 0 0 .508.588l.91.452A2 2 0 0 1 13 7.93v.819a1.5 1.5 0 0 1-1.5 1.5H11M1.25 8.75h2.5"></path>
+                          </svg>
+                        </span>
+                      </div>
+                    </div>
+                    <!-- Label -->
+                    <div class="radio-label-wrapper">
+                      <span>Your message will be sent when you complete your purchase</span>
+                    </div>
+                  </div>
+                </div>
+                <!-- Send later -->
+                <div class="radio-accordion-widget">
+                  <!-- Header -->
+                  <div
+                    [class.active]="onSendLaterChecked"
+                    class="radio-accordion-widget-header">
+                    <!-- Button -->
+                    <div class="radio-button-wrapper">
+                      <input
+                        (click)="optionOnSendLaterClick()"
+                        formControlName="giftDeliveryMethod"
+                        class="option-radio"
+                        id="send-later"
+                        type="radio"
+                        value="send later"
+                        aria-label="Send later">
+                    </div>
+                    <!--  Button label -->
+                    <div>
+                      <label
+                        [class.active]="onSendLaterChecked"
+                        class="option-label" for="send-later">
+                        <div class="inner">
+                          <p>Send later</p>
+                        </div>
+                      </label>
+                    </div>
+                    <!-- Icon -->
+                    <div class="radio-icon-wrapper">
+                      <div class="inner">
+                        <span>
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14" focusable="false"
+                               aria-hidden="true"><path
+                            d="M1.5 5A2.5 2.5 0 0 1 4 2.5h6A2.5 2.5 0 0 1 12.5 5v5a2.5 2.5 0 0 1-2.5 2.5H4A2.5 2.5 0 0 1 1.5 10z"></path><path
+                            stroke-linecap="round" d="M5.75 8.25H5m4 0h-.75m-2.5 2.25H5m4 0h-.75"></path><path
+                            d="M1.5 6.25h11"></path><path stroke-linecap="round" d="M4.5 1.25v2m5-2v2"></path>
+                          </svg>
+                        </span>
+                      </div>
+                    </div>
+                    <!-- Label -->
+                    <div class="radio-label-wrapper">
+                      <span>Your message will be sent at the selected date and time</span>
+                    </div>
+                  </div>
+                  <!-- Content -->
+                  <div
+                    [class.active]="onSendLaterChecked"
+                    class="content">
+                    <div class="inner">
+                      <!-- Heading -->
+                      <div class="radio-content-heading">
+                        <h2 class="heading-title">Your message will be sent at the selected date and time</h2>
+                      </div>
+                      <!-- Date Time -->
+                      <app-date-picker (dateChange)="giftDateSelected($event)"
+                                       (timeChange)="giftDateTimeSelected($event)"></app-date-picker>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Agreement -->
+            <div class="gift-message-agreement-wrapper">
+              <span class="gift-message-agreement">By sending this gift message, you agree to Giftnote's
+                <a target="_blank"
+                   class="icon-link-button" [routerLink]="['/terms-conditions']"> &nbsp;Terms of Service
+                  <span>
+                    <svg xmlns="http://www.w3.org/2000/svg"
+                         viewBox="0 0 14 14" focusable="false" aria-hidden="true"><path
+                          stroke-linecap="round"
+                          d="M11 7.696v2.554A1.75 1.75 0 0 1 9.25 12h-5.5A1.75 1.75 0 0 1 2 10.25v-5.5C2 3.784 2.784 3 3.75 3h2.554"></path><path
+                          stroke-linecap="round" stroke-linejoin="round"
+                          d="M12 2H8.8M12 2v3.2M12 2 7 7"></path>
+                    </svg>
+                  </span>
+                </a>
+              </span>
+            </div>
+            <!-- Button -->
+            <div class="input-controls-wrapper">
+              <div class="input-wrapper">
+                <!-- Button -->
+                <button
+                  class="cool-button" type="submit">
+                  <div
+                    [class.loading]="processing"
+                    class="button-content-wrapper">
+                    <span class="button-loading-wrapper">
+                      <div>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" focusable="false"
+                             aria-label="Processing…"><path
+                          d="M20 10c0 5.523-4.477 10-10 10S0 15.523 0 10 4.477 0 10 0v2a8 8 0 1 0 8 8z"></path>
+                        </svg>
+                      </div>
+                    </span>
+                    <p>Save</p>
+                  </div>
+                </button>
+                @if (formInvalid) {
+                  <span class="invalid-feedback">Fill required fields</span>
+                }
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

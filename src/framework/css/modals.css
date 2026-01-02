@@ -217,14 +217,20 @@
   flex: 1;
   grid-template-columns: 100%;
   grid-template-rows: auto 1fr;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
   border-radius: 12px;
 }
 .basic-modal-window > .inner .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 14px 21px 0 21px;
+  padding: 14px 14px 0 14px;
+}
+@media screen and (min-width: 425px) {
+  .basic-modal-window > .inner .header {
+    padding: 14px 21px 0 21px;
+  }
 }
 .basic-modal-window-heading {
   flex-grow: 1;
@@ -275,8 +281,13 @@
   color: rgba(0, 0, 0, 0.56);
   stroke: rgba(0, 0, 0, 0.56);
 }
-.basic-modal-window > .inner .content {
-  padding: 0 21px 14px 21px;
+.basic-modal-window > .inner .content:not(.active) {
+  padding: 0 14px;
+}
+@media screen and (min-width: 425px) {
+  .basic-modal-window > .inner .content:not(.active) {
+    padding: 0 21px 14px 21px;
+  }
 }
 .basic-modal-window > .inner .content .body {
   display: flex;
@@ -302,7 +313,7 @@
   }
 }
 @media screen and (max-width: 425px) {
-  .basic-modal-wrapper {
-    padding: 10px;
+  .basic-modal-window {
+    max-width: 320px;
   }
 }
