@@ -1,0 +1,22 @@
+<div class="cookie-widget" [class.active]="cookieActive">
+  <div class="cw-window cc-window cc-bottom isense-cc-window">
+    <div class="cookieconsent-wrapper isense-cookieconsent-wrapper">
+      <div class="cookie-widget-text-editor">
+        <p class="cc-message isense-cc-message">
+          <span class="isense-cc-cookie-bar-text">We use cookies and pixels to improve your experience and help understand our visitors. These trackers may disclose your browsing information to third parties, including advertising platforms. You may opt-out of our use of trackers by clicking “Preferences”. By continuing to use our website, you consent to the use of these cookies and pixels.</span>
+          <a
+            [routerLink]="['/privacy-policy']"
+            class="cc-link"
+            target="_blank">Privacy Policy</a>
+        </p>
+      </div>
+        <!-- Buttons -->
+      <div class="cc-buttons-wrapper">
+        <!--Reject button -->
+        <button (click)="rejectCookies()" type="button" class="cc-btn" aria-label="Reject">Reject</button>
+        <!--Reject button -->
+        <button (click)="acceptCookies()" type="button" class="cc-btn" aria-label="Accept">Accept</button>
+      </div>
+    </div>
+  </div>
+</div>
