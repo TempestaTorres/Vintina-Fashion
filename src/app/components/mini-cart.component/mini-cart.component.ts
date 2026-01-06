@@ -19,7 +19,7 @@ declare var Swiper: any;
 })
 export class MiniCartComponent {
   @Input({ required: true }) opened: boolean = false;
-  @Input({ required: true }) cartAdded: boolean = false;
+  @Input() cartAdded: boolean = false;
   @Output() miniCartClosed = new EventEmitter<void>();
 
   public cartItems: ProductType[] = [];
@@ -53,6 +53,7 @@ export class MiniCartComponent {
 
   ngOnInit() {
 
+    this.cartItems = this.cartService.getCart();
     this.subscribeToCart();
     //this.startTimer();
   }

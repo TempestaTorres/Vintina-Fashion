@@ -19,6 +19,7 @@ export class ProductFormComponent {
   public error:boolean = false;
   public processing: boolean = false;
   public btnDisabled: boolean = true;
+  private reset: boolean = false;
 
   private observable: Observable<string>;
   private subscription: Subscription | null = null;
@@ -54,6 +55,30 @@ export class ProductFormComponent {
 
       if (value.length > 0) {
         this.product = this.productService.getProductByType(value);
+
+        if (!this.reset) {
+          // Ajax for count and sizes
+
+          this.resetAllSizeButtons();
+          this.reset = true;
+        }
+      }
+    });
+  }
+
+  private resetAllSizeButtons(): void {
+    let buttons = document.querySelectorAll('.size-item');
+
+    buttons.forEach(button => {
+      let parent: HTMLElement | null = button.parentElement;
+
+      if (parent) {
+        for (let i = 0; i < parent.children.length; i++) {
+          let child = parent.children[i];
+          if (child instanceof HTMLElement) {
+            child.classList.remove('border-black');
+          }
+        }
       }
     });
   }
@@ -64,11 +89,13 @@ export class ProductFormComponent {
       this.processing = true;
       this.product.quantity = 1;
       this.cartService.addToCart(this.product);
+      this.error = false;
 
       setTimeout(() => {
         this.processing = false;
         this.btnDisabled = true;
         this.productType = '';
+        this.reset = false;
         this.addedToBag.emit();
 
       }, 2000);

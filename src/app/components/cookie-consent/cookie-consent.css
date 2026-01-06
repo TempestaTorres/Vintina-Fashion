@@ -31,11 +31,20 @@
   text-align:center;
   width:100%;
   z-index:99999999;
+  opacity: 0;
+  height: 0;
+  transition: all .4s ease-in-out;
+  transform: translateY(100%);
 }
 .cookie-widget > .cw-window {
   background-color: rgb(247, 247, 247);
   color: rgb(48, 48, 48);
   font-size: 16px;
+}
+.cookie-widget.active > .cw-window {
+  opacity: 1;
+  height: auto;
+  transform: translateY(0);
 }
 .cw-window > .cookieconsent-wrapper {
   align-items:center;

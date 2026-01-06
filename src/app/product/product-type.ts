@@ -23,6 +23,7 @@ export interface ProductType {
     hips: string,
     dress: number,
   },
+  available?: boolean,
 }
 
 export const  Products: ProductType[] = [
@@ -629,4 +630,68 @@ export const  Products: ProductType[] = [
     image: '/assets/images/bridal_lingerie_bodysuit_white_lace.jpg',
     onSale: true
   },
+  {
+    id: 200,
+    type: 'stuff-my-Stocking',
+    category: {
+      name: 'accessories',
+      tag: 'accessories',
+    },
+    name: 'Stuff My Stocking',
+    favorite: false,
+    price: 40.00,
+    image: '/assets/images/GiftBoxes_Xmas26_Cream.jpg',
+  },
+  {
+    id: 201,
+    type: 'tingle-all-the-way',
+    category: {
+      name: 'accessories',
+      tag: 'accessories',
+    },
+    name: 'TINGLE ALL THE WAY',
+    favorite: false,
+    price: 40.00,
+    image: '/assets/images/GiftBoxes_Xmas26_Red.jpg',
+  },
+  {
+    id: 202,
+    type: 'red-velvet-bag',
+    category: {
+      name: 'accessories',
+      tag: 'accessories',
+    },
+    name: 'RED VELVET LINGERIE BAG',
+    favorite: false,
+    price: 5.00,
+    image: '/assets/images/Packaging_RedVelvetBag.jpg',
+    available: false
+  },
+  {
+    id: 203,
+    type: 'gift-box',
+    category: {
+      name: 'accessories',
+      tag: 'accessories',
+    },
+    name: 'WHY NOT ADD A GIFT BOX?',
+    favorite: false,
+    price: 2.50,
+    image: '/assets/images/Packaging_Box_Bag_Open.jpg',
+    available: false
+  },
+  {
+    id: 204,
+    type: 'iou-cards-box',
+    category: {
+      name: 'accessories',
+      tag: 'accessories',
+    },
+    name: 'HOLIDAY - IOU CARDS GAME',
+    favorite: false,
+    price: 17.50,
+    image: '/assets/images/Xmas26_IOU_Cards_Box.jpg',
+    available: false
+  },
+
 ]

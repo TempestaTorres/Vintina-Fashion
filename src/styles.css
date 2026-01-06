@@ -686,3 +686,10 @@
   line-height: 21px;
   font-weight: 400!important;
 }
+.underlined-info-button.inline {
+  display: inline-block!important;
+}
+.underlined-info-button.danger {
+  color: rgb(222, 20, 20)!important;
+  text-decoration-color: rgb(222, 20, 20)!important;
+}

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, ElementRef, ViewChild} from '@angular/core';
 import {AddToCart} from '../../services/add-to-cart';
 import {ProductType} from '../../product/product-type';
 import {ScrollTotopService} from '../../services/scrolltotop-service';
@@ -8,6 +8,8 @@ import {CustomValidators} from '../../validators/validators';
 import {Phones, PhoneType} from '../../phones/phones-types';
 import {ModalTextPrompt} from '../../components/modal-text-prompt/modal-text-prompt';
 import {GiftInfo, ModalSendGift} from '../../components/modal-send-gift/modal-send-gift';
+import {CurrencyPipe} from '@angular/common';
+import {ProductService} from '../../services/product-service';
 
 @Component({
   selector: 'app-checkout',
@@ -15,14 +17,22 @@ import {GiftInfo, ModalSendGift} from '../../components/modal-send-gift/modal-se
     RouterLink,
     ReactiveFormsModule,
     ModalTextPrompt,
-    ModalSendGift
+    ModalSendGift,
+    CurrencyPipe
   ],
   templateUrl: './checkout.html',
   styleUrl: './checkout.css',
 })
 export class Checkout {
 
+  @ViewChild('shipping_country_select')
+  shippingCountrySelect!: ElementRef;
+  @ViewChild('select_billing_country')
+  billingCountrySelect!: ElementRef;
+
   public cartItems: ProductType[] = [];
+  public accessoryItems: ProductType[] = [];
+  public unavailableItems: ProductType[] = [];
   public labelActive: boolean = false;
   public labelFirstNameActive: boolean = false;
   public labelBillingFirstNameActive: boolean = false;
@@ -52,6 +62,7 @@ export class Checkout {
   public shipToPickupPointChecked: boolean = false;
   public currentCountry: string = 'US';
   public currentBillingCountry: string = 'US';
+  public countryName: string = '';
 
   public phones: PhoneType[] = Phones;
   public currentPhoneFlag: string = this.phones[0].flag;
@@ -66,7 +77,9 @@ export class Checkout {
   public rememberMeChecked: boolean = false;
   public checkBoxDeprecatedChecked: boolean = false;
   public processing: boolean = false;
+  public addAccessoryProcessing: boolean[] = [];
   public locationAllowed: boolean = true;
+  public shippingNotAvailable: boolean = false;
 
   public basicCardChecked: boolean = true;
   public shopPayChecked: boolean = false;
@@ -79,6 +92,7 @@ export class Checkout {
   public dropdownExpanded: boolean = false;
 
   public removePopup: boolean = false;
+  public scroll: boolean = false;
 
   protected giftMessageInfo: GiftInfo = {
     To: '',
@@ -92,6 +106,16 @@ export class Checkout {
     Day: 0,
     Time: ''
   }
+
+  public hiddenDropdownProductListExpanded: boolean = false;
+  public dropdownOrderSummaryExpanded: boolean = false;
+  public discountLabelActive: boolean = false;
+  public apply: boolean = true;
+  public totalAmount: number = 0;
+
+  public formDiscountGroup: FormGroup = new FormGroup({
+    reductionsInput: new FormControl(''),
+  });
 
   public formCheckoutGroup: FormGroup = new FormGroup({
     email: new FormControl('', [Validators.email]),
@@ -136,12 +160,22 @@ export class Checkout {
     checkBoxDeprecated: new FormControl(false),
   });
 
-  constructor(private  cartService: AddToCart, private scrollTotopService: ScrollTotopService) {
+  constructor(private  cartService: AddToCart, private scrollTotopService: ScrollTotopService,
+              private productService: ProductService) {
   }
 
   ngOnInit() {
     this.scrollTotopService.toTop();
     this.cartItems = this.cartService.getCart();
+    this.totalAmount = this.cartService.getCartSubTotalAmount();
+    this.apply = true;
+
+    this.accessoryItems = this.productService.getAccessories();
+    this.addAccessoryProcessing = [];
+
+    for (let i = 0; i < this.accessoryItems.length; i++) {
+      this.addAccessoryProcessing[i] = false;
+    }
 
     console.log(this.cartItems);
   }
@@ -169,15 +203,95 @@ export class Checkout {
   public onSubmit(e: SubmitEvent): void {
     e.preventDefault();
   }
+  public onDiscountSubmit(e: SubmitEvent): void {
+    e.preventDefault();
+
+    this.totalAmount = (this.totalAmount / 100) * 30;
+  }
+
+  public addAccessoryToCart(id: number, index: number): void {
+    this.addAccessoryProcessing[index] = true;
+    this.accessoryItems[index].quantity = 1;
+
+    if (this.accessoryItems[index].available !== undefined && !this.accessoryItems[index].available) {
+      this.unavailableItems.push(this.accessoryItems[index]);
+    }
+
+    setTimeout(() => {
+
+      this.cartService.addToCart(this.accessoryItems[index]);
+      this.totalAmount = this.cartService.getCartSubTotalAmount();
+      this.addAccessoryProcessing[index] = false;
+
+      this.accessoryItems = this.accessoryItems.filter(item => item.id !== id);
+      this.addAccessoryProcessing = [];
+
+      for (let i = 0; i < this.accessoryItems.length; i++) {
+        this.addAccessoryProcessing[i] = false;
+      }
+    }, 1000);
+  }
+
+  public removeAccessoryFromCart(): void {
+    for (let i: number = 0; i < this.cartItems.length; i++) {
+
+      if (this.cartItems[i].available !== undefined && !this.cartItems[i].available) {
+
+        this.unavailableItems = this.unavailableItems.filter(item => item.id !== this.cartItems[i].id);
+        this.cartService.removeFromCart(this.cartItems[i]);
+      }
+    }
+    this.cartItems = this.cartService.getCart();
+    this.shippingNotAvailable = false;
+  }
+  public setSubTotalAmount(): number {
+    return this.cartService.getCartSubTotalAmount();
+  }
+
+  public onHiddenDropdownProductListClick(): void {
+    this.hiddenDropdownProductListExpanded = !this.hiddenDropdownProductListExpanded;
+  }
+
+  public onHiddenDropdownOrderSummaryClick(): void {
+    this.dropdownOrderSummaryExpanded = !this.dropdownOrderSummaryExpanded;
+  }
+
   public onInputChange(): void {
     this.labelActive = this.formCheckoutGroup.value.email.length > 0;
   }
   public onInputCountryChange(): void {
     this.currentCountry = this.formCheckoutGroup.value.country_select;
+
+    this.shippingNotAvailable = this.currentCountry !== 'US' && this.unavailableItems.length > 0;
+    this.countryName = this.getShippingCountryName(this.currentCountry);
+  }
+  public getShippingCountryName(value: string): string {
+    let shippingCountryName = '';
+    for (let i: number = 0; i < this.shippingCountrySelect.nativeElement.children.length; i++) {
+      if (this.shippingCountrySelect.nativeElement.children[i].value === value) {
+        shippingCountryName = this.shippingCountrySelect.nativeElement.children[i].innerText;
+        break;
+      }
+    }
+    return shippingCountryName;
+  }
+  public getBillingCountryName(value: string): string {
+    let billingCountryName = '';
+    for (let i: number = 0; i < this.billingCountrySelect.nativeElement.children.length; i++) {
+      if (this.billingCountrySelect.nativeElement.children[i].value === value) {
+        billingCountryName = this.billingCountrySelect.nativeElement.children[i].innerText;
+        break;
+      }
+    }
+    return billingCountryName;
   }
   public onInputBillingCountryChange(): void {
     this.currentBillingCountry = this.formCheckoutGroup.value.billing_country_select;
+    this.shippingNotAvailable = this.currentBillingCountry !== 'US' && this.unavailableItems.length > 0;
+
+    this.countryName = this.getBillingCountryName(this.currentBillingCountry);
   }
+
   public onInputFirstNameChange(): void {
     this.labelFirstNameActive = this.formCheckoutGroup.value.first_name.length > 0;
   }
@@ -238,6 +352,7 @@ export class Checkout {
       this.labelSmsActive = true;
     }
   }
+
   public onInputBillingPhoneChange(): void {
     this.labelBillingPhoneActive = this.formCheckoutGroup.value.billing_phone.length > 0;
 
@@ -246,6 +361,7 @@ export class Checkout {
       this.checkBillingUserPhone();
     }
   }
+
   public onInputRememberMePhoneChange(): void {
     this.labelSmsRememberMeActive = this.formCheckoutGroup.value.phoneSmsRememberMe.length > 0;
 
@@ -254,6 +370,7 @@ export class Checkout {
       this.checkRememberMeUserPhone();
     }
   }
+
   public onInputMobilePhoneChange(): void {
     this.labelSmsActive = this.formCheckoutGroup.value.phoneSms.length > 0;
 
@@ -278,6 +395,11 @@ export class Checkout {
   public onInputCardNameChange(): void {
     this.labelCardNameActive = this.formCheckoutGroup.value.card_name.length > 0;
   }
+
+  public onInputDiscountChange(): void {
+    this.discountLabelActive = this.formDiscountGroup.value.reductionsInput.length > 0;
+    this.apply = this.formDiscountGroup.value.reductionsInput !== 'vintina';
+  }
   private checkUserPhone(): void {
     this.phoneCodeDetected = false;
 
@@ -293,6 +415,7 @@ export class Checkout {
       }
     }
   }
+
   private checkBillingUserPhone(): void {
     this.phoneBillingCodeDetected = false;
 
@@ -307,6 +430,7 @@ export class Checkout {
       }
     }
   }
+
   private checkRememberMeUserPhone(): void {
     this.phoneCodeDetected = false;
 
@@ -542,5 +666,18 @@ export class Checkout {
     this.giftMeesageReceived = true;
     this.sendGift = false;
     console.log('GiftInfoSaved', this.giftMessageInfo);
+  }
+
+  public onScroll(el: HTMLElement): void {
+
+    this.scroll = (el.scrollTop > 0 && el.scrollTop <= 30);
+  }
+  public onScrollEnd(): void {
+    this.scroll = false;
+  }
+
+  public checkOverflow(el: HTMLElement): void
+  {
+    this.scroll = el.scrollHeight != Math.max(el.offsetHeight, el.clientHeight);
   }
 }

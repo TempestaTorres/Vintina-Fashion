@@ -42,4 +42,8 @@ export class ProductService {
     }
     return total;
   }
+
+  public getAccessories(): ProductType[] {
+    return Products.filter((product) => product.category.name === 'accessories');
+  }
 }
