@@ -126,10 +126,13 @@
 .modal .side-image {
   flex: 1 1 0;
   overflow: hidden;
-  background-image: url("/assets/images/Whitney-Sparkling.jpg");
+  background-image: url("/assets/images/Lydia.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
+}
+.modal .side-image.wednesday {
+  background-image: url("/assets/images/Whitney-Sparkling.jpg");
 }
 .modal .side-image.friday {
   background-image: url("/assets/images/FRI_Pop-Up-Attentive.jpg");

@@ -1,5 +1,5 @@
 import { ApplicationConfig, provideBrowserGlobalErrorListeners, provideZoneChangeDetection } from '@angular/core';
-import {provideRouter, withInMemoryScrolling, withRouterConfig} from '@angular/router';
+import {provideRouter, withInMemoryScrolling, withRouterConfig, withViewTransitions} from '@angular/router';
 
 import { routes } from './app.routes';
 import {provideSweetAlert2} from '@sweetalert2/ngx-sweetalert2';
@@ -18,6 +18,6 @@ export const appConfig: ApplicationConfig = {
     }),
     provideRouter(routes, withRouterConfig({paramsInheritanceStrategy: 'always'}), withInMemoryScrolling({
       anchorScrolling: 'enabled',
-    }))
+    }),  withViewTransitions())
   ]
 };

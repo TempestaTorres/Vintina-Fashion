@@ -5,6 +5,7 @@ import {Collection} from '../../components/collection/collection';
 import {Router, RouterLink} from '@angular/router';
 import {FavoritesComponent} from '../../components/favorites.component/favorites.component';
 import {TestimonialsComponent} from '../../components/testimonials.component/testimonials.component';
+import {ScrollTotopService} from '../../services/scrolltotop-service';
 
 @Component({
   selector: 'ng-app-home',
@@ -21,7 +22,11 @@ import {TestimonialsComponent} from '../../components/testimonials.component/tes
 })
 export class Home {
 
-  constructor(private readonly router: Router) {
+  constructor(private readonly router: Router, private scrollTotopService: ScrollTotopService) {
+  }
+
+  ngOnInit() {
+    this.scrollTotopService.toTop();
   }
   isIntersecting (status: boolean, element: HTMLElement) {
     if (status) {

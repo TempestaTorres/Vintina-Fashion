@@ -1,0 +1,93 @@
+.app-home {
+  --global-typography-d10d66f-line-height: 253px;
+  --global-typography-d10d66f-letter-spacing: normal;
+  --global-typography-d10d66f-word-spacing: normal;
+}
+.app .app-element.app-element-not-found:not(.app-motion-effects-element-type-background),
+.app .app-element.app-element-not-found > .app-motion-effects-container > .app-motion-effects-layer {
+  background-image:url("/assets/images/Lydia_Bustier_Thong_Front1.webp");
+  background-position:center center;
+  background-size:cover;
+}
+.app .app-element.app-element-not-found > .app-background-overlay {
+  background-color:var( --global-color-primary );
+  opacity:0.5;
+  transition:background 0.3s, border-radius 0.3s, opacity 0.3s;
+}
+.app .app-element.app-element-not-found {
+  transition:background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
+  padding: 10px 0;
+}
+.app .app-element.app-element-not-found-heading,
+.app .app-element.app-element-page-not-found-heading {
+  text-align:center;
+}
+.app .app-element.app-element-not-found-heading .app-heading-title {
+  color:var( --global-color-bbd710c );
+  font-family:var( --global-typography-d10d66f-font-family ), sans-serif;
+  font-size:var( --global-typography-d10d66f-font-size );
+  font-weight:var( --global-typography-d10d66f-font-weight );
+  text-transform:var( --global-typography-d10d66f-text-transform );
+  line-height:var( --global-typography-d10d66f-line-height );
+  letter-spacing:var( --global-typography-d10d66f-letter-spacing );
+  word-spacing:var( --global-typography-d10d66f-word-spacing );
+}
+.app .app-element.app-element-not-found-heading > .app-widget-container {
+  padding:0;
+}
+.app .app-element.app-element-page-not-found-heading .app-heading-title {
+  color:var( --global-color-bbd710c );
+  font-family:var( --global-typography-secondary-font-family ), sans-serif;
+  font-size:var( --global-typography-secondary-font-size );
+  font-weight:var( --global-typography-secondary-font-weight );
+  text-transform:var( --global-typography-secondary-text-transform );
+}
+.app .app-element.app-element-not-found-text {
+  text-align:center;
+  color:var( --global-color-bbd710c );
+}
+
+.app .app-element.app-element-button-secondary {
+  width: 100%!important;
+}
+.app .app-element.app-element-button-secondary > .app-widget-container {
+  margin: 20px 0 0 0;
+}
+/*========================================== Media 1024 ====================================================*/
+@media(max-width:1024px) {
+  .app .app-element.app-element-not-found {
+    margin-top: 8px;
+    margin-bottom: 0;
+    padding: 0;
+  }
+  .app .app-element.app-element-not-found-heading .app-heading-title {
+    font-size:var( --global-typography-d10d66f-font-size );
+    line-height:var( --global-typography-d10d66f-line-height );
+    letter-spacing:var( --global-typography-d10d66f-letter-spacing );
+    word-spacing:var( --global-typography-d10d66f-word-spacing );
+  }
+  .app .app-element.app-element-not-found-heading > .app-widget-container {
+    padding:0;
+  }
+  .app .app-element.app-element-c00eee5 .app-heading-title {
+    font-size:var( --global-typography-secondary-font-size );
+  }
+  .app .app-element.app-element-page-not-found-heading .app-heading-title {
+    font-size:var( --global-typography-secondary-font-size );
+  }
+}
+/*========================================== 767 ============================================================*/
+@media(max-width:767px) {
+  .app .app-element.app-element-not-found {
+    padding: 240px 10px 200px 10px;
+  }
+  .app .app-element.app-element-not-found-heading .app-heading-title {
+    font-size:var( --global-typography-d10d66f-font-size );
+    line-height:var( --global-typography-d10d66f-line-height );
+    letter-spacing:var( --global-typography-d10d66f-letter-spacing );
+    word-spacing:var( --global-typography-d10d66f-word-spacing );
+  }
+  .app .app-element.app-element-page-not-found-heading .app-heading-title {
+    font-size:var( --global-typography-secondary-font-size );
+  }
+}

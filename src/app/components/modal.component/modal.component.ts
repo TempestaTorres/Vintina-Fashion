@@ -22,6 +22,7 @@ export class ModalComponent {
   public bFriday: boolean = false;
   public bSunday: boolean = false;
   public bTuesday: boolean = false;
+  public bWednesday: boolean = false;
 
   // Form group
   public offerFormGroup: FormGroup = new FormGroup({
@@ -38,7 +39,7 @@ export class ModalComponent {
     this.isFriday();
     this.isSunday();
     this.isTuesday();
-
+    this.isWednesday();
 
     window.addEventListener('mousemove', (evt: MouseEvent) => {
 
@@ -93,5 +94,9 @@ export class ModalComponent {
   public isTuesday(): void {
     let dayOfWeek: string = this.dateService.getDayOfWeekName();
     this.bTuesday = dayOfWeek === 'Tuesday';
+  }
+  public isWednesday(): void {
+    let dayOfWeek: string = this.dateService.getDayOfWeekName();
+    this.bWednesday = dayOfWeek === 'Wednesday';
   }
 }
