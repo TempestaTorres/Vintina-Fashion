@@ -221,6 +221,7 @@ export class ProductDetails {
 
       if (params['type']) {
 
+        console.log(params['type']);
         this.scrollTotopService.toTop();
         this.zoomed = false;
         this.bioOpened = false;
@@ -243,26 +244,26 @@ export class ProductDetails {
             next: (res) => {
               this.product = res;
               if (this.product) {
-          if (this.product.thumbnail) {
-            this.thumbnails = this.product.thumbnail;
+                if (this.product.thumbnail) {
+                  this.thumbnails = this.product.thumbnail;
 
-            if (this.thumbnails.length > 0) {
-              setTimeout(() => {
-                this.swInit();
-              }, 500);
+                  if (this.thumbnails.length > 0) {
+                    setTimeout(() => {
+                      this.swInit();
+                    }, 500);
 
-            }
-          } else {
-            this.thumbnails = [];
-          }
-          // Related products
-          let categories: ProductType[] = this.productService.getProductsByCategory(this.product.category.name);
+                  }
+                } else {
+                  this.thumbnails = [];
+                }
+                // Related products
+                let categories: ProductType[] = this.productService.getProductsByCategory(this.product.category.name);
 
-          this.relatedProducts = categories.filter(category => category.name !== this.product?.name);
-          this.signalsAdded = [false, false, false, false];
-          this.signalsloading = [false, false, false, false];
+                this.relatedProducts = categories.filter(category => category.name !== this.product?.name);
+                this.signalsAdded = [false, false, false, false];
+                this.signalsloading = [false, false, false, false];
 
-        }
+              }
             },
             error: (err) => {
               console.log(err);

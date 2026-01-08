@@ -1,1 +1,390 @@
-<p>contact works!</p>
+<div class="app app-home page-top">
+  <!--  Hero -->
+  <section class="app-section app-element app-element-contact-hero app-section-boxed">
+    <div class="app-background-overlay"></div>
+    <div class="app-container app-column-gap-default">
+      <div class="app-column app-col-100 app-element">
+        <div class="app-widget-wrap">
+          <!-- Heading -->
+          <div class="app-element app-element-hero-heading app-widget app-widget-heading">
+            <div class="app-widget-container">
+              <h2 class="app-heading-title">Contact</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Map -->
+  <section class="app-section app-element app-element-contact-map app-section-boxed">
+    <div class="app-container app-column-gap-no">
+      <div class="app-column app-col-100 app-element" data-element_type="column">
+        <div class="app-widget-wrap app-element-populated">
+          <!-- Google Map -->
+          <div class="app-element app-widget app-widget-google_maps">
+            <div class="app-widget-container">
+              <div class="app-custom-embed">
+                <iframe
+                  loading="lazy"
+                  title="Our location"
+                  aria-label="Google Map location"
+                  src="https://maps.google.com/maps?q=jl%20petitenget%20no.3%2C%20seminyak&t=m&z=16&output=embed&iwloc=near"></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--  Contact us -->
+  <section class="app-section app-element app-element-section-contact-us app-section-boxed">
+    <div class="app-container app-column-gap-no">
+      <!-- Contact Info -->
+      <div class="app-column app-col-50 app-element app-element-contact-info" data-element_type="column">
+        <div class="app-widget-wrap app-element-populated">
+          <!-- Heading -->
+          <div class="app-element app-element-contact-ifo-heading app-element-heading-secondary app-widget app-widget-heading">
+            <div class="app-widget-container">
+              <h2 class="app-heading-title">Contact Us</h2>
+            </div>
+          </div>
+          <!-- Text -->
+          <div class="app-element app-element-text-traditional app-align-left app-widget app-widget-text-editor">
+            <div class="app-widget-container">
+              <span>Our customer obsessive Vintina are here to help you. If you have any enquiries, please do not hesitate to contact us via the below.
+              Please note, Vintina does not tolerate verbal or written abusive behaviour.</span>
+            </div>
+          </div>
+          <!-- Info -->
+          <section class="app-section app-inner-section app-element elementor-section-boxed">
+            <div class="app-container app-column-gap-no">
+              <!-- Contact info item -->
+              <div class="app-column app-col-50 app-inner-column app-element">
+                <div class="app-widget-wrap app-element-populated">
+                  <!-- Accordion -->
+                  <div
+                    [class.open]="activeAccordionItem[0]"
+                    class="accordion-item accordion-contact-info">
+                    <!-- Button -->
+                    <a
+                      (click)="accordionItemClicked(0)"
+                      class="ap-element-button accordion-item-title" tabindex="-1">
+                      <div class="heading">
+                        <span>Denpasar, Bali</span>
+                      </div>
+                      <div class="accordion-item-button-wrapper">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon accordion-item-icon-open " viewBox="0 0 12 12" fill="none" role="img" aria-labelledby="title-icon-plus">
+                          <title id="title-icon-plus">Icon of plus</title>
+                          <g id="icon-plus">
+                            <path d="M1.875 6H10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+                            <path d="M6 1.875V10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+                          </g>
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon accordion-item-icon-close " viewBox="0 0 12 12" fill="none" role="img" aria-labelledby="title-icon-minus">
+                          <title id="title-icon-minus">Icon of minus</title>
+                          <path id="icon-minus" d="M1.875 6H10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+                        </svg>
+                      </div>
+                    </a>
+                    <!-- Content -->
+                    <div class="accordion-item-description">
+                      <div class="wysiwyg wysiwyg-contact-info">
+                        <!-- Icon List -->
+                        <div class="app-element app-element-default-icon-list app-list-item-link-full_width app-widget app-widget-icon-list">
+                          <div class="app-widget-container">
+                            <ul class="app-icon-list-items">
+                              <!-- List Item -->
+                              <li class="app-icon-list-item">
+                                <span class="app-icon-list-icon">
+                                  <i aria-hidden="true" class="fas fa-map-marker-alt"></i>
+                                </span>
+                                <span class="app-icon-list-text">Jl. Teuku Umar No.1, Renon, Bali, Indonesia</span>
+                              </li>
+                              <!-- List Item -->
+                              <li class="app-icon-list-item">
+                                <span class="app-icon-list-icon">
+                                  <i aria-hidden="true" class="fas fa-phone-alt"></i>
+                                </span>
+                                <span class="app-icon-list-text">+62 361 234 4567</span>
+                              </li>
+                              <!-- List Item -->
+                              <li class="app-icon-list-item">
+                                <span class="app-icon-list-icon">
+                                  <i aria-hidden="true" class="fas fa-envelope"></i>
+                                </span>
+                                <span class="app-icon-list-text">vintina&#64;domain.com</span>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Contact info item -->
+              <div class="app-column app-col-50 app-inner-column app-element">
+                <div class="app-widget-wrap app-element-populated">
+                  <!-- Accordion -->
+                  <div
+                    [class.open]="activeAccordionItem[1]"
+                    class="accordion-item accordion-contact-info">
+                    <!-- Button -->
+                    <a
+                      (click)="accordionItemClicked(1)"
+                      class="ap-element-button accordion-item-title" tabindex="-1">
+                      <div class="heading">
+                        <span>Seminyak, Bali</span>
+                      </div>
+                      <div class="accordion-item-button-wrapper">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon accordion-item-icon-open " viewBox="0 0 12 12" fill="none" role="img" aria-labelledby="title-icon-plus">
+                          <title id="title-icon-plus">Icon of plus</title>
+                          <g id="icon-plus">
+                            <path d="M1.875 6H10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+                            <path d="M6 1.875V10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+                          </g>
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon accordion-item-icon-close " viewBox="0 0 12 12" fill="none" role="img" aria-labelledby="title-icon-minus">
+                          <title id="title-icon-minus">Icon of minus</title>
+                          <path id="icon-minus" d="M1.875 6H10.125" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"></path>
+                        </svg>
+                      </div>
+                    </a>
+                    <!-- Content -->
+                    <div class="accordion-item-description">
+                      <div class="wysiwyg wysiwyg-contact-info">
+                        <!-- Icon List -->
+                        <div class="app-element app-element-default-icon-list app-list-item-link-full_width app-widget app-widget-icon-list">
+                          <div class="app-widget-container">
+                            <ul class="app-icon-list-items">
+                              <!-- List Item -->
+                              <li class="app-icon-list-item">
+                                <span class="app-icon-list-icon">
+                                  <i aria-hidden="true" class="fas fa-map-marker-alt"></i>
+                                </span>
+                                <span class="app-icon-list-text">Jl. Petitenget No.3, Seminyak, Bali, Indonesia</span>
+                              </li>
+                              <!-- List Item -->
+                              <li class="app-icon-list-item">
+                                <span class="app-icon-list-icon">
+                                  <i aria-hidden="true" class="fas fa-phone-alt"></i>
+                                </span>
+                                <span class="app-icon-list-text">+62 361 234 4567</span>
+                              </li>
+                              <!-- List Item -->
+                              <li class="app-icon-list-item">
+                                <span class="app-icon-list-icon">
+                                  <i aria-hidden="true" class="fas fa-envelope"></i>
+                                </span>
+                                <span class="app-icon-list-text">vintina&#64;domain.com</span>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+      <!-- Message Form -->
+      <div class="app-column app-col-50 app-element app-element-contact-message" data-element_type="column">
+        <div class="app-widget-wrap app-element-populated">
+          <!-- Met form widget -->
+          <div class="app-element app-widget app-widget-metform">
+            <div class="app-widget-container">
+              <div class="mf-form-wrapper">
+                <form
+                  (submit)="onSubmit($event)"
+                  class="metform-form-content"
+                  [formGroup]="metForm"
+                  novalidate>
+                  <!-- Response Message -->
+                  <div class="mf-main-response-wrap mf-response-msg-wrap" [class.active]="responseMessageActive">
+                    <div class="mf-response-msg" [class.response-error]="!response">
+                      @if (response) {
+                        <i class="mf-success-icon fas fa-check"></i>
+                      }
+                      <p>{{ responseMessage }}</p>
+                    </div>
+                  </div>
+                  <!-- Main form Content -->
+                  <div class="metform-form-main-wrapper">
+                    <section class="app-section app-element app-element-metform-main app-top-section app-section-boxed">
+                      <div class="app-container app-column-gap-default">
+                        <div class="app-column app-col-100 app-element app-top-column">
+                          <div class="app-widget-wrap app-element-populated">
+                            <!-- Name / Email -->
+                            <section class="app-section app-element app-section-form-group app-section-boxed">
+                              <div class="app-container app-column-gap-default">
+                                <!-- Name -->
+                                <div class="app-column app-col-50 app-element app-element-form-group-input-wrapper first">
+                                  <div class="app-widget-wrap app-element-populated">
+                                    <div class="app-element app-element-mf-input app-widget app-widget-mf-text">
+                                      <div class="app-widget-container">
+                                        <div class="mf-input-wrapper">
+                                          <label
+                                            [class.active]="labelNameActive"
+                                            class="floating-label" for="mf-input-text-name"><span>Your name</span>
+                                          </label>
+                                          <input
+                                            formControlName="name"
+                                            (input)="onInputNameChange()"
+                                            (blur)="onInputNameChange()"
+                                            (focus)="onInputNameChange()"
+                                            type="text"
+                                            class="mf-input"
+                                            id="mf-input-text-name"
+                                            placeholder="Your Name">
+                                          @if (name?.errors?.['required'] && (name?.dirty || name?.touched)) {
+                                            <span class="mf-error-message">This field is required.</span>
+                                          }
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <!-- Email -->
+                                <div class="app-column app-col-50 app-element app-element-form-group-input-wrapper last">
+                                  <div class="app-widget-wrap app-element-populated">
+                                    <div class="app-element app-element-mf-input app-widget app-widget-mf-email">
+                                      <div class="app-widget-container">
+                                        <div class="mf-input-wrapper">
+                                          <label
+                                            [class.active]="labelEmailActive"
+                                            class="floating-label" for="mf-input-text-email"><span>Your email</span>
+                                          </label>
+                                          <input
+                                            formControlName="email"
+                                            (input)="onInputEmailChange()"
+                                            (blur)="onInputEmailChange()"
+                                            (focus)="onInputEmailChange()"
+                                            type="email"
+                                            class="mf-input"
+                                            id="mf-input-text-email"
+                                            placeholder="Your email">
+                                          @if (email?.errors?.['required'] && (email?.dirty || email?.touched)) {
+                                            <span class="mf-error-message">This field is required.</span>
+                                          } @else if (email?.errors?.['email'] && (email?.dirty || email?.touched)) {
+                                            <span class="mf-error-message">Enter a valid email address.</span>
+                                          }
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </section>
+                            <!-- Subject / Phone -->
+                            <section class="app-section app-element app-section-form-group app-section-boxed">
+                              <div class="app-container app-column-gap-default">
+                                <!-- Subject -->
+                                <div class="app-column app-col-50 app-element app-element-form-group-input-wrapper first">
+                                  <div class="app-widget-wrap app-element-populated">
+                                    <div class="app-element app-element-mf-input app-widget app-widget-mf-text">
+                                      <div class="app-widget-container">
+                                        <div class="mf-input-wrapper">
+                                          <label
+                                            [class.active]="labelSubjectActive"
+                                            class="floating-label" for="mf-input-text-subject"><span>Subject</span>
+                                          </label>
+                                          <input
+                                            formControlName="subject"
+                                            (input)="onInputSubjectChange()"
+                                            (blur)="onInputSubjectChange()"
+                                            (focus)="onInputSubjectChange()"
+                                            type="text"
+                                            class="mf-input"
+                                            id="mf-input-text-subject"
+                                            placeholder="Subject">
+                                          @if (subject?.errors?.['required'] && (subject?.dirty || subject?.touched)) {
+                                            <span class="mf-error-message">This field is required.</span>
+                                          }
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <!-- Phone -->
+                                <div class="app-column app-col-50 app-element app-element-form-group-input-wrapper last">
+                                  <div class="app-widget-wrap app-element-populated">
+                                    <div class="app-element app-element-mf-input app-widget app-widget-mf-telephone">
+                                      <div class="app-widget-container">
+                                        <div class="mf-input-wrapper">
+                                          <label
+                                            [class.active]="labelPhoneActive"
+                                            class="floating-label" for="mf-input-text-phone"><span>Your Phone</span>
+                                          </label>
+                                          <input
+                                            formControlName="phone"
+                                            (input)="onInputPhoneChange()"
+                                            (blur)="onInputPhoneChange()"
+                                            (focus)="onInputPhoneChange()"
+                                            type="tel"
+                                            class="mf-input"
+                                            id="mf-input-text-phone"
+                                            placeholder="Your Phone">
+                                          @if (phone?.errors?.['pattern'] && (phone?.dirty || phone?.touched)) {
+                                            <span class="mf-error-message">Enter a valid phone number.</span>
+                                          }
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </section>
+                            <!-- Text Area -->
+                            <div class="app-element app-element-mf-input app-widget app-widget-mf-textarea">
+                              <div class="app-widget-container">
+                                <div class="mf-input-wrapper">
+                                  <label
+                                    [class.active]="labelMessageActive"
+                                    class="floating-label" for="mf-input-text-area"><span>Message</span>
+                                  </label>
+                                  <textarea
+                                    class="mf-input mf-textarea"
+                                    id="mf-input-text-area"
+                                    formControlName="message"
+                                    (input)="onInputMessageChange()"
+                                    (blur)="onInputMessageChange()"
+                                    (focus)="onInputMessageChange()"
+                                    maxlength="255"
+                                    autocomplete="on"
+                                    placeholder="Message"
+                                    rows="4"></textarea>
+                                  @if (message?.errors?.['required'] && (message?.dirty || message?.touched)) {
+                                    <span class="mf-error-message">Message required</span>
+                                  }
+                                </div>
+                              </div>
+                            </div>
+                            <!-- Button -->
+                            <div class="app-element app-element-metform-button mf-btn--justify mf-btn--tablet-justify mf-btn--mobile-justify app-widget app-widget-mf-button">
+                              <div class="app-widget-container">
+                                <div class="mf-btn-wraper ">
+                                  <button
+                                    [class.submitting]="processingMessage"
+                                    class="metform-btn metform-submit-btn">
+                                    <span class="metform-btn-text">Send Message</span>
+                                  </button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

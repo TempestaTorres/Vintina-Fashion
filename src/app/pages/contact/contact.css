@@ -1,0 +1,146 @@
+.app .app-element.app-element-contact-hero > .app-container {
+  max-width:1280px;
+}
+.app .app-element.app-element-contact-hero:not(.app-motion-effects-element-type-background),
+.app .app-element.app-element-contact-hero > .app-motion-effects-container > .app-motion-effects-layer {
+  background-image:url("/assets/images/luscious-and-graceful-woman-posing-wearing-linger.jpg");
+  background-position:center center;
+  background-size:cover;
+}
+.app .app-element.app-element-contact-hero > .app-background-overlay {
+  background-color:#000000;
+  opacity:0.31;
+  transition:background 0.3s, border-radius 0.3s, opacity 0.3s;
+}
+.app .app-element.app-element-contact-hero {
+  transition:background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
+  padding:180px 0 120px 0;
+}
+.app .app-element.app-element-contact-map > .app-container {
+  max-width:1280px;
+}
+.app .app-element.app-element-contact-map {
+  padding:40px 0;
+}
+.app .app-element.app-element-section-contact-us > .app-container {
+  max-width:1280px;
+}
+.app .app-element.app-element-section-contact-us {
+  padding:40px 0 140px 0;
+}
+.app-bc-flex-widget .app .app-element.app-element-contact-info.app-column .app-widget-wrap {
+  align-items:center;
+}
+.app .app-element.app-element-contact-info.app-column.app-element[data-element_type="column"] > .app-widget-wrap.app-element-populated {
+  align-content:center;
+  align-items:center;
+}
+.app .app-element.app-element-contact-info > .app-element-populated {
+  margin:0 30px 0 0;
+  --column-margin-right:30px;
+  --column-margin-left:0px;
+}
+.app .app-element.app-element-contact-ifo-heading {
+  text-align:left;
+}
+.app .app-element.app-element-contact-ifo-heading > .app-widget-container {
+  margin:0;
+}
+.app.app-home .app-element.app-inner-section {
+  margin:0;
+}
+.app-inner-column.app-element:first-child > .app-element-populated {
+  margin:0 15px 0 0;
+  --column-margin-right:15px;
+  --column-margin-left:0px;
+}
+.app-inner-column.app-element:not(:first-child) > .app-element-populated {
+  margin:0 0 0 15px;
+  --column-margin-right:0px;
+  --column-margin-left:15px;
+}
+.app .app-element.app-element-info-heading .app-heading-title,
+.accordion-contact-info .accordion-item-title {
+  color:var( --global-color-primary );
+  font-family:var( --global-typography-fc0661c-font-family ), sans-serif;
+  font-size:var( --global-typography-fc0661c-font-size );
+  font-weight:var( --global-typography-fc0661c-font-weight );
+  text-transform:var( --global-typography-fc0661c-text-transform );
+  line-height:var( --global-typography-fc0661c-line-height );
+}
+.accordion-item.accordion-contact-info {
+  width:100%;
+}
+.app .app-element.app-element-contact-message > .app-element-populated {
+  margin:0 0 0 30px;
+  --column-margin-right:0px;
+  --column-margin-left:30px;
+}
+.app .app-element.app-element-metform-main > .app-container {
+  max-width: 1100px;
+}
+.app .app-element.app-element-mf-input .mf-input.ng-invalid,
+.app .app-element.app-element-mf-input.ng-invalid .mf-input-file-upload-label,
+.app .app-element.app-element-mf-input.ng-invalid .mf-input-wrapper .iti--separate-dial-code .iti__selected-flag,
+.app .app-element.app-element-mf-input.ng-invalid .mf-input-calculation-total,
+.app .app-element.app-element-mf-input.ng-invalid .mf-input-select > .mf_select__control,
+.app .app-element.app-element-mf-input.ng-invalid .mf-input-multiselect .mf_multiselect__control,
+.app .app-element.app-element-mf-input.ng-invalid .mf_multiselect__option {
+  border-color: #ff0000;
+}
+/*================================================ Media 1024 - 768 ======================================== */
+@media(max-width:1024px) and (min-width:768px) {
+  .app .app-element.app-element-contact-info,
+  .app .app-element.app-element-contact-message {
+    width:100%;
+  }
+
+}
+/*==================================================== Media 1024 ========================================== */
+@media screen and (max-width: 1024px) {
+  .app .app-element.app-element-contact-map {
+    padding:40px 15px 20px 15px;
+  }
+  .app .app-element.app-element-section-contact-us {
+    padding:60px 15px 140px 15px;
+  }
+  .app .app-element.app-element-info-heading .app-heading-title,
+  .accordion-contact-info .accordion-item-title {
+    font-size:var( --global-typography-fc0661c-font-size );
+    line-height:var( --global-typography-fc0661c-line-height );
+  }
+  .app .app-element.app-element-contact-message > .app-element-populated {
+    margin:40px 0 0 0;
+    --column-margin-right:0px;
+    --column-margin-left:0px;
+  }
+}
+/*==================================================== Media 767  ========================================== */
+@media screen and (max-width: 767px) {
+  .app .app-element.app-element-contact-map {
+    padding:40px 10px 20px 10px;
+  }
+  .app .app-element.app-element-section-contact-us {
+    padding:60px 10px 100px 10px;
+  }
+  .app-inner-column.app-element:first-child > .app-element-populated {
+    margin:0;
+    --column-margin-right:0px;
+    --column-margin-left:0px;
+  }
+  .app-inner-column.app-element:not(:first-child) > .app-element-populated {
+    margin:20px 0 0 0;
+    --column-margin-right:0px;
+    --column-margin-left:0px;
+  }
+  .app .app-element.app-element-info-heading .app-heading-title,
+  .accordion-contact-info .accordion-item-title {
+    font-size:var( --global-typography-fc0661c-font-size );
+    line-height:var( --global-typography-fc0661c-line-height );
+  }
+}
+@media (min-width: 768px) {
+  .wysiwyg.wysiwyg-contact-info {
+    scrollbar-width: none;
+  }
+}

@@ -42,6 +42,20 @@ export class MiniCartComponent {
 
   }
 
+  public loginClick(): void {
+    this.opened = false;
+
+    setTimeout(() => {
+      this.router.navigate(['/login']).then();
+    }, 500);
+  }
+  public signupClick(): void {
+    this.opened = false;
+
+    setTimeout(() => {
+      this.router.navigate(['/signup']).then();
+    }, 500);
+  }
   private subscribeToCart(): void {
 
     this.subscription = this.cartService.itemAdded.subscribe(value => {

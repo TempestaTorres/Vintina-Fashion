@@ -287,7 +287,7 @@ body:not(.rtl) .app .app-element.app-element-text-icon-list .app-icon-list-items
 }
 /* Heading secondary */
 .app .app-element.app-element-heading-secondary .app-heading-title {
-  color: #000000;
+  color:var( --global-color-primary );
   font-family: var( --global-typography-secondary-font-family ),  sans-serif;
   font-size: var( --global-typography-secondary-font-size );
   font-weight: var( --global-typography-secondary-font-weight );
@@ -446,6 +446,16 @@ body:not(.rtl) .app .app-element.app-element-text-icon-list .app-icon-list-items
 .app .app-element.app-element-page-hero {
   transition:background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
   padding:200px 0 150px 0;
+}
+.app .app-element.app-element-hero-heading {
+  text-align:center;
+}
+.app .app-element.app-element-hero-heading .app-heading-title {
+  color:var( --global-color-bbd710c );
+  font-family:var( --global-typography-secondary-font-family ), sans-serif;
+  font-size:var( --global-typography-secondary-font-size );
+  font-weight:var( --global-typography-secondary-font-weight );
+  text-transform:var( --global-typography-secondary-text-transform );
 }
 .page-top {
   padding-top: 90px;
@@ -715,6 +725,9 @@ body:not(.rtl) .app .app-element.app-element-text-icon-list .app-icon-list-items
     font-size: var( --global-typography-text-font-size );
     width: auto;
   }
+  .app .app-element.app-element-hero-heading .app-heading-title {
+    font-size:var( --global-typography-secondary-font-size );
+  }
 }
 /*==================================================== 767 =================================================*/
 @media(max-width:767px) {
@@ -860,6 +873,9 @@ body:not(.rtl) .app .app-element.app-element-text-icon-list .app-icon-list-items
   }
   .app .app-element.app-element-label-traditional > .app-widget-container {
     margin: 0 0 0 0;
+  }
+  .app .app-element.app-element-hero-heading .app-heading-title {
+    font-size:var( --global-typography-secondary-font-size );
   }
 }
 @media(min-width:768px) {

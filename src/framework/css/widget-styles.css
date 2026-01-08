@@ -334,7 +334,8 @@ body.rtl .app .app-element.app-widget-star-rating-traditional .app-star-rating i
 .app-widget-mf-text .mf-input-required-indicator {
     color: var( --global-color-primary );
 }
-.app-widget-mf-text .mf-input-wrapper .mf-input[aria-invalid="true"],  .app-widget-mf-text .mf-input-wrapper .mf-input.mf-invalid {
+.app-widget-mf-text .mf-input-wrapper .mf-input[aria-invalid="true"],
+.app-widget-mf-text .mf-input-wrapper .mf-input.mf-invalid {
     border-color: var( --global-color-primary );
 }
 .app-widget-mf-text .mf-error-message {
@@ -344,7 +345,8 @@ body.rtl .app .app-element.app-widget-star-rating-traditional .app-star-rating i
     font-weight: var( --global-typography-primary-font-weight );
     text-transform: var( --global-typography-primary-text-transform );
 }
-.app-widget-mf-text .mf-input,  .app-widget-mf-text .app-widget-mf-text .mf-input-wrapper .iti--separate-dial-code .iti__selected-flag,  .app-widget-mf-text .mf-input-wrapper .iti--separate-dial-code .iti__selected-dial-code {
+.app-widget-mf-text .mf-input,
+.app-widget-mf-text .app-widget-mf-text .mf-input-wrapper .iti--separate-dial-code .iti__selected-flag,  .app-widget-mf-text .mf-input-wrapper .iti--separate-dial-code .iti__selected-dial-code {
     color: var( --global-color-primary );
 }
 .app-widget-mf-text .irs--round .irs-bar,  .app-widget-mf-text .irs--round .irs-from,  .app-widget-mf-text .irs--round .irs-to,  .app-widget-mf-text .irs--round .irs-single {
@@ -5350,5 +5352,235 @@ body.rtl .app .app-element.app-widget-star-rating-traditional .app-star-rating i
   }
   .app-element.app-widget-jkit_tabs .jeg-app-kit.jkit-tabs.layout-vertical .tab-nav-list.caret-on .tab-nav.active::after  {
     display:  none;
+  }
+}
+.app-widget-google_maps .app-widget-container {
+  overflow:hidden
+}
+.app-widget-google_maps .app-custom-embed {
+  line-height:0
+}
+.app-widget-google_maps iframe {
+  filter:brightness( 100% ) contrast( 100% ) saturate( 0% ) blur( 0px ) hue-rotate( 0deg );
+  height:300px
+}
+/*mf - input*/
+.app .app-element.app-element-mf-input.app-widget-mf-textarea .mf-textarea {
+  height: 150px;
+  resize: none;
+}
+.app .app-element.app-element-mf-input .mf-error-message {
+  color: #ff0000;
+  font-family: var( --global-typography-text-font-family ),  sans-serif;
+  font-size: var( --global-typography-text-font-size );
+  font-weight: var( --global-typography-text-font-weight );
+  text-transform: var( --global-typography-text-text-transform );
+}
+.app .app-element.app-element-mf-input .mf-input {
+  padding: 15px;
+  border-radius: 0;
+}
+.app .app-element.app-element-mf-input .mf-input-file-upload-label {
+  padding: 15px 15px 15px 15px;
+}
+.app .app-element.app-element-mf-input .mf-input-calculation-total {
+  padding: 15px 15px 15px 15px;
+}
+.app .app-element.app-element-mf-input .mf_select__control,  .app .app-element.app-element-mf-input .mf_multiselect__control .mf_multiselect__value-container,  .app .app-element.app-element-mf-input .mf_multiselect__option,  .app .app-element.app-element-mf-input .mf_multiselect__menu-notice--no-options {
+  padding: 15px 15px 15px 15px;
+}
+.app .app-element.app-element-mf-input .mf-input-wrapper .range-slider {
+  padding: 15px 15px 15px 15px;
+}
+.app .app-element.app-element-mf-input .mf-input,  .app .app-element.app-element-mf-input .app .app-element.app-element-mf-input .mf-input-wrapper .iti--separate-dial-code .iti__selected-flag,  .app .app-element.app-element-mf-input .mf-input-wrapper .iti--separate-dial-code .iti__selected-dial-code {
+  color: var( --global-color-primary );
+}
+.app .app-element.app-element-mf-input .irs--round .irs-bar,  .app .app-element.app-element-mf-input .irs--round .irs-from,  .app .app-element.app-element-mf-input .irs--round .irs-to,  .app .app-element.app-element-mf-input .irs--round .irs-single {
+  background-color: var( --global-color-primary );
+}
+.app .app-element.app-element-mf-input .irs--round .irs-handle {
+  border-color: var( --global-color-primary );
+}
+.app .app-element.app-element-mf-input .irs--round .irs-from:before,  .app .app-element.app-element-mf-input .irs--round .irs-to:before,  .app .app-element.app-element-mf-input .irs--round .irs-single:before {
+  border-top-color: var( --global-color-primary );
+}
+.app .app-element.app-element-mf-input .mf_select__single-value {
+  color: var( --global-color-primary );
+}
+.app .app-element.app-element-mf-input .mf-input-wrapper {
+  border-color: #000000;
+}
+.app .app-element.app-element-mf-input .mf-input-wrapper .input-range__track--active {
+  background-color: var( --global-color-primary );
+}
+.app .app-element.app-element-mf-input .mf-input-wrapper .asRange .asRange-pointer .asRange-tip {
+  background-color: var( --global-color-primary );
+  border-color: var( --global-color-primary );
+}
+.app .app-element.app-element-mf-input .mf-input-file-upload-label,  .app .app-element.app-element-mf-input .mf-input-calculation-total {
+  color: var( --global-color-primary );
+}
+.app .app-element.app-element-mf-input .mf-input-file-upload-label svg path {
+  stroke: var( --global-color-primary );
+  fill: var( --global-color-primary );
+}
+.app .app-element.app-element-mf-input .mf_multiselect__multi-value__label,  .app .app-element.app-element-mf-input .mf_multiselect__multi-value__remove, .app .app-element.app-element-mf-input .mf_multiselect__menu-notice--no-options {
+  color: var( --global-color-primary );
+}
+.app .app-element.app-element-mf-input .mf-input,  .app .app-element.app-element-mf-input .mf-input-file-upload-label,  .app .app-element.app-element-mf-input .mf-input-wrapper .iti--separate-dial-code .iti__selected-flag,  .app .app-element.app-element-mf-input .mf-input-calculation-total, .app .app-element.app-element-mf-input .mf_multiselect__multi-value__label,  .app .app-element.app-element-mf-input .mf_multiselect__multi-value__remove, .app .app-element.app-element-mf-input .mf_multiselect__option, .app .app-element.app-element-mf-input .mf_multiselect__menu-notice--no-options, .app .app-element.app-element-mf-input .mf-input-multiselect .mf_multiselect__control {
+  background-color: #02010100;
+}
+.app .app-element.app-element-mf-input .mf-input,  .app .app-element.app-element-mf-input .mf-input-file-upload-label,  .app .app-element.app-element-mf-input .mf-input-wrapper .iti--separate-dial-code .iti__selected-flag,  .app .app-element.app-element-mf-input .mf-input-calculation-total,  .app .app-element.app-element-mf-input .mf-input-select > .mf_select__control,  .app .app-element.app-element-mf-input .mf-input-multiselect .mf_multiselect__control,  .app .app-element.app-element-mf-input .mf_multiselect__option {
+  border-style: solid;
+  border-width: 1px 1px 1px 1px;
+  border-color: var( --global-color-e440f85 );
+}
+.app .app-element.app-element-mf-input .mf-input:hover,  .app .app-element.app-element-mf-input .mf-input-wrapper:hover .iti--separate-dial-code .iti__selected-flag,  .app .app-element.app-element-mf-input .mf-input-wrapper:hover .iti--separate-dial-code .iti__selected-dial-code {
+  color: #000000;
+}
+.app .app-element.app-element-mf-input .irs--round .irs-handle:hover {
+  border-color: #000000;
+}
+.app .app-element.app-element-mf-input .mf-input-file-upload-label:hover {
+  color: #000000;
+}
+.app .app-element.app-element-mf-input .mf-input:hover .mf_select__single-value {
+  color: #000000;
+}
+.app .app-element.app-element-mf-input .mf-file-upload-container:hover .mf-input-file-upload-label svg path {
+  stroke: #000000;
+  fill: #000000;
+}
+.app .app-element.app-element-mf-input .mf_multiselect__multi-value:hover .mf_multiselect__multi-value__label,  .app .app-element.app-element-mf-input .mf_multiselect__multi-value:hover .mf_multiselect__multi-value__remove, .app .app-element.app-element-mf-input .mf_multiselect__menu-notice--no-options:hover {
+  color: #000000;
+}
+.app .app-element.app-element-mf-input .mf-input:focus,  .app .app-element.app-element-mf-input .mf-input-wrapper:focus .iti--separate-dial-code .iti__selected-flag,  .app .app-element.app-element-mf-input .mf-input-wrapper:focus .iti--separate-dial-code .iti__selected-dial-code {
+  color: #000000;
+}
+.app .app-element.app-element-mf-input .irs--round .irs-handle:focus {
+  border-color: #000000;
+}
+.app .app-element.app-element-mf-input .mf-file-upload-container:focus .mf-input-file-upload-label,  .app .app-element.app-element-mf-input .mf-file-upload-container:focus .mf-image-label,  .app .app-element.app-element-mf-input .mf-input-calculation-total:focus {
+  color: #000000;
+}
+.app .app-element.app-element-mf-input .mf-input > .mf_select__control--is-focused .mf_select__single-value {
+  color: #000000;
+}
+.app .app-element.app-element-mf-input .mf-file-upload-container:focus .mf-input-file-upload-label svg path {
+  stroke: #000000;
+  fill: #000000;
+}
+.app .app-element.app-element-mf-input .mf-input-calculation-total:focus,  .app .app-element.app-element-mf-input .mf_multiselect__option:focus,  .app .app-element.app-element-mf-input .mf_multiselect__multi-value:focus .mf_multiselect__multi-value__label,  .app .app-element.app-element-mf-input .mf_multiselect__multi-value:focus .mf_multiselect__multi-value__remove,  .app .app-element.app-element-mf-input .mf_multiselect__menu-notice--no-options:focus {
+  color: #000000;
+}
+.app .app-element.app-element-mf-input .mf-input:focus,  .app .app-element.app-element-mf-input .mf-file-upload-container:focus .mf-input-file-upload-label,  .app .app-element.app-element-mf-input .mf-input-wrapper:focus .iti--separate-dial-code .iti__selected-flag,  .app .app-element.app-element-mf-input .mf-input-calculation-total:focus,  .app .app-element.app-element-mf-input .mf-input-wrapper > .mf-input-select > .mf_select__control--is-focused,  .app .app-element.app-element-mf-input .mf_multiselect__option:focus,  .app .app-element.app-element-mf-input .mf_multiselect__menu-notice--no-options:focus {
+  border-style: solid;
+  border-width: 1px 1px 1px 1px;
+  border-color: var( --global-color-primary );
+}
+.app .app-element.app-element-mf-input .mf-input,  .app .app-element.app-element-mf-input .irs--round .irs-single,  .app .app-element.app-element-mf-input .asRange .asRange-pointer .asRange-tip,  .app .app-element.app-element-mf-input .mf-file-upload-container .mf-input-file-upload-label,  .app .app-element.app-element-mf-input .mf-input-wrapper .iti--separate-dial-code .iti__selected-flag,  .app .app-element.app-element-mf-input .mf-input-calculation-total,  .app .app-element.app-element-mf-input .mf-input-wrapper .input-range__label-container {
+  font-family: var( --global-typography-text-font-family ),  sans-serif;
+  font-size: var( --global-typography-text-font-size );
+  font-weight: var( --global-typography-text-font-weight );
+  text-transform: var( --global-typography-text-text-transform );
+}
+.app .app-element.app-element-mf-input .input-range .input-range__track {
+  border-radius: 0px;
+}
+.app .app-element.app-element-mf-input .mf-file-upload-container .mf-input-file-upload-label,  .app .app-element.app-element-mf-input .mf-input-wrapper .iti--separate-dial-code .iti__selected-flag,  .app .app-element.app-element-mf-input .mf-input-calculation-total {
+  border-radius: 0px;
+}
+.app .app-element.app-element-mf-input .mf-input-select > .mf_select__control,  .app .app-element.app-element-mf-input .mf-input-multiselect .mf_multiselect__control,  .app .app-element.app-element-mf-input .mf_multiselect__option,  .app .app-element.app-element-mf-input .mf_multiselect__multi-value__label,  .app .app-element.app-element-mf-input .mf_multiselect__multi-value__remove,  .app .app-element.app-element-mf-input .mf_multiselect__menu-notice--no-options  {
+  border-radius: 0px;
+}
+.app .app-element.app-element-mf-input :is(.mf_select__placeholder,  .mf_multiselect__placeholder,  .text),
+.app .app-element.app-element-mf-input .mf-input::placeholder,
+.app .app-element.app-element-mf-input .mf-time-input::before {
+  font-family: var( --global-typography-text-font-family ),  sans-serif;
+  font-size: var( --global-typography-text-font-size );
+  font-weight: var( --global-typography-text-font-weight );
+  text-transform: var( --global-typography-text-text-transform );
+}
+.app .app-element.app-element-mf-input .mf-input:not([type="submit"]):not([type="checkbox"]):not([type="radio"])::-webkit-input-placeholder {
+  color: #D8D8D8;
+}
+.app .app-element.app-element-mf-input .mf-input:not([type="submit"]):not([type="checkbox"]):not([type="radio"])::-moz-placeholder {
+  color: #D8D8D8;
+}
+.app .app-element.app-element-mf-input .mf-input:not([type="submit"]):not([type="checkbox"]):not([type="radio"]):-ms-input-placeholder {
+  color: #D8D8D8;
+}
+.app .app-element.app-element-mf-input .mf-input:not([type="submit"]):not([type="checkbox"]):not([type="radio"]):-moz-placeholder {
+  color: #D8D8D8;
+}
+.app .app-element.app-element-mf-input .mf-time-input::before {
+  color: #D8D8D8;
+}
+.app .app-element.app-element-mf-input .mf-input::-webkit-input-placeholder {
+  color: #D8D8D8;
+}
+.app .app-element.app-element-mf-input .mf-input::-moz-placeholder {
+  color: #D8D8D8;
+}
+.app .app-element.app-element-mf-input .mf-input:-ms-input-placeholder {
+  color: #D8D8D8;
+}
+.app .app-element.app-element-mf-input .mf-input:-moz-placeholder {
+  color: #D8D8D8;
+}
+.app .app-element.app-element-mf-input :is(.mf_select__placeholder,  .mf_multiselect__placeholder) {
+  color: #D8D8D8;
+}
+@media (max-width: 1024px) {
+  .app .app-element.app-element-mf-input .mf-error-message {
+    font-size: var( --global-typography-text-font-size );
+  }
+  .app .app-element.app-element-mf-input .mf-input,  .app .app-element.app-element-mf-input .irs--round .irs-single,  .app .app-element.app-element-mf-input .asRange .asRange-pointer .asRange-tip,  .app .app-element.app-element-mf-input .mf-file-upload-container .mf-input-file-upload-label,  .app .app-element.app-element-mf-input .mf-input-wrapper .iti--separate-dial-code .iti__selected-flag,  .app .app-element.app-element-mf-input .mf-input-calculation-total,  .app .app-element.app-element-mf-input .mf-input-wrapper .input-range__label-container {
+    font-size: var( --global-typography-text-font-size );
+  }
+  .app .app-element.app-element-mf-input :is(.mf_select__placeholder,  .mf_multiselect__placeholder,  .text),
+  .app .app-element.app-element-mf-input .mf-input::placeholder,
+  .app .app-element.app-element-mf-input .mf-time-input::before {
+    font-size: var( --global-typography-text-font-size );
+  }
+}
+@media (max-width: 767px) {
+  .app .app-element.app-element-mf-input .mf-error-message {
+    font-size: var( --global-typography-text-font-size );
+  }
+  .app .app-element.app-element-mf-input .mf-input,  .app .app-element.app-element-mf-input .irs--round .irs-single,  .app .app-element.app-element-mf-input .asRange .asRange-pointer .asRange-tip,  .app .app-element.app-element-mf-input .mf-file-upload-container .mf-input-file-upload-label,  .app .app-element.app-element-mf-input .mf-input-wrapper .iti--separate-dial-code .iti__selected-flag,  .app .app-element.app-element-mf-input .mf-input-calculation-total,  .app .app-element.app-element-mf-input .mf-input-wrapper .input-range__label-container {
+    font-size: var( --global-typography-text-font-size );
+  }
+  .app .app-element.app-element-mf-input :is(.mf_select__placeholder,  .mf_multiselect__placeholder,  .text),
+  .app .app-element.app-element-mf-input .mf-input::placeholder,
+  .app .app-element.app-element-mf-input .mf-time-input::before {
+    font-size: var( --global-typography-text-font-size );
+  }
+}
+.app .app-element.app-element-metform-button .mf-btn-wraper {
+  text-align: justify;
+}
+.app .app-element.app-element-metform-button .metform-btn {
+  padding: 20px 0;
+  font-family: var( --global-typography-accent-font-family ),  sans-serif;
+  font-size: var( --global-typography-accent-font-size );
+  font-weight: var( --global-typography-accent-font-weight );
+  color: var( --global-color-bbd710c );
+  background-color: var( --global-color-accent );
+  border-style: none;
+  border-radius: 0;
+  box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.5);
+}
+.app .app-element.app-element-metform-button .metform-btn:hover {
+  color: #FFFFFF;
+}
+@media (max-width: 1024px) {
+  .app .app-element.app-element-metform-button .metform-btn {
+    font-size: var( --global-typography-accent-font-size );
+  }
+}
+@media (max-width: 767px) {
+  .app .app-element.app-element-metform-button .metform-btn {
+    font-size: var( --global-typography-accent-font-size );
   }
 }

@@ -1,7 +1,11 @@
-<app-header></app-header>
+@if (routeValid) {
+  <app-header></app-header>
+}
 <router-outlet />
-<app-footer></app-footer>
-<ng-app-modal></ng-app-modal>
-<app-cookie-consent></app-cookie-consent>
-<!--  Mini cart -->
-<app-mini-cart></app-mini-cart>
+@if (routeValid) {
+  <app-footer></app-footer>
+  <ng-app-modal></ng-app-modal>
+  <app-cookie-consent></app-cookie-consent>
+  <!--  Mini cart -->
+  <app-mini-cart></app-mini-cart>
+}

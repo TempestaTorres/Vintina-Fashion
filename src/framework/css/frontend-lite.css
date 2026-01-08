@@ -1,3 +1,18 @@
+
+.app-element.app-element-form-group-input-wrapper.first > .app-element-populated {
+  padding: 0 10px 0 0;
+}
+.app-element.app-element-form-group-input-wrapper.last > .app-element-populated {
+  padding: 0 0 0 10px;
+}
+@media(max-width:767px) {
+  .app-element.app-element-form-group-input-wrapper.first > .app-element-populated {
+    padding: 0 0 15px 0;
+  }
+  .app-element.app-element-form-group-input-wrapper.last > .app-element-populated {
+    padding: 0;
+  }
+}
 .dialog-widget-content {
   background-color:var(--a-bg-default);
   position:absolute;
@@ -14,13 +29,13 @@
   position:absolute;
   margin-top:15px;
   right:15px;
-  color:var(--a-color-txt);
+  color:rgb(0,0,0);
   font-size:15px;
   line-height:1;
-  transition:var(--a-transition-hover)
+  transition:all .2s ease-in-out;
 }
 .dialog-close-button:hover {
-  color:var(--a-color-txt-hover)
+  color:rgba(0,0,0,0.56);
 }
 .dialog-prevent-scroll {
   overflow:hidden;
@@ -722,6 +737,9 @@ h1.entry-title {
 .app-section {
   position:relative
 }
+.app-section.app-section-form-group:not(:last-child) {
+  margin-bottom:20px
+}
 .app-section .app-container {
   display:flex;
   margin-right:auto;
@@ -770,6 +788,12 @@ h1.entry-title {
   width:100%;
   display:flex
 }
+.app-top-section {
+  transition: background 0.3s,  border 0.3s,  border-radius 0.3s,  box-shadow 0.3s;
+}
+.app-top-section > .app-background-overlay {
+  transition: background 0.3s,  border-radius 0.3s,  opacity 0.3s;
+}
 @media (max-width:1024px) {
   .app-row {
     flex-wrap:wrap
@@ -810,6 +834,9 @@ h1.entry-title {
   width:100%;
   position:relative;
   display:flex
+}
+.app-top-column > .app-element-populated {
+  padding: 0!important;
 }
 .app-column-gap-narrow>.app-column>.app-element-populated {
   padding:5px

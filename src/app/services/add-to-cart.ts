@@ -13,6 +13,7 @@ export class AddToCart {
   public itemAdded: Observable<boolean>;
   public showCart: Observable<boolean>;
   public cartCounter: Observable<number>;
+
   constructor() {
     this.itemAdded = new Observable(observer => {
 
