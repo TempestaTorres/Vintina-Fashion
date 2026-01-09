@@ -97,6 +97,7 @@ export class ProductFormComponent {
 
         if (this.product)
           this.cartService.addToCart(this.product);
+          this.cartService.openCart();
 
       }, 2000);
     }
