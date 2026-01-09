@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import {ObserveElementDirective} from '../../directives/scroll-observer';
 import {NgClass} from '@angular/common';
 import {Collections, ICollectionType} from './collection-types';
+import {RouterLink} from '@angular/router';
 
 
 @Component({
@@ -9,6 +10,7 @@ import {Collections, ICollectionType} from './collection-types';
   imports: [
     ObserveElementDirective,
     NgClass,
+    RouterLink,
   ],
   templateUrl: './collection.html',
   styleUrl: './collection.css',
