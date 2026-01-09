@@ -1,13 +1,12 @@
 import { Component } from '@angular/core';
 import {FormControl, FormGroup, ReactiveFormsModule, Validators} from '@angular/forms';
 import {DateService} from '../../services/date-service';
-import {RouterLink} from '@angular/router';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'ng-app-modal',
   imports: [
     ReactiveFormsModule,
-    RouterLink
   ],
   templateUrl: './modal.component.html',
   styleUrl: './modal.component.css',
@@ -31,7 +30,7 @@ export class ModalComponent {
     email: new FormControl('', [Validators.required, Validators.email, Validators.maxLength(100)]),
   });
 
-  constructor( private dateService: DateService ) {
+  constructor( private dateService: DateService, private router: Router ) {
   }
 
   ngOnInit() {
@@ -98,5 +97,24 @@ export class ModalComponent {
   public isWednesday(): void {
     let dayOfWeek: string = this.dateService.getDayOfWeekName();
     this.bWednesday = dayOfWeek === 'Wednesday';
+  }
+
+  public onPrivacy(): void {
+    this.shutdown = true;
+
+    setTimeout(() => {
+      this.bOpen = false;
+      this.shutdown = false;
+      this.router.navigate(['/privacy-policy']).then();
+    }, 1000);
+  }
+  onTerms(): void {
+    this.shutdown = true;
+
+    setTimeout(() => {
+      this.bOpen = false;
+      this.shutdown = false;
+      this.router.navigate(['/terms-conditions']).then();
+    }, 1000);
   }
 }

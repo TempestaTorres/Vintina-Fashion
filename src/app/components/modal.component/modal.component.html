@@ -61,15 +61,10 @@
                     to join&nbsp;The Vinita Club&nbsp;&amp; receive marketing emails including AI content from Mad
                     Jun. We may share info with service providers per our Privacy Policy. You can unsubscribe at
                     any time. By submitting your email address, you also agree to our
-                    <a rel="noopener"
-                       target="_blank"
-                       [routerLink]="['/terms-conditions']"
-                       >
+                    <a (click)="onTerms()">
                       Terms (incl. arbitration)
                     </a>&amp;
-                    <a rel="noopener"
-                       [routerLink]="['/privacy-policy']"
-                       >
+                    <a (click)="onPrivacy()">
                       Privacy Policy</a>
                     . Contact Mad Jun at 125 York Street Level 1, Sydney, New South Wales 2000.
                   </div>
