@@ -1,12 +1,13 @@
 import { Component } from '@angular/core';
 import {FormControl, FormGroup, ReactiveFormsModule, Validators} from '@angular/forms';
 import {DateService} from '../../services/date-service';
-import {Router} from '@angular/router';
+import {Router, RouterLink} from '@angular/router';
 
 @Component({
   selector: 'ng-app-modal',
   imports: [
     ReactiveFormsModule,
+    RouterLink,
   ],
   templateUrl: './modal.component.html',
   styleUrl: './modal.component.css',
@@ -22,6 +23,7 @@ export class ModalComponent {
   public bSunday: boolean = false;
   public bTuesday: boolean = false;
   public bWednesday: boolean = false;
+  public bThursday: boolean = false;
 
   // Form group
   public offerFormGroup: FormGroup = new FormGroup({
@@ -96,25 +98,8 @@ export class ModalComponent {
     let dayOfWeek: string = this.dateService.getDayOfWeekName();
     this.bWednesday = dayOfWeek === 'Wednesday';
   }
-
-  public onPrivacy(): void {
-    this.shutdown = true;
-
-    setTimeout(() => {
-      this.bOpen = false;
-      this.shutdown = false;
-      this.closed = false;
-      this.router.navigate(['/privacy-policy']).then();
-    }, 1000);
-  }
-  onTerms(): void {
-    this.shutdown = true;
-
-    setTimeout(() => {
-      this.bOpen = false;
-      this.shutdown = false;
-      this.closed = false;
-      this.router.navigate(['/terms-conditions']).then();
-    }, 1000);
+  public isThursday(): void {
+    let dayOfWeek: string = this.dateService.getDayOfWeekName();
+    this.bThursday = dayOfWeek === 'Thursday';
   }
 }
