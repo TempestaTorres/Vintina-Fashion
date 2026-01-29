@@ -1,8 +1,8 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ObserveElementDirective} from '../../directives/scroll-observer';
 import {NgClass} from '@angular/common';
 import {Collection} from '../../components/collection/collection';
-import {Router, RouterLink} from '@angular/router';
+import {RouterLink} from '@angular/router';
 import {FavoritesComponent} from '../../components/favorites.component/favorites.component';
 import {TestimonialsComponent} from '../../components/testimonials.component/testimonials.component';
 import {ScrollTotopService} from '../../services/scrolltotop-service';
@@ -20,9 +20,9 @@ import {ScrollTotopService} from '../../services/scrolltotop-service';
   templateUrl: './home.html',
   styleUrl: './home.css',
 })
-export class Home {
+export class Home implements OnInit {
 
-  constructor(private readonly router: Router, private scrollTotopService: ScrollTotopService) {
+  constructor(private scrollTotopService: ScrollTotopService) {
   }
 
   ngOnInit() {
