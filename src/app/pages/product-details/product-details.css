@@ -285,6 +285,9 @@
   margin-bottom: 0;
   padding: 80px 0 140px 0;
 }
+.inline-link {
+  display: inline!important;
+}
 /*=========================================== Media 1024 =============================================*/
 @media (max-width: 1024px) {
   .app-home .app-element.app-element-hero-top-section-heading .app-heading-title {

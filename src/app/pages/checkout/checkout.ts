@@ -502,6 +502,7 @@ export class Checkout {
       this.currentBillingPhoneFlag = flag;
     }
   }
+
   public onInputTextMeChange(): void {
     this.sendSmsMessage = this.formCheckoutGroup.value.checkBoxTextMe;
   }

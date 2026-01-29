@@ -153,7 +153,11 @@
           <div class="app-element app-icon-list--layout-traditional app-list-item-link-full_width app-widget app-widget-icon-list">
             <div class="app-widget-container">
               <ul class="app-icon-list-items">
-                <li class="app-icon-list-item"><span class="app-icon-list-text">Categories : {{ product?.category?.name }}</span></li>
+                <li class="app-icon-list-item">
+                  <div class="app-icon-list-text">Categories :
+                  <a class="inline-link" [routerLink]="['/product-category', product?.category?.name]">{{ product?.category?.name }}</a>
+                  </div>
+                </li>
               </ul>
             </div>
           </div>

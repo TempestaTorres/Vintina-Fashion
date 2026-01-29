@@ -16,6 +16,7 @@ import {Signup} from './pages/signup/signup';
 import {Login} from './pages/login/login';
 import {Checkout} from './pages/checkout/checkout';
 import {NotFound} from './pages/not-found/not-found';
+import {BraMakeYouFeel} from './posts/bra-make-you-feel/bra-make-you-feel';
 
 export const routes: Routes = [
   {path: '', component: Home},
@@ -28,6 +29,7 @@ export const routes: Routes = [
   {path: 'cart', component: CartComponent},
   {path: 'bridal-shapewear', component: BridalShapewear},
   {path: 'bra-types', component: FiveTypesOfBras},
+  {path: 'how-does-your-bra-make-you-feel', component: BraMakeYouFeel},
   {path: 'terms-conditions', component: TermsConditions},
   {path: 'privacy-policy', component: PrivacyPolicy},
   {path: 'returns-exchanges', component: ReturnsExchanges},

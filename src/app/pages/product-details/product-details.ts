@@ -9,12 +9,10 @@ import {ScrollTotopService} from '../../services/scrolltotop-service';
 import {ModalPayLaterComponent} from '../../components/modal-pay-later.component/modal-pay-later.component';
 import {FindInStoreComponent} from '../../components/find-in-store.component/find-in-store.component';
 import {ProductFormComponent} from '../../components/product-form.component/product-form.component';
-import {MiniCartComponent} from '../../components/mini-cart.component/mini-cart.component';
 import {InstagramFeeds} from '../../components/instagram-feeds/instagram-feeds';
 import {ModalInstagram} from '../../components/modal-instagram/modal-instagram';
 import {AddToCart} from '../../services/add-to-cart';
 import {SizeGuideModal} from '../../components/size-guide-modal/size-guide-modal';
-import {HttpClient} from '@angular/common/http';
 import {Subscription} from 'rxjs';
 
 declare var Swiper: any;
@@ -63,8 +61,7 @@ export class ProductDetails {
   private subscription: Subscription | null = null;
 
   constructor(private activatedRoute: ActivatedRoute, private productService: ProductService,
-              private scrollTotopService: ScrollTotopService, private router: Router, private  cartService: AddToCart,
-              private http: HttpClient) {
+              private scrollTotopService: ScrollTotopService, private router: Router, private  cartService: AddToCart) {
   }
 
   public ngOnInit() {
@@ -221,7 +218,6 @@ export class ProductDetails {
 
       if (params['type']) {
 
-        console.log(params['type']);
         this.scrollTotopService.toTop();
         this.zoomed = false;
         this.bioOpened = false;

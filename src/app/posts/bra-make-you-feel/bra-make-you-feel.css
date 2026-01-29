@@ -1,0 +1,90 @@
+.app-home .app-element.app-element-page-hero.hero-banner:not(.app-motion-effects-element-type-background),
+.app-home .app-element.app-element-page-hero.hero-banner > .app-motion-effects-container > .app-motion-effects-layer {
+  background-image:url("/assets/images/HERO-DESKTOP.jpg");
+}
+.app-link {
+  text-decoration: underline;
+}
+
+.app .app-element.app-element-section-post > .app-container {
+  max-width:1400px;
+}
+.app-element-text-image {
+  position: relative;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  grid-template-areas:"image""text";
+  justify-items: stretch;
+  align-items: center;
+  gap: 16px;
+}
+.app-element-text-image__text {
+  grid-area: text;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 70px;
+}
+.app-element-text-image__image {
+  grid-area: image;
+}
+
+.app-element-text-image__text .text-container {
+  position: relative;
+  width: 100%;
+  align-content: center;
+}
+.app-element-text-image__text-heading .app-heading-title {
+  font-family: inherit;
+  letter-spacing: 2px;
+  font-size: 22px;
+  font-weight: 400;
+  text-transform: none;
+}
+.app-element-text-image__list {
+  padding: 0 0 0 16px;
+}
+.app-element-text-image__text__footer {
+  display: flex;
+  height: auto;
+  align-content: flex-end;
+  flex-wrap: wrap;
+}
+.app-element-text-image__text__footer > .inner {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  height: auto;
+}
+/*================================ Media ============================*/
+@media screen and (min-width: 1025px) {
+  .app .app-element.app-element-section-post {
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+}
+@media (min-width: 990px) {
+  .app-element-text-image {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "image text";
+    gap: 0;
+  }
+  .app-element-text-image__text {
+    padding: 0 30px;
+    /*gap:100px;*/
+  }
+  .app-element-text-image__image.reverse {
+    grid-area: text;
+  }
+  .app-element-text-image__text.reverse {
+    grid-area: image;
+  }
+}
+@media (min-width: 768px) {
+
+}
