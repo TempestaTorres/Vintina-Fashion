@@ -10,6 +10,7 @@ import {DateService} from '../../services/date-service';
   ],
   templateUrl: './post-comment.component.html',
   styleUrl: './post-comment.component.css',
+  standalone: true
 })
 export class PostCommentComponent {
 

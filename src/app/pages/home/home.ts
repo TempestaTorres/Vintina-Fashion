@@ -19,6 +19,7 @@ import {ScrollTotopService} from '../../services/scrolltotop-service';
   ],
   templateUrl: './home.html',
   styleUrl: './home.css',
+  standalone: true
 })
 export class Home implements OnInit {
 

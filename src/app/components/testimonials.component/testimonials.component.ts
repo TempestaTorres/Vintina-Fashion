@@ -11,6 +11,7 @@ declare var tns: any;
   ],
   templateUrl: './testimonials.component.html',
   styleUrl: './testimonials.component.css',
+  standalone: true
 })
 export class TestimonialsComponent {
 

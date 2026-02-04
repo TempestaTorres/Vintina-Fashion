@@ -14,6 +14,7 @@ import {RouterLink} from '@angular/router';
   ],
   templateUrl: './collection.html',
   styleUrl: './collection.css',
+  standalone: true
 })
 export class Collection {
 

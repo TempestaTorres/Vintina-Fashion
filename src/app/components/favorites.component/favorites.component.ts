@@ -16,6 +16,7 @@ import {AddToCart} from '../../services/add-to-cart';
   ],
   templateUrl: './favorites.component.html',
   styleUrl: './favorites.component.css',
+  standalone: true
 })
 export class FavoritesComponent {
 

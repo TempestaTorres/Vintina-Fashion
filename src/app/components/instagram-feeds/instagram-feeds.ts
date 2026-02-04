@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Output} from '@angular/core';
+import {AfterViewInit, Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {Feeds, InstagramFeed} from './feed-type';
 import {NgStyle} from '@angular/common';
 declare var Swiper: any;
@@ -10,8 +10,9 @@ declare var Swiper: any;
   ],
   templateUrl: './instagram-feeds.html',
   styleUrl: './instagram-feeds.css',
+  standalone: true
 })
-export class InstagramFeeds {
+export class InstagramFeeds implements OnInit, AfterViewInit {
   @Output()
   timelineClicked: EventEmitter<any> = new EventEmitter();
   private swiper: any;

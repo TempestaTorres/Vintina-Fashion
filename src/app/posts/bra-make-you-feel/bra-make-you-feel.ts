@@ -11,6 +11,7 @@ import {ScrollTotopService} from '../../services/scrolltotop-service';
   ],
   templateUrl: './bra-make-you-feel.html',
   styleUrl: './bra-make-you-feel.css',
+  standalone: true
 })
 export class BraMakeYouFeel implements OnInit {
   constructor(private scrollTotopService: ScrollTotopService) {

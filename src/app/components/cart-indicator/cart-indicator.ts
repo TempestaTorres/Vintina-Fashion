@@ -7,6 +7,7 @@ import {AddToCart} from '../../services/add-to-cart';
   imports: [],
   templateUrl: './cart-indicator.html',
   styleUrl: './cart-indicator.css',
+  standalone: true
 })
 export class CartIndicator {
 
