@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {ProductType} from '../../product/product-type';
 import {AddToCart} from '../../services/add-to-cart';
 import {ProductService} from '../../services/product-service';
@@ -18,7 +18,7 @@ declare var Swiper: any;
   styleUrls: ['./mini-cart.component.css'],
   standalone: true
 })
-export class MiniCartComponent implements OnInit {
+export class MiniCartComponent implements OnInit , OnDestroy {
 
   public opened: boolean = false;
 
