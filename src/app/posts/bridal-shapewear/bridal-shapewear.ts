@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {AfterViewInit, Component, OnDestroy, OnInit} from '@angular/core';
 import {PostCommentComponent} from '../../components/post-comment.component/post-comment.component';
 import {RouterLink} from '@angular/router';
 import {ScrollTotopService} from '../../services/scrolltotop-service';
@@ -12,8 +12,9 @@ declare var Swiper: any;
   ],
   templateUrl: './bridal-shapewear.html',
   styleUrl: './bridal-shapewear.css',
+  standalone: true
 })
-export class BridalShapewear {
+export class BridalShapewear implements OnInit, OnDestroy,AfterViewInit {
 
   private swiper: any;
 

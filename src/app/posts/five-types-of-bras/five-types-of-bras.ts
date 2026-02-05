@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {SlickService} from '../../services/slick-service';
 import {PostCommentComponent} from "../../components/post-comment.component/post-comment.component";
 import {ScrollTotopService} from '../../services/scrolltotop-service';
@@ -12,8 +12,9 @@ import {RouterLink} from '@angular/router';
   ],
   templateUrl: './five-types-of-bras.html',
   styleUrl: './five-types-of-bras.css',
+  standalone: true
 })
-export class FiveTypesOfBras {
+export class FiveTypesOfBras implements OnInit, OnDestroy {
   constructor(private slickService: SlickService, private scrollTotopService: ScrollTotopService) { }
 
   ngOnInit() {
